@@ -1,11 +1,7 @@
 <template>
   <div>
-    <router-view />
+    <router-view  class="app-routes"/>
   </div>
 </template>
-
-<script>
-  export default {};
-</script>
 
 <style lang="scss" src="./_shared/styles/main.scss"></style>

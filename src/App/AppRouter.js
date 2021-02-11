@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 Vue.use(VueRouter);
 
-import ServiceWrapperPage from "./";
+import ServiceWrapperPage from "./_pages/Wrapper";
 /*
 import CartRouter from "./Cart/CartRouter";
 import ProfileRouter from "./Profile/ProfileRouter";

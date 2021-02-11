@@ -1,20 +1,20 @@
-import FeatureWrapper from '.'
+import FeatureWrapper from './'
 
 const HomePage = ()=> import('./_pages/Home')
 const GoodsPage = ()=> import('./_pages/Goods')
 
 const showcaseRoutes = [
   {
-    path: '/showcase/',
+    path: '/',
     component: FeatureWrapper,
     children: [
       {
-        path: '/showcase/',
+        path: '/',
         component: HomePage,
         name: 'home'
       },
       {
-        path: '/showcase/goods',
+        path: '/goods',
         component: GoodsPage,
         name: 'goods'
       }

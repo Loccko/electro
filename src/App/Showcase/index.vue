@@ -1,17 +1,24 @@
 <template>
   <div>
-    <div>Showcase main</div> 
-    <div>Rendered content below:</div>
-    <router-view></router-view>
+    <h1>Showcase</h1>
+    <router-view class="rw"></router-view>
   </div>
 </template>
 
 <script>
-export default {
-
-}
+  export default {
+    name:'ShowcaseFeatureWrapper',
+    data:()=>({
+      user: null,
+      products: []
+    }),
+    methods: {
+      a(){
+        this.$set(this.user, 'firstName', 'serhii')
+        this.$set(this.user, 'lastName', 'but')
+      }
+    }
+  }
 </script>
 
-<style>
-
-</style>
+<style></style>
