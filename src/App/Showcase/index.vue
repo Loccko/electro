@@ -1,13 +1,10 @@
 <template>
-  <div>
-    <h1>Showcase</h1>
-    <router-view class="rw"></router-view>
-  </div>
+  <router-view class="rw"></router-view>
 </template>
 
 <script>
   export default {
-    name:'ShowcaseFeatureWrapper',
+    name:'Showcase-Feature-Wrapper',
     data:()=>({
       user: null,
       products: []

@@ -1,0 +1,778 @@
+<template>
+  <div class="max-width-270 min-width-270 pt-xl-13 mt-xl-13">
+              <!-- Image Banner -->
+              <aside class="mb-8">
+                  <a href="../shop/shop.html" class="d-block">
+                      <img class="img-fluid" src="@/assets/img/270X428/img1.jpg" alt="Image Description">
+                  </a>
+              </aside>
+              <!-- End Image Banner -->
+              <!-- Latest Products -->
+              <aside class="mb-4">
+                  <!-- Wrapper Latest Products -->
+                  <div class="mb-2 position-relative">
+                      <dv class="d-flex justify-content-between border-bottom border-color-1 flex-md-nowrap flex-wrap border-sm-bottom-0">
+                          <h3 class="section-title section-title__sm mb-0 pb-3 font-size-18">Latest Products</h3>
+                      </dv>
+                      <div class="js-slick-carousel u-slick u-slick--gutters-2 overflow-hidden u-slick-overflow-visble pt-3 position-static slick-initialized slick-slider" data-slides-show="1" data-slides-scroll="1" data-arrows-classes="position-absolute top-0 font-size-17 u-slick__arrow-normal top-10" data-arrow-left-classes="fa fa-angle-left right-1" data-arrow-right-classes="fa fa-angle-right right-0"><div class="js-prev position-absolute top-0 font-size-17 u-slick__arrow-normal top-10 fa fa-angle-left right-1 slick-arrow slick-disabled" aria-disabled="true" style=""></div>
+                          <div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 858px; transform: translate3d(0px, 0px, 0px);"><div class="js-slide slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 270px; height: auto;" tabindex="0">
+                              <ul class="list-unstyled products-group mb-0 overflow-visible">
+                                  <li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">
+                                      <div class="product-item__outer h-100">
+                                          <div class="product-item__inner py-md-3 mx-3 border-bottom row no-gutters">
+                                              <div class="col-auto product-media-left">
+                                                  <a href="../shop/single-product-fullwidth.html" class="max-width-70 d-block" tabindex="0"><img class="img-fluid" src="@/assets/img/150X140/img1.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="col product-item__body pl-2 pl-lg-3">
+                                                  <div class="mb-4">
+                                                      <h5 class="product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-gray-90" tabindex="0">Tablet Air 3 WiFi 64GB Gold</a>
+                                                      </h5>
+                                                  </div>
+                                                  <div class="flex-center-between">
+                                                      <div class="prodcut-price">
+                                                          <div class="text-gray-100 font-size-15 font-weight-bold">$629,00</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">
+                                      <div class="product-item__outer h-100">
+                                          <div class="product-item__inner py-md-3 mx-3 border-bottom row no-gutters">
+                                              <div class="col-auto product-media-left">
+                                                  <a href="../shop/single-product-fullwidth.html" class="max-width-70 d-block" tabindex="0"><img class="img-fluid" src="@/assets/img/150X140/img2.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="col product-item__body pl-2 pl-lg-3">
+                                                  <div class="mb-4">
+                                                      <h5 class="product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-gray-90" tabindex="0">Tablet White EliteBook Revolve 810
+                                                          G2</a></h5>
+                                                  </div>
+                                                  <div class="flex-center-between">
+                                                      <div class="prodcut-price">
+                                                          <div class="text-gray-100 font-size-15 font-weight-bold">$1 299,00</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">
+                                      <div class="product-item__outer h-100">
+                                          <div class="product-item__inner py-md-3 mx-3 border-bottom row no-gutters">
+                                              <div class="col-auto product-media-left">
+                                                  <a href="../shop/single-product-fullwidth.html" class="max-width-70 d-block" tabindex="0"><img class="img-fluid" src="@/assets/img/150X140/img3.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="col product-item__body pl-2 pl-lg-3">
+                                                  <div class="mb-4">
+                                                      <h5 class="product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-gray-90" tabindex="0">Pendrive USB 3.0 Flash 64 GB</a>
+                                                      </h5>
+                                                  </div>
+                                                  <div class="flex-center-between">
+                                                      <div class="prodcut-price">
+                                                          <div class="text-gray-100 font-size-15 font-weight-bold">$110,00</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">
+                                      <div class="product-item__outer h-100">
+                                          <div class="product-item__inner py-md-3 mx-3 border-bottom row no-gutters">
+                                              <div class="col-auto product-media-left">
+                                                  <a href="../shop/single-product-fullwidth.html" class="max-width-70 d-block" tabindex="0"><img class="img-fluid" src="@/assets/img/150X140/img7.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="col product-item__body pl-2 pl-lg-3">
+                                                  <div class="mb-4">
+                                                      <h5 class="product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-gray-90" tabindex="0">White Solo 2 Wireless</a></h5>
+                                                  </div>
+                                                  <div class="flex-center-between">
+                                                      <div class="prodcut-price">
+                                                          <div class="text-gray-100 font-size-15 font-weight-bold">$110,00</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">
+                                      <div class="product-item__outer h-100">
+                                          <div class="product-item__inner py-md-3 mx-3 border-bottom row no-gutters">
+                                              <div class="col-auto product-media-left">
+                                                  <a href="../shop/single-product-fullwidth.html" class="max-width-70 d-block" tabindex="0"><img class="img-fluid" src="@/assets/img/150X140/img4.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="col product-item__body pl-2 pl-lg-3">
+                                                  <div class="mb-4">
+                                                      <h5 class="product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-gray-90" tabindex="0">Smartwatch 2.0 LTE Wifi</a></h5>
+                                                  </div>
+                                                  <div class="flex-center-between">
+                                                      <div class="prodcut-price">
+                                                          <div class="text-gray-100 font-size-15 font-weight-bold">$110,00</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">
+                                      <div class="product-item__outer h-100">
+                                          <div class="product-item__inner py-md-3 mx-3 border-bottom row no-gutters">
+                                              <div class="col-auto product-media-left">
+                                                  <a href="../shop/single-product-fullwidth.html" class="max-width-70 d-block" tabindex="0"><img class="img-fluid" src="@/assets/img/150X140/img5.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="col product-item__body pl-2 pl-lg-3">
+                                                  <div class="mb-4">
+                                                      <h5 class="product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-gray-90" tabindex="0">Gear Virtual Reality</a></h5>
+                                                  </div>
+                                                  <div class="flex-center-between">
+                                                      <div class="prodcut-price">
+                                                          <div class="text-gray-100 font-size-15 font-weight-bold">$799,00</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">
+                                      <div class="product-item__outer h-100">
+                                          <div class="product-item__inner py-md-3 mx-3 border-bottom row no-gutters">
+                                              <div class="col-auto product-media-left">
+                                                  <a href="../shop/single-product-fullwidth.html" class="max-width-70 d-block" tabindex="0"><img class="img-fluid" src="@/assets/img/150X140/img6.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="col product-item__body pl-2 pl-lg-3">
+                                                  <div class="mb-4">
+                                                      <h5 class="product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-gray-90" tabindex="0">External SSD USB 3.1 750 GB</a>
+                                                      </h5>
+                                                  </div>
+                                                  <div class="flex-center-between">
+                                                      <div class="prodcut-price">
+                                                          <div class="text-gray-100 font-size-15 font-weight-bold">$799,00</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">
+                                      <div class="product-item__outer h-100">
+                                          <div class="product-item__inner py-md-3 mx-3 row no-gutters">
+                                              <div class="col-auto product-media-left">
+                                                  <a href="../shop/single-product-fullwidth.html" class="max-width-70 d-block" tabindex="0"><img class="img-fluid" src="@/assets/img/150X140/img8.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="col product-item__body pl-2 pl-lg-3">
+                                                  <div class="mb-4">
+                                                      <h5 class="product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-gray-90" tabindex="0">Purple NX Mini F1 aparat SMART
+                                                          NX</a></h5>
+                                                  </div>
+                                                  <div class="flex-center-between">
+                                                      <div class="prodcut-price">
+                                                          <div class="text-gray-100 font-size-15 font-weight-bold">$559.00</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div><div class="js-slide slick-slide" data-slick-index="1" aria-hidden="true" style="width: 270px; height: auto;" tabindex="-1">
+                              <ul class="list-unstyled products-group mb-0 overflow-visible">
+                                  <li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">
+                                      <div class="product-item__outer h-100">
+                                          <div class="product-item__inner py-md-3 mx-3 border-bottom row no-gutters">
+                                              <div class="col-auto product-media-left">
+                                                  <a href="../shop/single-product-fullwidth.html" class="max-width-70 d-block" tabindex="-1"><img class="img-fluid" src="@/assets/img/150X140/img1.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="col product-item__body pl-2 pl-lg-3">
+                                                  <div class="mb-4">
+                                                      <h5 class="product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-gray-90" tabindex="-1">Tablet Air 3 WiFi 64GB Gold</a>
+                                                      </h5>
+                                                  </div>
+                                                  <div class="flex-center-between">
+                                                      <div class="prodcut-price">
+                                                          <div class="text-gray-100 font-size-15 font-weight-bold">$629,00</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">
+                                      <div class="product-item__outer h-100">
+                                          <div class="product-item__inner py-md-3 mx-3 border-bottom row no-gutters">
+                                              <div class="col-auto product-media-left">
+                                                  <a href="../shop/single-product-fullwidth.html" class="max-width-70 d-block" tabindex="-1"><img class="img-fluid" src="@/assets/img/150X140/img2.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="col product-item__body pl-2 pl-lg-3">
+                                                  <div class="mb-4">
+                                                      <h5 class="product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-gray-90" tabindex="-1">Tablet White EliteBook Revolve 810
+                                                          G2</a></h5>
+                                                  </div>
+                                                  <div class="flex-center-between">
+                                                      <div class="prodcut-price">
+                                                          <div class="text-gray-100 font-size-15 font-weight-bold">$1 299,00</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">
+                                      <div class="product-item__outer h-100">
+                                          <div class="product-item__inner py-md-3 mx-3 border-bottom row no-gutters">
+                                              <div class="col-auto product-media-left">
+                                                  <a href="../shop/single-product-fullwidth.html" class="max-width-70 d-block" tabindex="-1"><img class="img-fluid" src="@/assets/img/150X140/img3.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="col product-item__body pl-2 pl-lg-3">
+                                                  <div class="mb-4">
+                                                      <h5 class="product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-gray-90" tabindex="-1">Pendrive USB 3.0 Flash 64 GB</a>
+                                                      </h5>
+                                                  </div>
+                                                  <div class="flex-center-between">
+                                                      <div class="prodcut-price">
+                                                          <div class="text-gray-100 font-size-15 font-weight-bold">$110,00</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">
+                                      <div class="product-item__outer h-100">
+                                          <div class="product-item__inner py-md-3 mx-3 border-bottom row no-gutters">
+                                              <div class="col-auto product-media-left">
+                                                  <a href="../shop/single-product-fullwidth.html" class="max-width-70 d-block" tabindex="-1"><img class="img-fluid" src="@/assets/img/150X140/img7.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="col product-item__body pl-2 pl-lg-3">
+                                                  <div class="mb-4">
+                                                      <h5 class="product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-gray-90" tabindex="-1">White Solo 2 Wireless</a></h5>
+                                                  </div>
+                                                  <div class="flex-center-between">
+                                                      <div class="prodcut-price">
+                                                          <div class="text-gray-100 font-size-15 font-weight-bold">$110,00</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">
+                                      <div class="product-item__outer h-100">
+                                          <div class="product-item__inner py-md-3 mx-3 border-bottom row no-gutters">
+                                              <div class="col-auto product-media-left">
+                                                  <a href="../shop/single-product-fullwidth.html" class="max-width-70 d-block" tabindex="-1"><img class="img-fluid" src="@/assets/img/150X140/img4.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="col product-item__body pl-2 pl-lg-3">
+                                                  <div class="mb-4">
+                                                      <h5 class="product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-gray-90" tabindex="-1">Smartwatch 2.0 LTE Wifi</a></h5>
+                                                  </div>
+                                                  <div class="flex-center-between">
+                                                      <div class="prodcut-price">
+                                                          <div class="text-gray-100 font-size-15 font-weight-bold">$110,00</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">
+                                      <div class="product-item__outer h-100">
+                                          <div class="product-item__inner py-md-3 mx-3 border-bottom row no-gutters">
+                                              <div class="col-auto product-media-left">
+                                                  <a href="../shop/single-product-fullwidth.html" class="max-width-70 d-block" tabindex="-1"><img class="img-fluid" src="@/assets/img/150X140/img5.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="col product-item__body pl-2 pl-lg-3">
+                                                  <div class="mb-4">
+                                                      <h5 class="product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-gray-90" tabindex="-1">Gear Virtual Reality</a></h5>
+                                                  </div>
+                                                  <div class="flex-center-between">
+                                                      <div class="prodcut-price">
+                                                          <div class="text-gray-100 font-size-15 font-weight-bold">$799,00</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">
+                                      <div class="product-item__outer h-100">
+                                          <div class="product-item__inner py-md-3 mx-3 border-bottom row no-gutters">
+                                              <div class="col-auto product-media-left">
+                                                  <a href="../shop/single-product-fullwidth.html" class="max-width-70 d-block" tabindex="-1"><img class="img-fluid" src="@/assets/img/150X140/img6.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="col product-item__body pl-2 pl-lg-3">
+                                                  <div class="mb-4">
+                                                      <h5 class="product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-gray-90" tabindex="-1">External SSD USB 3.1 750 GB</a>
+                                                      </h5>
+                                                  </div>
+                                                  <div class="flex-center-between">
+                                                      <div class="prodcut-price">
+                                                          <div class="text-gray-100 font-size-15 font-weight-bold">$799,00</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">
+                                      <div class="product-item__outer h-100">
+                                          <div class="product-item__inner py-md-3 mx-3 row no-gutters">
+                                              <div class="col-auto product-media-left">
+                                                  <a href="../shop/single-product-fullwidth.html" class="max-width-70 d-block" tabindex="-1"><img class="img-fluid" src="@/assets/img/150X140/img8.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="col product-item__body pl-2 pl-lg-3">
+                                                  <div class="mb-4">
+                                                      <h5 class="product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-gray-90" tabindex="-1">Purple NX Mini F1 aparat SMART
+                                                          NX</a></h5>
+                                                  </div>
+                                                  <div class="flex-center-between">
+                                                      <div class="prodcut-price">
+                                                          <div class="text-gray-100 font-size-15 font-weight-bold">$559.00</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div><div class="js-slide slick-slide" data-slick-index="2" aria-hidden="true" style="width: 270px; height: auto;" tabindex="-1">
+                              <ul class="list-unstyled products-group mb-0 overflow-visible">
+                                  <li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">
+                                      <div class="product-item__outer h-100">
+                                          <div class="product-item__inner py-md-3 mx-3 border-bottom row no-gutters">
+                                              <div class="col-auto product-media-left">
+                                                  <a href="../shop/single-product-fullwidth.html" class="max-width-70 d-block" tabindex="-1"><img class="img-fluid" src="@/assets/img/150X140/img1.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="col product-item__body pl-2 pl-lg-3">
+                                                  <div class="mb-4">
+                                                      <h5 class="product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-gray-90" tabindex="-1">Tablet Air 3 WiFi 64GB Gold</a>
+                                                      </h5>
+                                                  </div>
+                                                  <div class="flex-center-between">
+                                                      <div class="prodcut-price">
+                                                          <div class="text-gray-100 font-size-15 font-weight-bold">$629,00</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">
+                                      <div class="product-item__outer h-100">
+                                          <div class="product-item__inner py-md-3 mx-3 border-bottom row no-gutters">
+                                              <div class="col-auto product-media-left">
+                                                  <a href="../shop/single-product-fullwidth.html" class="max-width-70 d-block" tabindex="-1"><img class="img-fluid" src="@/assets/img/150X140/img2.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="col product-item__body pl-2 pl-lg-3">
+                                                  <div class="mb-4">
+                                                      <h5 class="product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-gray-90" tabindex="-1">Tablet White EliteBook Revolve 810
+                                                          G2</a></h5>
+                                                  </div>
+                                                  <div class="flex-center-between">
+                                                      <div class="prodcut-price">
+                                                          <div class="text-gray-100 font-size-15 font-weight-bold">$1 299,00</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">
+                                      <div class="product-item__outer h-100">
+                                          <div class="product-item__inner py-md-3 mx-3 border-bottom row no-gutters">
+                                              <div class="col-auto product-media-left">
+                                                  <a href="../shop/single-product-fullwidth.html" class="max-width-70 d-block" tabindex="-1"><img class="img-fluid" src="@/assets/img/150X140/img3.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="col product-item__body pl-2 pl-lg-3">
+                                                  <div class="mb-4">
+                                                      <h5 class="product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-gray-90" tabindex="-1">Pendrive USB 3.0 Flash 64 GB</a>
+                                                      </h5>
+                                                  </div>
+                                                  <div class="flex-center-between">
+                                                      <div class="prodcut-price">
+                                                          <div class="text-gray-100 font-size-15 font-weight-bold">$110,00</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">
+                                      <div class="product-item__outer h-100">
+                                          <div class="product-item__inner py-md-3 mx-3 border-bottom row no-gutters">
+                                              <div class="col-auto product-media-left">
+                                                  <a href="../shop/single-product-fullwidth.html" class="max-width-70 d-block" tabindex="-1"><img class="img-fluid" src="@/assets/img/150X140/img7.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="col product-item__body pl-2 pl-lg-3">
+                                                  <div class="mb-4">
+                                                      <h5 class="product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-gray-90" tabindex="-1">White Solo 2 Wireless</a></h5>
+                                                  </div>
+                                                  <div class="flex-center-between">
+                                                      <div class="prodcut-price">
+                                                          <div class="text-gray-100 font-size-15 font-weight-bold">$110,00</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">
+                                      <div class="product-item__outer h-100">
+                                          <div class="product-item__inner py-md-3 mx-3 border-bottom row no-gutters">
+                                              <div class="col-auto product-media-left">
+                                                  <a href="../shop/single-product-fullwidth.html" class="max-width-70 d-block" tabindex="-1"><img class="img-fluid" src="@/assets/img/150X140/img4.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="col product-item__body pl-2 pl-lg-3">
+                                                  <div class="mb-4">
+                                                      <h5 class="product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-gray-90" tabindex="-1">Smartwatch 2.0 LTE Wifi</a></h5>
+                                                  </div>
+                                                  <div class="flex-center-between">
+                                                      <div class="prodcut-price">
+                                                          <div class="text-gray-100 font-size-15 font-weight-bold">$110,00</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">
+                                      <div class="product-item__outer h-100">
+                                          <div class="product-item__inner py-md-3 mx-3 border-bottom row no-gutters">
+                                              <div class="col-auto product-media-left">
+                                                  <a href="../shop/single-product-fullwidth.html" class="max-width-70 d-block" tabindex="-1"><img class="img-fluid" src="@/assets/img/150X140/img5.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="col product-item__body pl-2 pl-lg-3">
+                                                  <div class="mb-4">
+                                                      <h5 class="product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-gray-90" tabindex="-1">Gear Virtual Reality</a></h5>
+                                                  </div>
+                                                  <div class="flex-center-between">
+                                                      <div class="prodcut-price">
+                                                          <div class="text-gray-100 font-size-15 font-weight-bold">$799,00</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">
+                                      <div class="product-item__outer h-100">
+                                          <div class="product-item__inner py-md-3 mx-3 border-bottom row no-gutters">
+                                              <div class="col-auto product-media-left">
+                                                  <a href="../shop/single-product-fullwidth.html" class="max-width-70 d-block" tabindex="-1"><img class="img-fluid" src="@/assets/img/150X140/img6.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="col product-item__body pl-2 pl-lg-3">
+                                                  <div class="mb-4">
+                                                      <h5 class="product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-gray-90" tabindex="-1">External SSD USB 3.1 750 GB</a>
+                                                      </h5>
+                                                  </div>
+                                                  <div class="flex-center-between">
+                                                      <div class="prodcut-price">
+                                                          <div class="text-gray-100 font-size-15 font-weight-bold">$799,00</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="product-item__list pb-2 mb-2 pb-md-0 mb-md-0">
+                                      <div class="product-item__outer h-100">
+                                          <div class="product-item__inner py-md-3 mx-3 row no-gutters">
+                                              <div class="col-auto product-media-left">
+                                                  <a href="../shop/single-product-fullwidth.html" class="max-width-70 d-block" tabindex="-1"><img class="img-fluid" src="@/assets/img/150X140/img8.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="col product-item__body pl-2 pl-lg-3">
+                                                  <div class="mb-4">
+                                                      <h5 class="product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-gray-90" tabindex="-1">Purple NX Mini F1 aparat SMART
+                                                          NX</a></h5>
+                                                  </div>
+                                                  <div class="flex-center-between">
+                                                      <div class="prodcut-price">
+                                                          <div class="text-gray-100 font-size-15 font-weight-bold">$559.00</div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div></div></div>
+                          
+                          
+                      <div class="js-next position-absolute top-0 font-size-17 u-slick__arrow-normal top-10 fa fa-angle-right right-0 slick-arrow" style="" aria-disabled="false"></div></div>
+                  </div>
+                  <!-- End Wrapper Latest Products -->
+              </aside>
+              <!-- End Latest Products -->
+              <!-- Feature List -->
+              <aside class="mb-8">
+                  <div class="d-flex justify-content-center rounded border mb-4">
+                      <div class="px-4 py-6 w-100">
+                          <!-- Feature List -->
+                          <div class="media px-3 mb-4 pb-4 border-bottom" href="#">
+                              <div class="u-avatar mr-2">
+                                  <i class="text-primary ec ec-transport font-size-46"></i>
+                              </div>
+                              <div class="media-body text-center">
+                                  <span class="d-block font-weight-bold text-dark">Free Delivery</span>
+                                  <div class=" text-secondary">from $50</div>
+                              </div>
+                          </div>
+                          <!-- End Feature List -->
+
+                          <!-- Feature List -->
+                          <div class="media px-3 mb-4 pb-4 border-bottom" href="#">
+                              <div class="u-avatar mr-2">
+                                  <i class="text-primary ec ec-customers font-size-56"></i>
+                              </div>
+                              <div class="media-body text-center">
+                                  <span class="d-block font-weight-bold text-dark">99 % Customer</span>
+                                  <div class=" text-secondary">Feedbacks</div>
+                              </div>
+                          </div>
+                          <!-- End Feature List -->
+
+                          <!-- Feature List -->
+                          <div class="media px-3 mb-4 pb-4 border-bottom" href="#">
+                              <div class="u-avatar mr-2">
+                                  <i class="text-primary ec ec-returning font-size-46"></i>
+                              </div>
+                              <div class="media-body text-center">
+                                  <span class="d-block font-weight-bold text-dark">365 Days</span>
+                                  <div class=" text-secondary">for free return</div>
+                              </div>
+                          </div>
+                          <!-- End Feature List -->
+
+                          <!-- Feature List -->
+                          <div class="media px-3 mb-4 pb-4 border-bottom" href="#">
+                              <div class="u-avatar mr-2">
+                                  <i class="text-primary ec ec-payment font-size-46"></i>
+                              </div>
+                              <div class="media-body text-center">
+                                  <span class="d-block font-weight-bold text-dark">Payment</span>
+                                  <div class=" text-secondary">Secure System</div>
+                              </div>
+                          </div>
+                          <!-- End Feature List -->
+
+                          <!-- Feature List -->
+                          <div class="media px-3" href="#">
+                              <div class="u-avatar mr-2">
+                                  <i class="text-primary ec ec-tag font-size-46"></i>
+                              </div>
+                              <div class="media-body text-center">
+                                  <span class="d-block font-weight-bold text-dark">Only Best</span>
+                                  <div class=" text-secondary">Brands</div>
+                              </div>
+                          </div>
+                          <!-- End Feature List -->
+                      </div>
+                  </div>
+              </aside>
+              <!-- End Feature List -->
+              <!-- Feature Product -->
+              <aside class="mb-8">
+                  <!-- Featured Products -->
+                  <div class="position-relative">
+                      <div class="border-bottom border-color-1 mb-2">
+                          <h3 class="section-title mb-0 pb-3 font-size-18">Featured Products</h3>
+                      </div>
+                      <div class="js-slick-carousel u-slick position-static overflow-hidden u-slick-overflow-visble slick-initialized slick-slider" data-slides-show="1" data-slides-scroll="1" data-arrows-classes="position-absolute top-0 font-size-17 u-slick__arrow-normal top-10" data-arrow-left-classes="fa fa-angle-left right-1" data-arrow-right-classes="fa fa-angle-right right-0"><div class="js-prev position-absolute top-0 font-size-17 u-slick__arrow-normal top-10 fa fa-angle-left right-1 slick-arrow slick-disabled" aria-disabled="true" style=""></div>
+                          <div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 2430px; transform: translate3d(0px, 0px, 0px);"><div class="js-slide products-group slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 270px; height: auto;" tabindex="0">
+                              <div class="product-item remove-divider text-center">
+                                  <div class="product-item__outer h-100">
+                                      <div class="product-item__inner remove-prodcut-hover px-wd-4 p-2 p-md-3">
+                                          <div class="product-item__body pb-xl-2">
+                                              <div class="mb-2">
+                                                  <a href="../shop/single-product-fullwidth.html" class="d-block text-center" tabindex="0"><img class="img-fluid" src="@/assets/img/212X200/img1.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="mb-2"><a href="../shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5" tabindex="0">Speakers</a></div>
+                                              <h5 class="mb-4 product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-blue font-weight-bold" tabindex="0">Wireless Audio System
+                                                  Multiroom 360 degree Full base audio</a></h5>
+                                              <div class="mb-1">
+                                                  <div class="prodcut-price">
+                                                      <div class="text-gray-100">$685,00</div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div><div class="js-slide products-group slick-slide" data-slick-index="1" aria-hidden="true" style="width: 270px; height: auto;" tabindex="-1">
+                              <div class="product-item remove-divider text-center">
+                                  <div class="product-item__outer h-100">
+                                      <div class="product-item__inner remove-prodcut-hover px-wd-4 p-2 p-md-3">
+                                          <div class="product-item__body pb-xl-2">
+                                              <div class="mb-2">
+                                                  <a href="../shop/single-product-fullwidth.html" class="d-block text-center" tabindex="-1"><img class="img-fluid" src="@/assets/img/212X200/img2.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="mb-2"><a href="../shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5" tabindex="-1">Speakers</a></div>
+                                              <h5 class="mb-4 product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-blue font-weight-bold" tabindex="-1">Wireless Audio System
+                                                  Multiroom 360 degree Full base audio</a></h5>
+                                              <div class="mb-1">
+                                                  <div class="prodcut-price">
+                                                      <div class="text-gray-100">$685,00</div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div><div class="js-slide products-group slick-slide" data-slick-index="2" aria-hidden="true" style="width: 270px; height: auto;" tabindex="-1">
+                              <div class="product-item remove-divider text-center">
+                                  <div class="product-item__outer h-100">
+                                      <div class="product-item__inner remove-prodcut-hover px-wd-4 p-2 p-md-3">
+                                          <div class="product-item__body pb-xl-2">
+                                              <div class="mb-2">
+                                                  <a href="../shop/single-product-fullwidth.html" class="d-block text-center" tabindex="-1"><img class="img-fluid" src="@/assets/img/212X200/img3.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="mb-2"><a href="../shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5" tabindex="-1">Speakers</a></div>
+                                              <h5 class="mb-4 product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-blue font-weight-bold" tabindex="-1">Wireless Audio System
+                                                  Multiroom 360 degree Full base audio</a></h5>
+                                              <div class="mb-1">
+                                                  <div class="prodcut-price">
+                                                      <div class="text-gray-100">$685,00</div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div><div class="js-slide products-group slick-slide" data-slick-index="3" aria-hidden="true" style="width: 270px; height: auto;" tabindex="-1">
+                              <div class="product-item remove-divider text-center">
+                                  <div class="product-item__outer h-100">
+                                      <div class="product-item__inner remove-prodcut-hover px-wd-4 p-2 p-md-3">
+                                          <div class="product-item__body pb-xl-2">
+                                              <div class="mb-2">
+                                                  <a href="../shop/single-product-fullwidth.html" class="d-block text-center" tabindex="-1"><img class="img-fluid" src="@/assets/img/212X200/img4.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="mb-2"><a href="../shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5" tabindex="-1">Speakers</a></div>
+                                              <h5 class="mb-4 product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-blue font-weight-bold" tabindex="-1">Wireless Audio System
+                                                  Multiroom 360 degree Full base audio</a></h5>
+                                              <div class="mb-1">
+                                                  <div class="prodcut-price">
+                                                      <div class="text-gray-100">$685,00</div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div><div class="js-slide products-group slick-slide" data-slick-index="4" aria-hidden="true" style="width: 270px; height: auto;" tabindex="-1">
+                              <div class="product-item remove-divider text-center">
+                                  <div class="product-item__outer h-100">
+                                      <div class="product-item__inner remove-prodcut-hover px-wd-4 p-2 p-md-3">
+                                          <div class="product-item__body pb-xl-2">
+                                              <div class="mb-2">
+                                                  <a href="../shop/single-product-fullwidth.html" class="d-block text-center" tabindex="-1"><img class="img-fluid" src="@/assets/img/212X200/img5.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="mb-2"><a href="../shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5" tabindex="-1">Speakers</a></div>
+                                              <h5 class="mb-4 product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-blue font-weight-bold" tabindex="-1">Wireless Audio System
+                                                  Multiroom 360 degree Full base audio</a></h5>
+                                              <div class="mb-1">
+                                                  <div class="prodcut-price">
+                                                      <div class="text-gray-100">$685,00</div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div><div class="js-slide products-group slick-slide" data-slick-index="5" aria-hidden="true" style="width: 270px; height: auto;" tabindex="-1">
+                              <div class="product-item remove-divider text-center">
+                                  <div class="product-item__outer h-100">
+                                      <div class="product-item__inner remove-prodcut-hover px-wd-4 p-2 p-md-3">
+                                          <div class="product-item__body pb-xl-2">
+                                              <div class="mb-2">
+                                                  <a href="../shop/single-product-fullwidth.html" class="d-block text-center" tabindex="-1"><img class="img-fluid" src="@/assets/img/212X200/img6.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="mb-2"><a href="../shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5" tabindex="-1">Speakers</a></div>
+                                              <h5 class="mb-4 product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-blue font-weight-bold" tabindex="-1">Wireless Audio System
+                                                  Multiroom 360 degree Full base audio</a></h5>
+                                              <div class="mb-1">
+                                                  <div class="prodcut-price">
+                                                      <div class="text-gray-100">$685,00</div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div><div class="js-slide products-group slick-slide" data-slick-index="6" aria-hidden="true" style="width: 270px; height: auto;" tabindex="-1">
+                              <div class="product-item remove-divider text-center">
+                                  <div class="product-item__outer h-100">
+                                      <div class="product-item__inner remove-prodcut-hover px-wd-4 p-2 p-md-3">
+                                          <div class="product-item__body pb-xl-2">
+                                              <div class="mb-2">
+                                                  <a href="../shop/single-product-fullwidth.html" class="d-block text-center" tabindex="-1"><img class="img-fluid" src="@/assets/img/212X200/img7.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="mb-2"><a href="../shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5" tabindex="-1">Speakers</a></div>
+                                              <h5 class="mb-4 product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-blue font-weight-bold" tabindex="-1">Wireless Audio System
+                                                  Multiroom 360 degree Full base audio</a></h5>
+                                              <div class="mb-1">
+                                                  <div class="prodcut-price">
+                                                      <div class="text-gray-100">$685,00</div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div><div class="js-slide products-group slick-slide" data-slick-index="7" aria-hidden="true" style="width: 270px; height: auto;" tabindex="-1">
+                              <div class="product-item remove-divider text-center">
+                                  <div class="product-item__outer h-100">
+                                      <div class="product-item__inner remove-prodcut-hover px-wd-4 p-2 p-md-3">
+                                          <div class="product-item__body pb-xl-2">
+                                              <div class="mb-2">
+                                                  <a href="../shop/single-product-fullwidth.html" class="d-block text-center" tabindex="-1"><img class="img-fluid" src="@/assets/img/212X200/img1.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="mb-2"><a href="../shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5" tabindex="-1">Speakers</a></div>
+                                              <h5 class="mb-4 product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-blue font-weight-bold" tabindex="-1">Wireless Audio System
+                                                  Multiroom 360 degree Full base audio</a></h5>
+                                              <div class="mb-1">
+                                                  <div class="prodcut-price">
+                                                      <div class="text-gray-100">$685,00</div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div><div class="js-slide products-group slick-slide" data-slick-index="8" aria-hidden="true" style="width: 270px; height: auto;" tabindex="-1">
+                              <div class="product-item remove-divider text-center">
+                                  <div class="product-item__outer h-100">
+                                      <div class="product-item__inner remove-prodcut-hover px-wd-4 p-2 p-md-3">
+                                          <div class="product-item__body pb-xl-2">
+                                              <div class="mb-2">
+                                                  <a href="../shop/single-product-fullwidth.html" class="d-block text-center" tabindex="-1"><img class="img-fluid" src="@/assets/img/212X200/img1.jpg" alt="Image Description"></a>
+                                              </div>
+                                              <div class="mb-2"><a href="../shop/product-categories-7-column-full-width.html" class="font-size-12 text-gray-5" tabindex="-1">Speakers</a></div>
+                                              <h5 class="mb-4 product-item__title"><a href="../shop/single-product-fullwidth.html" class="text-blue font-weight-bold" tabindex="-1">Wireless Audio System
+                                                  Multiroom 360 degree Full base audio</a></h5>
+                                              <div class="mb-1">
+                                                  <div class="prodcut-price">
+                                                      <div class="text-gray-100">$685,00</div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div></div></div>
+                      <div class="js-next position-absolute top-0 font-size-17 u-slick__arrow-normal top-10 fa fa-angle-right right-0 slick-arrow" style="" aria-disabled="false"></div></div>
+                  </div>
+                  <!-- End Featured Products -->
+              </aside>
+              <!-- End Feature Product -->
+          </div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style>
+
+</style>
