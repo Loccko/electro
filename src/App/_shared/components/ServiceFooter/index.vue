@@ -2,61 +2,70 @@
   <footer>
     <!-- Footer-top-widget -->
     <div class="container mb-8">
-        <div class="py-2 border-top border-bottom">
-            <div class="js-slick-carousel u-slick my-1"
-                 data-slides-show="5"
-                 data-slides-scroll="1"
-                 data-arrows-classes="d-none d-lg-inline-block u-slick__arrow-normal u-slick__arrow-centered--y"
-                 data-arrow-left-classes="fa fa-angle-left u-slick__arrow-classic-inner--left z-index-9"
-                 data-arrow-right-classes="fa fa-angle-right u-slick__arrow-classic-inner--right"
-                 data-responsive='[{
-                            "breakpoint": 992,
-                            "settings": {
-                                "slidesToShow": 2
-                            }
-                        }, {
-                            "breakpoint": 768,
-                            "settings": {
-                                "slidesToShow": 1
-                            }
-                        }, {
-                            "breakpoint": 554,
-                            "settings": {
-                                "slidesToShow": 1
-                            }
-                        }]'>
-                <div class="js-slide">
-                    <a href="#" class="link-hover__brand">
-                        <img class="img-fluid m-auto max-height-50" src="@/assets/img/200X60/img1.png" alt="Image Description">
-                    </a>
-                </div>
-                <div class="js-slide">
-                    <a href="#" class="link-hover__brand">
-                        <img class="img-fluid m-auto max-height-50" src="@/assets/img/200X60/img2.png" alt="Image Description">
-                    </a>
-                </div>
-                <div class="js-slide">
-                    <a href="#" class="link-hover__brand">
-                        <img class="img-fluid m-auto max-height-50" src="@/assets/img/200X60/img3.png" alt="Image Description">
-                    </a>
-                </div>
-                <div class="js-slide">
-                    <a href="#" class="link-hover__brand">
-                        <img class="img-fluid m-auto max-height-50" src="@/assets/img/200X60/img4.png" alt="Image Description">
-                    </a>
-                </div>
-                <div class="js-slide">
-                    <a href="#" class="link-hover__brand">
-                        <img class="img-fluid m-auto max-height-50" src="@/assets/img/200X60/img5.png" alt="Image Description">
-                    </a>
-                </div>
-                <div class="js-slide">
-                    <a href="#" class="link-hover__brand">
-                        <img class="img-fluid m-auto max-height-50" src="@/assets/img/200X60/img6.png" alt="Image Description">
-                    </a>
-                </div>
-            </div>
-        </div>
+      <div class="py-2 border-top border-bottom">
+        <carousel v-bind="settings" @afterChange="updateCurrentSlide">
+          <div class="js-slide">
+            <router-link to="#" class="link-hover__brand">
+              <img
+                class="img-fluid m-auto max-height-50"
+                src="@/assets/img/200X60/img1.png"
+                alt="Image Description"
+              />
+            </router-link>
+          </div>
+          <div class="js-slide">
+            <router-link to="#" class="link-hover__brand">
+              <img
+                class="img-fluid m-auto max-height-50"
+                src="@/assets/img/200X60/img2.png"
+                alt="Image Description"
+              />
+            </router-link>
+          </div>
+          <div class="js-slide">
+            <router-link to="#" class="link-hover__brand">
+              <img
+                class="img-fluid m-auto max-height-50"
+                src="@/assets/img/200X60/img3.png"
+                alt="Image Description"
+              />
+            </router-link>
+          </div>
+          <div class="js-slide">
+            <router-link to="#" class="link-hover__brand">
+              <img
+                class="img-fluid m-auto max-height-50"
+                src="@/assets/img/200X60/img4.png"
+                alt="Image Description"
+              />
+            </router-link>
+          </div>
+          <div class="js-slide">
+            <router-link to="#" class="link-hover__brand">
+              <img
+                class="img-fluid m-auto max-height-50"
+                src="@/assets/img/200X60/img5.png"
+                alt="Image Description"
+              />
+            </router-link>
+          </div>
+          <div class="js-slide">
+            <router-link to="#" class="link-hover__brand">
+              <img
+                class="img-fluid m-auto max-height-50"
+                src="@/assets/img/200X60/img6.png"
+                alt="Image Description"
+              />
+            </router-link>
+          </div>
+          <template #prevArrow>
+            <div class="js-prev d-lg-inline-block u-slick__arrow-normal u-slick__arrow-centered--y fa fa-angle-left u-slick__arrow-classic-inner--left z-index-9 slick-arrow" aria-disabled="true" style=""></div>
+          </template>
+          <template #nextArrow>
+            <div class="js-next d-lg-inline-block u-slick__arrow-normal u-slick__arrow-centered--y fa fa-angle-right u-slick__arrow-classic-inner--right slick-arrow" style="" aria-disabled="false"></div>
+          </template>
+        </carousel>
+      </div>
     </div>
     <div class="container d-none d-lg-block mb-3">
       <div class="row">
@@ -761,7 +770,28 @@
 </template>
 
 <script>
-export default {};
+import VueSlickCarousel from "vue-slick-carousel";
+import "vue-slick-carousel/dist/vue-slick-carousel.css";
+import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
+
+export default {
+  components: {
+    carousel: VueSlickCarousel,
+  },
+  data:()=>({
+    settings: {
+      draggable: true,
+      dots: false,
+      arrows: true,
+      edgeFriction: 0.35,
+      speed: 500,
+      autoplay: false,
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      waitForAnimate: true,
+    }
+  })
+};
 </script>
 
 <style scoped lang="scss" src="./style.scss"></style>

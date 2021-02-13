@@ -1,9 +1,6 @@
 <template>
   <div>
-    <div
-      class="bg-img-hero"
-      :style="{ 'background-image': `url(${sliderBg})` }"
-    >
+    <div class="bg-img-hero" :style="{ 'background-image': `url(${sliderBg})` }">
       <div class="container min-height-438 overflow-hidden">
         <carousel v-bind="settings" @afterChange="updateCurrentSlide">
           <div class="js-slide">

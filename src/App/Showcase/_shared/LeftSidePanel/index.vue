@@ -11,9 +11,9 @@
               <aside class="mb-4">
                   <!-- Wrapper Latest Products -->
                   <div class="mb-2 position-relative">
-                      <dv class="d-flex justify-content-between border-bottom border-color-1 flex-md-nowrap flex-wrap border-sm-bottom-0">
+                      <div class="d-flex justify-content-between border-bottom border-color-1 flex-md-nowrap flex-wrap border-sm-bottom-0">
                           <h3 class="section-title section-title__sm mb-0 pb-3 font-size-18">Latest Products</h3>
-                      </dv>
+                      </div>
                       <div class="js-slick-carousel u-slick u-slick--gutters-2 overflow-hidden u-slick-overflow-visble pt-3 position-static slick-initialized slick-slider" data-slides-show="1" data-slides-scroll="1" data-arrows-classes="position-absolute top-0 font-size-17 u-slick__arrow-normal top-10" data-arrow-left-classes="fa fa-angle-left right-1" data-arrow-right-classes="fa fa-angle-right right-0"><div class="js-prev position-absolute top-0 font-size-17 u-slick__arrow-normal top-10 fa fa-angle-left right-1 slick-arrow slick-disabled" aria-disabled="true" style=""></div>
                           <div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 858px; transform: translate3d(0px, 0px, 0px);"><div class="js-slide slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 270px; height: auto;" tabindex="0">
                               <ul class="list-unstyled products-group mb-0 overflow-visible">
