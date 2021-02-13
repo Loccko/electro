@@ -1,7 +1,7 @@
 <template>
   <div>
     <service-header :categories="categories"/>
-    <router-view  class="wwww"/>
+    <router-view  class="wwww" :initialCategoriesArray="initialCategoriesArray"/>
     <service-footer />
   </div>
 </template>
@@ -27,6 +27,14 @@ export default {
   },
   data:()=>({
     categories: null
-  })
+  }),
+  computed: {
+    initialCategoriesArray(){
+      if(this.categories && this.categories.length>0) {
+        return this.categories
+      }
+      return null
+    }
+  }
 };
 </script>

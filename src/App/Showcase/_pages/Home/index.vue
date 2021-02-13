@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xl-3 col-wd-auto d-none d-xl-block">
-          <left-side-panel />
+          <left-side-panel :latestProducts="latestProducts" />
         </div>
         <div class="col-xl-9 col-wd-auto max-width-1130">
           <main-banner />
@@ -13,10 +13,15 @@
             <full-banner />
           </div>
           <div class="mb-8">
-            <products-slider />
+            <category-preview-slider
+              :slidesToShow="3"
+              :title="`Bestsellers`"
+              :items="categoriesWithoutSubcategories[0]"
+            />
           </div>
           <category-best-offers />
           <category-best-offers />
+
           <div class="mb-8">
             <div class="row">
               <div class="col-md-6 mb-3 mb-md-0">
@@ -39,9 +44,21 @@
               </div>
             </div>
           </div>
-          <category-best-offers />
-          <category-best-offers />
-          <category-best-offers />
+          <category-preview-slider
+            :slidesToShow="4"
+            :title="categoriesWithoutSubcategories[1].title"
+            :item="categoriesWithoutSubcategories[1]"
+          />
+          <category-preview-slider
+            :slidesToShow="4"
+            :title="categoriesWithoutSubcategories[2].title"
+            :item="categoriesWithoutSubcategories[2]"
+          />
+          <category-preview-slider
+            :slidesToShow="4"
+            :title="categoriesWithoutSubcategories[3].title"
+            :item="categoriesWithoutSubcategories[3]"
+          />
         </div>
       </div>
     </div>
@@ -55,8 +72,11 @@ import Banner from "@/App/Showcase/_shared/Banner";
 import LeftSidePanel from "@/App/Showcase/_shared/LeftSidePanel";
 import TabSelector from "@/App/Showcase/_shared/TabSelector";
 import FullBanner from "@/App/Showcase/_shared/FullBanner";
-import ProductsSlider from "@/App/Showcase/_shared/ProductsSlider";
 import CategoryBestOffers from "@/App/Showcase/_shared/CategoryBestOffers";
+import CategoryPreviewSlider from "@/App/Showcase/_shared/CategoryPreviewSlider";
+
+import LatestProducts from "@/App/_shared/services/LatestProducts";
+import Categories from "@/App/_shared/services/Categories";
 
 export default {
   name: "HomePage",
@@ -66,10 +86,23 @@ export default {
     "left-side-panel": LeftSidePanel,
     "tab-selector": TabSelector,
     "full-banner": FullBanner,
-    "products-slider": ProductsSlider,
     "category-best-offers": CategoryBestOffers,
+    "category-preview-slider": CategoryPreviewSlider,
   },
-  data: () => ({}),
+
+  async beforeRouteEnter(to, from, next) {
+    const latestProducts = await LatestProducts.fetchLatestProducts();
+    const categoriesWithoutSubcategories = await Categories.fetchCategoriesWithoutSubcategories();
+
+    next((vm) => {
+      vm.latestProducts = latestProducts;
+      vm.categoriesWithoutSubcategories = categoriesWithoutSubcategories;
+    });
+  },
+  data: () => ({
+    latestProducts: null,
+    categoriesWithoutSubcategories: null,
+  }),
   methods: {},
 };
 </script>

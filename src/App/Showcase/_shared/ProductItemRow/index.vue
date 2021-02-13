@@ -8,14 +8,12 @@
             tabindex="0"
             class="max-width-150 d-block"
             ><img
-              src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wCEAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDIBCQkJDAsMGA0NGDIhHCEyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMv/AABEIAIwAlgMBIgACEQEDEQH/xABjAAEAAwEBAAAAAAAAAAAAAAAAAgMEAQcQAQACAQMCBQQDAAAAAAAAAAABAgMEERIxURMUIUGBIzNhoTJC0QEBAAAAAAAAAAAAAAAAAAAAABEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A9MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZ9dlzYtLkvhivKKzO8z0/P5aFWpxzm02XHWYi16zWNwZtXntXU8PMWxVikWma4+XvPX09OieW+a+SaYcsV4Y4vM8YnlM77fHonnpqZtPhWx8LV2mL/ANZ7xt1V20uXHx8van2oxW579I6T+5BbbUzGjrqK0m0TWLTG/rET1SwZvHra9a7U32rbf+Ud0cmG/lIwYrRHpFJtPtX3+djTYbYMc4pmJpE/T7xHaQcjLm8/GO0VjF4dpjad5mYmOvbqhk1F51uLHT7cWmt57zxmdvjZdOOZ1VMu8ca0tWe+8zH+Kb6Gni47UteIrebWjxLe8T0+ZBHBmzTbBkyXi1M8TtXjtx9N4/TayYdNlpfFF7UnHhiYptvvPtG/w1gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//Z"
+              :src="item.images.size150x140.link"
               alt="Image Description"
               class="img-fluid"
           /></a>
         </div>
-        <div
-          class="col col-xl-7 col-wd product-item__body pl-2 pl-lg-3 pl-xl-0 pl-wd-3 mr-wd-1"
-        >
+        <div class="col col-xl-7 col-wd product-item__body pl-2 pl-lg-3 pl-xl-0 pl-wd-3 mr-wd-1">
           <div class="mb-4 mb-xl-2 mb-wd-4">
             <div class="mb-2">
               <a
@@ -30,13 +28,13 @@
                 href="../shop/single-product-fullwidth.html"
                 tabindex="0"
                 class="text-blue font-weight-bold"
-                >Tablet Air 3 WiFi 64GB Gold</a
+                >{{ item.title }}</a
               >
             </h5>
           </div>
           <div class="flex-center-between mb-3">
             <div class="prodcut-price">
-              <div class="text-gray-100">$629,00</div>
+              <div class="text-gray-100">${{ item.price }}</div>
             </div>
             <div class="d-none d-xl-block prodcut-add-cart">
               <a
@@ -69,7 +67,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "productItemRow",
+  props: {
+    item: {
+      default: null
+    }
+  }
+};
 </script>
 
 <style></style>

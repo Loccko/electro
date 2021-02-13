@@ -4,11 +4,11 @@
       <div class="product-item__inner px-wd-4 p-2 p-md-3">
         <div class="product-item__body pb-xl-2">
           <div class="mb-2">
-            <a
-              href="../shop/product-categories-7-column-full-width.html"
+            <router-link
+              :to="`category/${item.id}`"
               class="font-size-12 text-gray-5"
               tabindex="0"
-              >Speakers</a
+              >{{ categoryTitle }}</router-link
             >
           </div>
           <h5 class="mb-1 product-item__title">
@@ -16,7 +16,7 @@
               href="../shop/single-product-fullwidth.html"
               class="text-blue font-weight-bold"
               tabindex="0"
-              >Wireless Audio System Multiroom 360 degree Full base audio</a
+              >{{ item.title }}</a
             >
           </h5>
           <div class="mb-2">
@@ -26,13 +26,13 @@
               tabindex="0"
               ><img
                 class="img-fluid"
-                src="@/assets/img/212X200/img2.jpg"
+                :src="item.images.size212x200.link"
                 alt="Image Description"
             /></a>
           </div>
           <div class="flex-center-between mb-1">
             <div class="prodcut-price">
-              <div class="text-gray-100">$685,00</div>
+              <div class="text-gray-100">${{ item.price }}</div>
             </div>
             <div class="d-none d-xl-block prodcut-add-cart">
               <a
@@ -66,7 +66,13 @@
 </template>
 
 <script>
-export default {};
+  export default {
+    name: 'ProductCard',
+    props: {
+      item: Object,
+      categoryTitle: String
+    }
+  };
 </script>
 
 <style scoped lang="scss" src="./style.scss"></style>

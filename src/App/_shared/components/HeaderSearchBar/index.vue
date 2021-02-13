@@ -33,7 +33,7 @@
                       class="vertical-menu v1"
                       aria-labelledby="basicsHeadingOne"
                       data-parent="#basicsAccordion"
-                      :class="{'collapse show': !categoriesListOpened}"
+                      :class="{'collapse show':  !categoriesListOpened}"
                     >
                       <div class="card-body p-0">
                         <nav
@@ -66,7 +66,7 @@
                                   aria-haspopup="true"
                                   aria-expanded="false"
                                   >{{ rootCategory.title }}</router-link>
-                                <div class="hs-mega-menu vmm-tfw u-header__sub-menu" aria-labelledby="basicMegaMenu">
+                                <div class="hs-mega-menu vmm-tfw u-header__sub-menu" style="height: calc(100% + 1px) !important;" aria-labelledby="basicMegaMenu">
                                   <div class="vmm-bg">
                                     <img
                                       class="img-fluid"
