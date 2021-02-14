@@ -7,63 +7,57 @@
           <div class="js-slide">
             <router-link to="#" class="link-hover__brand">
               <img
-                class="img-fluid m-auto max-height-50"
-                src="@/assets/img/200X60/img1.png"
-                alt="Image Description"
+                  class="img-fluid m-auto max-height-50"
+                  src="https://transvelo.github.io/electro-html/2.0/assets/img/200X60/img3.png"
+                  alt="Image Description"
               />
             </router-link>
           </div>
           <div class="js-slide">
             <router-link to="#" class="link-hover__brand">
               <img
-                class="img-fluid m-auto max-height-50"
-                src="@/assets/img/200X60/img2.png"
-                alt="Image Description"
+                  class="img-fluid m-auto max-height-50"
+                  src="https://transvelo.github.io/electro-html/2.0/assets/img/200X60/img3.png"
+                  alt="Image Description"
               />
             </router-link>
           </div>
           <div class="js-slide">
             <router-link to="#" class="link-hover__brand">
               <img
-                class="img-fluid m-auto max-height-50"
-                src="@/assets/img/200X60/img3.png"
-                alt="Image Description"
+                  class="img-fluid m-auto max-height-50"
+                  src="https://transvelo.github.io/electro-html/2.0/assets/img/200X60/img3.png"
+                  alt="Image Description"
               />
             </router-link>
           </div>
           <div class="js-slide">
             <router-link to="#" class="link-hover__brand">
               <img
-                class="img-fluid m-auto max-height-50"
-                src="@/assets/img/200X60/img4.png"
-                alt="Image Description"
+                  class="img-fluid m-auto max-height-50"
+                  src="https://transvelo.github.io/electro-html/2.0/assets/img/200X60/img3.png"
+                  alt="Image Description"
               />
             </router-link>
           </div>
           <div class="js-slide">
             <router-link to="#" class="link-hover__brand">
               <img
-                class="img-fluid m-auto max-height-50"
-                src="@/assets/img/200X60/img5.png"
-                alt="Image Description"
+                  class="img-fluid m-auto max-height-50"
+                  src="https://transvelo.github.io/electro-html/2.0/assets/img/200X60/img3.png"
+                  alt="Image Description"
               />
             </router-link>
           </div>
           <div class="js-slide">
             <router-link to="#" class="link-hover__brand">
               <img
-                class="img-fluid m-auto max-height-50"
-                src="@/assets/img/200X60/img6.png"
-                alt="Image Description"
+                  class="img-fluid m-auto max-height-50"
+                  src="https://transvelo.github.io/electro-html/2.0/assets/img/200X60/img3.png"
+                  alt="Image Description"
               />
             </router-link>
           </div>
-          <template #prevArrow>
-            <div class="js-prev d-lg-inline-block u-slick__arrow-normal u-slick__arrow-centered--y fa fa-angle-left u-slick__arrow-classic-inner--left z-index-9 slick-arrow" aria-disabled="true" style=""></div>
-          </template>
-          <template #nextArrow>
-            <div class="js-next d-lg-inline-block u-slick__arrow-normal u-slick__arrow-centered--y fa fa-angle-right u-slick__arrow-classic-inner--right slick-arrow" style="" aria-disabled="false"></div>
-          </template>
         </carousel>
       </div>
     </div>
@@ -96,25 +90,25 @@
             <!-- Subscribe Form -->
             <form class="js-validate js-form-message">
               <label class="sr-only" for="subscribeSrEmail"
-                >Email address</label
+              >Email address</label
               >
               <div class="input-group input-group-pill">
                 <input
-                  type="email"
-                  class="form-control border-0 height-40"
-                  name="email"
-                  id="subscribeSrEmail"
-                  placeholder="Email address"
-                  aria-label="Email address"
-                  aria-describedby="subscribeButton"
-                  required
-                  data-msg="Please enter a valid email address."
+                    type="email"
+                    class="form-control border-0 height-40"
+                    name="email"
+                    id="subscribeSrEmail"
+                    placeholder="Email address"
+                    aria-label="Email address"
+                    aria-describedby="subscribeButton"
+                    required
+                    data-msg="Please enter a valid email address."
                 />
                 <div class="input-group-append">
                   <button
-                    type="submit"
-                    class="btn btn-dark btn-sm-wide height-40 py-2"
-                    id="subscribeButton"
+                      type="submit"
+                      class="btn btn-dark btn-sm-wide height-40 py-2"
+                      id="subscribeButton"
                   >
                     Sign Up
                   </button>
@@ -135,28 +129,28 @@
             <div class="mb-6">
               <a href="#" class="d-inline-block">
                 <svg
-                  version="1.1"
-                  x="0px"
-                  y="0px"
-                  width="156px"
-                  height="37px"
-                  viewBox="0 0 175.748 42.52"
-                  enable-background="new 0 0 175.748 42.52"
+                    version="1.1"
+                    x="0px"
+                    y="0px"
+                    width="156px"
+                    height="37px"
+                    viewBox="0 0 175.748 42.52"
+                    enable-background="new 0 0 175.748 42.52"
                 >
                   <ellipse
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    fill="#FDD700"
-                    cx="170.05"
-                    cy="36.341"
-                    rx="5.32"
-                    ry="5.367"
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      fill="#FDD700"
+                      cx="170.05"
+                      cy="36.341"
+                      rx="5.32"
+                      ry="5.367"
                   ></ellipse>
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    fill="#333E48"
-                    d="M30.514,0.71c-0.034,0.003-0.066,0.008-0.056,0.056
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      fill="#333E48"
+                      d="M30.514,0.71c-0.034,0.003-0.066,0.008-0.056,0.056
                                             C30.263,0.995,29.876,1.181,29.79,1.5c-0.148,0.548,0,1.568,0,2.427v36.459c0.265,0.221,0.506,0.465,0.725,0.734h6.187
                                             c0.2-0.25,0.423-0.477,0.669-0.678V1.387C37.124,1.185,36.9,0.959,36.701,0.71H30.514z M117.517,12.731
                                             c-0.232-0.189-0.439-0.64-0.781-0.734c-0.754-0.209-2.039,0-3.121,0h-3.176V4.435c-0.232-0.189-0.439-0.639-0.781-0.733
@@ -205,10 +199,10 @@
                     Got questions? Call us 24/7!
                   </div>
                   <a href="tel:+80080018588" class="font-size-20 text-gray-90"
-                    >(800) 8001-8588, </a
+                  >(800) 8001-8588, </a
                   ><a href="tel:+0600874548" class="font-size-20 text-gray-90"
-                    >(0600) 874 548</a
-                  >
+                >(0600) 874 548</a
+                >
                 </div>
               </div>
             </div>
@@ -222,32 +216,32 @@
               <ul class="list-inline mb-0 opacity-7">
                 <li class="list-inline-item mr-0">
                   <a
-                    class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle"
-                    href="#"
+                      class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle"
+                      href="#"
                   >
                     <span class="fab fa-facebook-f btn-icon__inner"></span>
                   </a>
                 </li>
                 <li class="list-inline-item mr-0">
                   <a
-                    class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle"
-                    href="#"
+                      class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle"
+                      href="#"
                   >
                     <span class="fab fa-google btn-icon__inner"></span>
                   </a>
                 </li>
                 <li class="list-inline-item mr-0">
                   <a
-                    class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle"
-                    href="#"
+                      class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle"
+                      href="#"
                   >
                     <span class="fab fa-twitter btn-icon__inner"></span>
                   </a>
                 </li>
                 <li class="list-inline-item mr-0">
                   <a
-                    class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle"
-                    href="#"
+                      class="btn font-size-20 btn-icon btn-soft-dark btn-bg-transparent rounded-circle"
+                      href="#"
                   >
                     <span class="fab fa-github btn-icon__inner"></span>
                   </a>
@@ -261,55 +255,55 @@
                 <h6 class="mb-3 font-weight-bold">Find it Fast</h6>
                 <!-- List Group -->
                 <ul
-                  class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent"
+                    class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent"
                 >
                   <li>
                     <a
-                      class="list-group-item list-group-item-action"
-                      href="../shop/product-categories-5-column-sidebar.html"
-                      >Laptops & Computers</a
+                        class="list-group-item list-group-item-action"
+                        href="../shop/product-categories-5-column-sidebar.html"
+                    >Laptops & Computers</a
                     >
                   </li>
                   <li>
                     <a
-                      class="list-group-item list-group-item-action"
-                      href="../shop/product-categories-5-column-sidebar.html"
-                      >Cameras & Photography</a
+                        class="list-group-item list-group-item-action"
+                        href="../shop/product-categories-5-column-sidebar.html"
+                    >Cameras & Photography</a
                     >
                   </li>
                   <li>
                     <a
-                      class="list-group-item list-group-item-action"
-                      href="../shop/product-categories-5-column-sidebar.html"
-                      >Smart Phones & Tablets</a
+                        class="list-group-item list-group-item-action"
+                        href="../shop/product-categories-5-column-sidebar.html"
+                    >Smart Phones & Tablets</a
                     >
                   </li>
                   <li>
                     <a
-                      class="list-group-item list-group-item-action"
-                      href="../shop/product-categories-5-column-sidebar.html"
-                      >Video Games & Consoles</a
+                        class="list-group-item list-group-item-action"
+                        href="../shop/product-categories-5-column-sidebar.html"
+                    >Video Games & Consoles</a
                     >
                   </li>
                   <li>
                     <a
-                      class="list-group-item list-group-item-action"
-                      href="../shop/product-categories-5-column-sidebar.html"
-                      >TV & Audio</a
+                        class="list-group-item list-group-item-action"
+                        href="../shop/product-categories-5-column-sidebar.html"
+                    >TV & Audio</a
                     >
                   </li>
                   <li>
                     <a
-                      class="list-group-item list-group-item-action"
-                      href="../shop/product-categories-5-column-sidebar.html"
-                      >Gadgets</a
+                        class="list-group-item list-group-item-action"
+                        href="../shop/product-categories-5-column-sidebar.html"
+                    >Gadgets</a
                     >
                   </li>
                   <li>
                     <a
-                      class="list-group-item list-group-item-action"
-                      href="../shop/product-categories-5-column-sidebar.html"
-                      >Car Electronic & GPS</a
+                        class="list-group-item list-group-item-action"
+                        href="../shop/product-categories-5-column-sidebar.html"
+                    >Car Electronic & GPS</a
                     >
                   </li>
                 </ul>
@@ -319,41 +313,41 @@
               <div class="col-12 col-md mb-4 mb-md-0">
                 <!-- List Group -->
                 <ul
-                  class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent mt-md-6"
+                    class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent mt-md-6"
                 >
                   <li>
                     <a
-                      class="list-group-item list-group-item-action"
-                      href="../shop/product-categories-5-column-sidebar.html"
-                      >Printers & Ink</a
+                        class="list-group-item list-group-item-action"
+                        href="../shop/product-categories-5-column-sidebar.html"
+                    >Printers & Ink</a
                     >
                   </li>
                   <li>
                     <a
-                      class="list-group-item list-group-item-action"
-                      href="../shop/product-categories-5-column-sidebar.html"
-                      >Software</a
+                        class="list-group-item list-group-item-action"
+                        href="../shop/product-categories-5-column-sidebar.html"
+                    >Software</a
                     >
                   </li>
                   <li>
                     <a
-                      class="list-group-item list-group-item-action"
-                      href="../shop/product-categories-5-column-sidebar.html"
-                      >Office Supplies</a
+                        class="list-group-item list-group-item-action"
+                        href="../shop/product-categories-5-column-sidebar.html"
+                    >Office Supplies</a
                     >
                   </li>
                   <li>
                     <a
-                      class="list-group-item list-group-item-action"
-                      href="../shop/product-categories-5-column-sidebar.html"
-                      >Computer Components</a
+                        class="list-group-item list-group-item-action"
+                        href="../shop/product-categories-5-column-sidebar.html"
+                    >Computer Components</a
                     >
                   </li>
                   <li>
                     <a
-                      class="list-group-item list-group-item-action"
-                      href="../shop/product-categories-5-column-sidebar.html"
-                      >Accesories</a
+                        class="list-group-item list-group-item-action"
+                        href="../shop/product-categories-5-column-sidebar.html"
+                    >Accesories</a
                     >
                   </li>
                 </ul>
@@ -364,55 +358,55 @@
                 <h6 class="mb-3 font-weight-bold">Customer Care</h6>
                 <!-- List Group -->
                 <ul
-                  class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent"
+                    class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent"
                 >
                   <li>
                     <a
-                      class="list-group-item list-group-item-action"
-                      href="../shop/my-account.html"
-                      >My Account</a
+                        class="list-group-item list-group-item-action"
+                        href="../shop/my-account.html"
+                    >My Account</a
                     >
                   </li>
                   <li>
                     <a
-                      class="list-group-item list-group-item-action"
-                      href="../shop/track-your-order.html"
-                      >Order Tracking</a
+                        class="list-group-item list-group-item-action"
+                        href="../shop/track-your-order.html"
+                    >Order Tracking</a
                     >
                   </li>
                   <li>
                     <a
-                      class="list-group-item list-group-item-action"
-                      href="../shop/wishlist.html"
-                      >Wish List</a
+                        class="list-group-item list-group-item-action"
+                        href="../shop/wishlist.html"
+                    >Wish List</a
                     >
                   </li>
                   <li>
                     <a
-                      class="list-group-item list-group-item-action"
-                      href="../home/terms-and-conditions.html"
-                      >Customer Service</a
+                        class="list-group-item list-group-item-action"
+                        href="../home/terms-and-conditions.html"
+                    >Customer Service</a
                     >
                   </li>
                   <li>
                     <a
-                      class="list-group-item list-group-item-action"
-                      href="../home/terms-and-conditions.html"
-                      >Returns / Exchange</a
+                        class="list-group-item list-group-item-action"
+                        href="../home/terms-and-conditions.html"
+                    >Returns / Exchange</a
                     >
                   </li>
                   <li>
                     <a
-                      class="list-group-item list-group-item-action"
-                      href="../home/faq.html"
-                      >FAQs</a
+                        class="list-group-item list-group-item-action"
+                        href="../home/faq.html"
+                    >FAQs</a
                     >
                   </li>
                   <li>
                     <a
-                      class="list-group-item list-group-item-action"
-                      href="../home/terms-and-conditions.html"
-                      >Product Support</a
+                        class="list-group-item list-group-item-action"
+                        href="../home/terms-and-conditions.html"
+                    >Product Support</a
                     >
                   </li>
                 </ul>
@@ -435,37 +429,37 @@
           <div class="text-md-right">
             <span class="d-inline-block bg-white border rounded p-1">
               <img
-                class="max-width-5"
-                src="@/assets/img/100x60/img1.jpg"
-                alt="Image Description"
+                  class="max-width-5"
+                  src="@/assets/img/100x60/img1.jpg"
+                  alt="Image Description"
               />
             </span>
             <span class="d-inline-block bg-white border rounded p-1">
               <img
-                class="max-width-5"
-                src="@/assets/img/100x60/img2.jpg"
-                alt="Image Description"
+                  class="max-width-5"
+                  src="@/assets/img/100x60/img2.jpg"
+                  alt="Image Description"
               />
             </span>
             <span class="d-inline-block bg-white border rounded p-1">
               <img
-                class="max-width-5"
-                src="@/assets/img/100x60/img3.jpg"
-                alt="Image Description"
+                  class="max-width-5"
+                  src="@/assets/img/100x60/img3.jpg"
+                  alt="Image Description"
               />
             </span>
             <span class="d-inline-block bg-white border rounded p-1">
               <img
-                class="max-width-5"
-                src="@/assets/img/100x60/img4.jpg"
-                alt="Image Description"
+                  class="max-width-5"
+                  src="@/assets/img/100x60/img4.jpg"
+                  alt="Image Description"
               />
             </span>
             <span class="d-inline-block bg-white border rounded p-1">
               <img
-                class="max-width-5"
-                src="@/assets/img/100x60/img5.jpg"
-                alt="Image Description"
+                  class="max-width-5"
+                  src="@/assets/img/100x60/img5.jpg"
+                  alt="Image Description"
               />
             </span>
           </div>
@@ -490,7 +484,7 @@ export default {
     productColumns: Array,
     columnTitles: Array
   },
-  data:()=>({
+  data: () => ({
     settings: {
       draggable: true,
       dots: false,
@@ -502,7 +496,21 @@ export default {
       slidesToScroll: 1,
       waitForAnimate: true,
     }
-  })
+  }),
+  methods: {
+    updateCurrentSlide(e) {
+      console.log(e);
+      setTimeout(() => {
+        this.currentSlideIndex = e;
+      }, 600);
+    },
+    showNext() {
+      this.$refs.slider.next()
+    },
+    showPrev() {
+      this.$refs.slider.prev()
+    }
+  }
 };
 </script>
 

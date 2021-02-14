@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xl-3 col-wd-auto d-none d-xl-block">
-          <left-side-panel :latestProducts="latestProducts" />
+          <left-side-panel :latestProducts="latestProducts"/>
         </div>
         <div class="col-xl-9 col-wd-auto max-width-1130">
           <main-banner :categories="categoriesWithoutSubcategories.slice(0,2)"/>
@@ -12,52 +12,48 @@
           <div class="mb-8">
             <full-banner :image="popularProducts[2][0].node.images.size212x200.link"/>
           </div>
-          <div class="mb-8" >
+          <div class="mb-8">
             <category-preview-slider
-              v-if="categoriesWithoutSubcategories[0]"
-              :slidesToShow="3"
-              :title="`Bestsellers`"
-              :item="categoriesWithoutSubcategories[0]"
+                v-if="categoriesWithoutSubcategories[0]"
+                :slidesToShow="3"
+                :title="`Bestsellers`"
+                :item="categoriesWithoutSubcategories[0]"
             />
           </div>
-          <category-best-offers :items="categoriesWithoutSubcategories[4]" v-if="categoriesWithoutSubcategories[4]"/>
+          <category-best-offers :items="categoriesWithoutSubcategories[0]" v-if="categoriesWithoutSubcategories[0]"/>
           <category-best-offers :items="categoriesWithoutSubcategories[5]" v-if="categoriesWithoutSubcategories[5]"/>
           <div class="mb-8">
             <div class="row">
               <div class="col-md-6 mb-3 mb-md-0">
-                <a href="../shop/shop.html">
-                  <img
-                    class="img-fluid debil"
-                    :src="popularProducts[1][2].node.images.size212x200.link"
+                <img
+                    class="img-fluid"
+                    src="https://transvelo.github.io/electro-html/2.0/assets/img/536X150/img1.jpg"
                     alt="Image Description"
-                  />
-                </a>
+                />
               </div>
               <div class="col-md-6">
-                <a href="../shop/shop.html">
-                  <img
-                    class="img-fluid debil"
-                    :src="popularProducts[0][0].node.images.size212x200.link"
+                <img
+                    class="img-fluid"
+                    src="https://transvelo.github.io/electro-html/2.0/assets/img/536X150/img2.jpg"
                     alt="Image Description"
-                  />
-                </a>
+                />
               </div>
             </div>
           </div>
           <category-preview-slider
-            :slidesToShow="4"
-            :title="categoriesWithoutSubcategories[1].title"
-            :item="categoriesWithoutSubcategories[1]"
+              :slidesToShow="4"
+              :title="categoriesWithoutSubcategories[1].title"
+              :item="categoriesWithoutSubcategories[1]"
           />
           <category-preview-slider
-            :slidesToShow="4"
-            :title="categoriesWithoutSubcategories[2].title"
-            :item="categoriesWithoutSubcategories[2]"
+              :slidesToShow="4"
+              :title="categoriesWithoutSubcategories[2].title"
+              :item="categoriesWithoutSubcategories[2]"
           />
           <category-preview-slider
-            :slidesToShow="4"
-            :title="categoriesWithoutSubcategories[3].title"
-            :item="categoriesWithoutSubcategories[3]"
+              :slidesToShow="4"
+              :title="categoriesWithoutSubcategories[3].title"
+              :item="categoriesWithoutSubcategories[3]"
           />
         </div>
       </div>
@@ -97,7 +93,7 @@ export default {
     const popularityProducts = await LatestProducts.fetchLatestProducts(5, 'popularity');
     const topRatedProducts = await LatestProducts.fetchLatestProducts(5, 'average_rating');
     const discountedProducts = await LatestProducts.fetchLatestProducts(5, 'discount');
-    popularProducts.push(popularityProducts,topRatedProducts,discountedProducts)
+    popularProducts.push(popularityProducts, topRatedProducts, discountedProducts)
 
     next((vm) => {
       vm.latestProducts = latestProducts;
@@ -110,7 +106,7 @@ export default {
     categoriesWithoutSubcategories: null,
     popularProducts: []
   }),
-  methods: {},
+  methods: {}
 };
 </script>
 

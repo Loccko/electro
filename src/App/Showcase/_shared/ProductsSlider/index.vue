@@ -41,9 +41,10 @@ export default {
     currentSlideIndex: 1
   }),
   methods: {
-    updateCurrentSlide(e){
-      console.log(e);
-      setTimeout(()=>{this.currentSlideIndex = e}, 600)
+    updateCurrentSlide(e) {
+      setTimeout(() => {
+        this.currentSlideIndex = e
+      }, 600)
     }
   }
 };

@@ -6,14 +6,22 @@
     <carousel v-bind="settings" @afterChange="updateCurrentSlide" ref="slider">
       <div v-for="i of 3" :key="i">
         <latest-product-item
-          v-for="(item, j) of itemsPart(i-1)"
-          :key="j"
-          :item="item.node"
+            v-for="(item, j) of itemsPart(i-1)"
+            :key="j"
+            :item="item.node"
         />
       </div>
     </carousel>
-    <div @click="showPrev" class="js-prev position-absolute top-0 font-size-17 u-slick__arrow-normal top-10 fa fa-angle-left right-1 slick-arrow" aria-disabled="false" style=""></div>
-    <div @click="showNext" class="js-next position-absolute top-0 font-size-17 u-slick__arrow-normal top-10 fa fa-angle-right right-0 slick-arrow" style="" aria-disabled="false">
+    <div
+        @click="showPrev"
+        class="js-prev position-absolute top-0 font-size-17 u-slick__arrow-normal top-10 fa fa-angle-left right-1 slick-arrow"
+        aria-disabled="false"
+        style="">
+    </div>
+    <div @click="showNext"
+         class="js-next position-absolute top-0 font-size-17 u-slick__arrow-normal top-10 fa fa-angle-right right-0 slick-arrow"
+         style=""
+         aria-disabled="false">
     </div>
   </div>
 </template>
@@ -48,7 +56,6 @@ export default {
   }),
   methods: {
     updateCurrentSlide(e) {
-      console.log(e);
       setTimeout(() => {
         this.currentSlideIndex = e;
       }, 600);
@@ -56,14 +63,12 @@ export default {
     itemsPart(i) {
       const startIndex = i * 8;
       let endIndex = startIndex + 8
-  
-      console.log(this.items.slice(startIndex, endIndex));
       return this.items.slice(startIndex, endIndex);
     },
     showNext() {
       this.$refs.slider.next()
     },
-    showPrev(){
+    showPrev() {
       this.$refs.slider.prev()
     }
   },
