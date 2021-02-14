@@ -2,7 +2,7 @@
   <a href="../shop/shop.html" class="d-block text-gray-90">
     <div
       class="bg-img-hero pt-3"
-      style="background-image: url(../../assets/img/1400X206/img1.jpg);"
+      :style="`background-image: url(${image});`"
     >
       <div
         class="space-top-2-md p-4 pt-4 pt-md-5 pt-lg-6 pt-xl-5 pb-lg-4 px-xl-8 px-lg-6"
@@ -28,7 +28,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    image: String
+  }
+};
 </script>
 
 <style></style>

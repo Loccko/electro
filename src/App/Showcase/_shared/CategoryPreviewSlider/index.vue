@@ -9,11 +9,9 @@
       <product-card v-for="(item, i) of item.products" :key="i" :item="item" :categoryTitle="title"/>
       <template #customPaging style="display: flex">
         <li
-          :class="{ 'slick-current': currentSlideIndex == i }"
           role="presentation"
           v-for="j of item.products.length/slidesToShow"
           :key="j"
-          :id="'dot-' + i"
         >
           <span></span>
         </li>

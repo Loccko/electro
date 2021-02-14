@@ -14,7 +14,7 @@ const showcaseRoutes = [
         name: 'home'
       },
       {
-        path: '/goods',
+        path: '/goods/:categoryid',
         component: GoodsPage,
         name: 'goods'
       }

@@ -26,7 +26,7 @@
               tabindex="0"
               ><img
                 class="img-fluid"
-                :src="item.images.size212x200.link"
+                :src="item.images.size212x200 ? item.images.size212x200.link : ''"
                 alt="Image Description"
             /></a>
           </div>

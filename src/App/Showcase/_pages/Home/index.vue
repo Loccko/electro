@@ -1,34 +1,34 @@
 <template>
   <div>
-    <main-carousel />
+    <main-carousel class="mb-4"/>
     <div class="container">
       <div class="row">
         <div class="col-xl-3 col-wd-auto d-none d-xl-block">
           <left-side-panel :latestProducts="latestProducts" />
         </div>
         <div class="col-xl-9 col-wd-auto max-width-1130">
-          <main-banner />
-          <tab-selector />
+          <main-banner :categories="categoriesWithoutSubcategories.slice(0,2)"/>
+          <tab-selector :products="popularProducts"/>
           <div class="mb-8">
-            <full-banner />
+            <full-banner :image="popularProducts[2][0].node.images.size212x200.link"/>
           </div>
-          <div class="mb-8">
+          <div class="mb-8" >
             <category-preview-slider
+              v-if="categoriesWithoutSubcategories[0]"
               :slidesToShow="3"
               :title="`Bestsellers`"
-              :items="categoriesWithoutSubcategories[0]"
+              :item="categoriesWithoutSubcategories[0]"
             />
           </div>
-          <category-best-offers />
-          <category-best-offers />
-
+          <category-best-offers :items="categoriesWithoutSubcategories[4]" v-if="categoriesWithoutSubcategories[4]"/>
+          <category-best-offers :items="categoriesWithoutSubcategories[5]" v-if="categoriesWithoutSubcategories[5]"/>
           <div class="mb-8">
             <div class="row">
               <div class="col-md-6 mb-3 mb-md-0">
                 <a href="../shop/shop.html">
                   <img
-                    class="img-fluid"
-                    src="@/assets/img/536X150/img1.jpg"
+                    class="img-fluid debil"
+                    :src="popularProducts[1][2].node.images.size212x200.link"
                     alt="Image Description"
                   />
                 </a>
@@ -36,8 +36,8 @@
               <div class="col-md-6">
                 <a href="../shop/shop.html">
                   <img
-                    class="img-fluid"
-                    src="@/assets/img/536X150/img2.jpg"
+                    class="img-fluid debil"
+                    :src="popularProducts[0][0].node.images.size212x200.link"
                     alt="Image Description"
                   />
                 </a>
@@ -91,17 +91,24 @@ export default {
   },
 
   async beforeRouteEnter(to, from, next) {
-    const latestProducts = await LatestProducts.fetchLatestProducts();
+    const latestProducts = await LatestProducts.fetchLatestProducts(24, 'latest');
     const categoriesWithoutSubcategories = await Categories.fetchCategoriesWithoutSubcategories();
+    let popularProducts = []
+    const popularityProducts = await LatestProducts.fetchLatestProducts(5, 'popularity');
+    const topRatedProducts = await LatestProducts.fetchLatestProducts(5, 'average_rating');
+    const discountedProducts = await LatestProducts.fetchLatestProducts(5, 'discount');
+    popularProducts.push(popularityProducts,topRatedProducts,discountedProducts)
 
     next((vm) => {
       vm.latestProducts = latestProducts;
       vm.categoriesWithoutSubcategories = categoriesWithoutSubcategories;
+      vm.popularProducts = popularProducts
     });
   },
   data: () => ({
     latestProducts: null,
     categoriesWithoutSubcategories: null,
+    popularProducts: []
   }),
   methods: {},
 };
