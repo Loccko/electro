@@ -34,6 +34,9 @@ export default {
                   title
                   priceWithDiscount
                   averageRating
+                  comments {
+                    id
+                  }
                   images {
                     size75x75 {
                       link

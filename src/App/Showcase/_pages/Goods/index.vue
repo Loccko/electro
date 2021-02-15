@@ -38,9 +38,9 @@
             </p>
           </div>
 
-          <view-switcher />
+          <view-switcher :view="view" @changeview="view=$event"/>
 
-          <products-container :products="products"/>
+          <products-container :products="products" :cardType="view"/>
 
           <nav class="d-md-flex justify-content-between align-items-center border-top pt-3" aria-label="Page navigation example">
             <div class="text-center text-md-left mb-3 mb-md-0">
@@ -82,7 +82,8 @@ export default {
     })
   },
   data:()=>({
-    products: null
+    products: null,
+    view: 0
   })
 };
 </script>
