@@ -27,12 +27,9 @@
         <li class="nav-item" @click="changeView(0)">
           <a
             class="nav-link"
-            :class="{'active': view === 0 }"
+            :class="{'active': view == 0, inactive:view !== 0 }"
+            :aria-selected="view == 0"
             id="pills-one-example1-tab"
-            data-toggle="pill"
-            role="tab"
-            aria-controls="pills-one-example1"
-            aria-selected="false"
           >
             <div
               class="d-md-flex justify-content-md-center align-items-md-center"
@@ -44,12 +41,9 @@
         <li class="nav-item" @click="changeView(1)">
           <a
             class="nav-link"
-            :class="{'active': view === 1 }"
+            :class="{ active: view == 1 , inactive:view !== 1 }"
+            :aria-selected="view == 1"
             id="pills-two-example1-tab"
-            data-toggle="pill"
-            role="tab"
-            aria-controls="pills-two-example1"
-            aria-selected="false"
           >
             <div
               class="d-md-flex justify-content-md-center align-items-md-center"
@@ -62,11 +56,7 @@
           <a
             class="nav-link"
             id="pills-three-example1-tab"
-            :class="{'active': view === 2 }"
-            data-toggle="pill"
-            role="tab"
-            aria-controls="pills-three-example1"
-            aria-selected="true"
+            :class="{ 'active': view == 2 , inactive:view !== 2 }"
           >
             <div
               class="d-md-flex justify-content-md-center align-items-md-center"
@@ -79,11 +69,7 @@
           <a
             class="nav-link"
             id="pills-four-example1-tab"
-            data-toggle="pill"
-            role="tab"
-            aria-controls="pills-four-example1"
-            aria-selected="true"
-            :class="{'active': view === 3 }"
+            :class="{ 'active': view == 3, inactive:view !== 3  }"
           >
             <div
               class="d-md-flex justify-content-md-center align-items-md-center"
@@ -144,14 +130,18 @@
 <script>
 export default {
   props: {
-    view: Number
+    view: Number,
   },
   methods: {
-    changeView(type){
-      this.$emit('changeview', type)
-    }
-  }
+    changeView(type) {
+      this.$emit("changeview", type);
+    },
+  },
 };
 </script>
 
-<style></style>
+<style scoped>
+  .inactive {
+    opacity: .3 !important;
+  }
+</style>

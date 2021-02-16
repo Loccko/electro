@@ -58,7 +58,7 @@
 export default {
   props: {
     title: String,
-    products: Object,
+    products: Array,
   },
 };
 </script>

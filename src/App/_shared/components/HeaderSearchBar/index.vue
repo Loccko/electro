@@ -30,21 +30,15 @@
                 </div>
                 <div
                     id="basicsCollapseOne"
-                    class="vertical-menu v1"
+                    class="vertical-menu v1 collapse"
                     aria-labelledby="basicsHeadingOne"
                     data-parent="#basicsAccordion"
-                    :class="{'collapse show':  !categoriesListOpened}"
+                    :class="{'show':  categoriesListOpened}"
                 >
                   <div class="card-body p-0">
-                    <nav
-                        class="js-mega-menu navbar navbar-expand-xl u-header__navbar u-header__navbar--no-space hs-menu-initialized"
-                    >
-                      <div
-                          id="navBar"
-                          class="collapse navbar-collapse u-header__navbar-collapse"
-                      >
+                    <nav class="js-mega-menu navbar navbar-expand-xl u-header__navbar u-header__navbar--no-space hs-menu-initialized">
+                      <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
                         <ul class="navbar-nav u-header__navbar-nav border-primary border-top-0">
-                          <!-- Nav Item MegaMenu -->
                           <li
                               v-for="rootCategory of categories"
                               :key="rootCategory.id"
@@ -59,8 +53,7 @@
                           >
                             <router-link
                                 id="basicMegaMenu"
-
-                                :to="`/categories/${rootCategory.id}`"
+                                :to="`/category/${rootCategory.id}`"
                                 class="nav-link u-header__nav-link u-header__nav-link-toggle"
                                 href="javascript:;"
                                 aria-haspopup="true"
@@ -88,7 +81,7 @@
                                       <router-link
                                           class="nav-link u-header__sub-menu-nav-link"
                                           href="#"
-                                          :to="`/category/${subcategory.id}`"
+                                          :to="`/goods/${subcategory.id}`"
                                       >
                                         {{ subcategory.title }}
                                       </router-link>
@@ -97,24 +90,17 @@
                                 </div>
                               </div>
                             </div>
-                            <!-- End Nav Item - Mega Menu -->
                           </li>
-
                         </ul>
                       </div>
                     </nav>
                   </div>
                 </div>
               </div>
-              <!-- End Card -->
             </div>
-            <!-- End Basics Accordion -->
           </div>
         </div>
-        <!-- End Vertical Menu -->
-        <!-- Search bar -->
         <div class="col align-self-center">
-          <!-- Search-Form -->
           <form class="js-focus-state">
             <label class="sr-only" for="searchProduct">Search</label>
             <div class="input-group">
@@ -150,10 +136,7 @@
               </div>
             </div>
           </form>
-          <!-- End Search-Form -->
         </div>
-        <!-- End Search bar -->
-        <!-- Header Icons -->
         <div class="col-md-auto align-self-center">
           <div class="d-flex">
             <ul class="d-flex list-unstyled mb-0">

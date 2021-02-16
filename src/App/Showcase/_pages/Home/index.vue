@@ -7,21 +7,20 @@
           <left-side-panel :latestProducts="latestProducts"/>
         </div>
         <div class="col-xl-9 col-wd-auto max-width-1130">
-          <main-banner :categories="categoriesWithoutSubcategories.slice(0,2)"/>
+          <main-banner :categories="categoriesWithoutSubcategories ? categoriesWithoutSubcategories.slice(0,2) : []"/>
           <tab-selector :products="popularProducts"/>
-          <div class="mb-8">
+          <div class="mb-8" v-if="popularProducts && popularProducts[2] && popularProducts[2][0]">
             <full-banner :image="popularProducts[2][0].node.images.size212x200.link"/>
           </div>
-          <div class="mb-8">
+          <div class="mb-8" v-if="categoriesWithoutSubcategories && categoriesWithoutSubcategories[0]">
             <category-preview-slider
-                v-if="categoriesWithoutSubcategories[0]"
                 :slidesToShow="3"
                 :title="`Bestsellers`"
-                :item="categoriesWithoutSubcategories[0]"
+                :item="categoriesWithoutSubcategories ? categoriesWithoutSubcategories[0] : null"
             />
           </div>
-          <category-best-offers :items="categoriesWithoutSubcategories[0]" v-if="categoriesWithoutSubcategories[0]"/>
-          <category-best-offers :items="categoriesWithoutSubcategories[5]" v-if="categoriesWithoutSubcategories[5]"/>
+          <category-best-offers :items="categoriesWithoutSubcategories[0]" v-if="categoriesWithoutSubcategories && categoriesWithoutSubcategories[0]"/>
+          <category-best-offers :items="categoriesWithoutSubcategories[5]" v-if="categoriesWithoutSubcategories && categoriesWithoutSubcategories[5]"/>
           <div class="mb-8">
             <div class="row">
               <div class="col-md-6 mb-3 mb-md-0">
