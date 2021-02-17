@@ -22,7 +22,7 @@
                 class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1 active"
                 aria-current="page"
               >
-                Ultra Wireless S50 Headphones S50 with Bluetooth
+                {{ product ? product.title : "" }}
               </li>
             </ol>
           </nav>
@@ -37,179 +37,37 @@
       <div class="mb-14">
         <div class="row">
           <div class="col-md-6 col-lg-4 col-xl-5 mb-4 mb-md-0">
-            <div
+            <VueSlickCarousel
+              :arrows="true"
               id="sliderSyncingNav"
               class="js-slick-carousel u-slick mb-2 slick-initialized slick-slider"
-              data-infinite="true"
-              data-arrows-classes="d-none d-lg-inline-block u-slick__arrow-classic u-slick__arrow-centered--y rounded-circle"
-              data-arrow-left-classes="fas fa-arrow-left u-slick__arrow-classic-inner u-slick__arrow-classic-inner--left ml-lg-2 ml-xl-4"
-              data-arrow-right-classes="fas fa-arrow-right u-slick__arrow-classic-inner u-slick__arrow-classic-inner--right mr-lg-2 mr-xl-4"
-              data-nav-for="#sliderSyncingThumb"
+              ref="carousel"
             >
+              <!--
               <div
                 class="js-prev d-none d-lg-inline-block u-slick__arrow-classic u-slick__arrow-centered--y rounded-circle fas fa-arrow-left u-slick__arrow-classic-inner u-slick__arrow-classic-inner--left ml-lg-2 ml-xl-4 slick-arrow"
                 style=""
               ></div>
-              <div class="slick-list draggable">
-                <div
-                  class="slick-track"
-                  style="
-                    opacity: 1;
-                    width: 5170px;
-                    transform: translate3d(-470px, 0px, 0px);
-                  "
-                >
-                  <div
-                    class="js-slide slick-slide slick-cloned"
-                    data-slick-index="-1"
-                    aria-hidden="true"
-                    style="width: 470px"
-                    tabindex="-1"
-                  >
-                    <img
-                      class="img-fluid"
-                      src="@/assets/img/720X660/img5.jpg"
-                      alt="Image Description"
-                    />
-                  </div>
-                  <div
-                    class="js-slide slick-slide slick-current slick-active"
-                    data-slick-index="0"
-                    aria-hidden="false"
-                    style="width: 470px; height: auto"
-                    tabindex="0"
-                  >
-                    <img
-                      class="img-fluid"
-                      src="@/assets/img/720X660/img1.jpg"
-                      alt="Image Description"
-                    />
-                  </div>
-                  <div
-                    class="js-slide slick-slide"
-                    data-slick-index="1"
-                    aria-hidden="true"
-                    style="width: 470px; height: auto"
-                    tabindex="-1"
-                  >
-                    <img
-                      class="img-fluid"
-                      src="@/assets/img/720X660/img2.jpg"
-                      alt="Image Description"
-                    />
-                  </div>
-                  <div
-                    class="js-slide slick-slide"
-                    data-slick-index="2"
-                    aria-hidden="true"
-                    style="width: 470px; height: auto"
-                    tabindex="-1"
-                  >
-                    <img
-                      class="img-fluid"
-                      src="@/assets/img/720X660/img3.jpg"
-                      alt="Image Description"
-                    />
-                  </div>
-                  <div
-                    class="js-slide slick-slide"
-                    data-slick-index="3"
-                    aria-hidden="true"
-                    style="width: 470px; height: auto"
-                    tabindex="-1"
-                  >
-                    <img
-                      class="img-fluid"
-                      src="@/assets/img/720X660/img4.jpg"
-                      alt="Image Description"
-                    />
-                  </div>
-                  <div
-                    class="js-slide slick-slide"
-                    data-slick-index="4"
-                    aria-hidden="true"
-                    style="width: 470px; height: auto"
-                    tabindex="-1"
-                  >
-                    <img
-                      class="img-fluid"
-                      src="@/assets/img/720X660/img5.jpg"
-                      alt="Image Description"
-                    />
-                  </div>
-                  <div
-                    class="js-slide slick-slide slick-cloned"
-                    data-slick-index="5"
-                    aria-hidden="true"
-                    style="width: 470px"
-                    tabindex="-1"
-                  >
-                    <img
-                      class="img-fluid"
-                      src="@/assets/img/720X660/img1.jpg"
-                      alt="Image Description"
-                    />
-                  </div>
-                  <div
-                    class="js-slide slick-slide slick-cloned"
-                    data-slick-index="6"
-                    aria-hidden="true"
-                    style="width: 470px"
-                    tabindex="-1"
-                  >
-                    <img
-                      class="img-fluid"
-                      src="@/assets/img/720X660/img2.jpg"
-                      alt="Image Description"
-                    />
-                  </div>
-                  <div
-                    class="js-slide slick-slide slick-cloned"
-                    data-slick-index="7"
-                    aria-hidden="true"
-                    style="width: 470px"
-                    tabindex="-1"
-                  >
-                    <img
-                      class="img-fluid"
-                      src="@/assets/img/720X660/img3.jpg"
-                      alt="Image Description"
-                    />
-                  </div>
-                  <div
-                    class="js-slide slick-slide slick-cloned"
-                    data-slick-index="8"
-                    aria-hidden="true"
-                    style="width: 470px"
-                    tabindex="-1"
-                  >
-                    <img
-                      class="img-fluid"
-                      src="@/assets/img/720X660/img4.jpg"
-                      alt="Image Description"
-                    />
-                  </div>
-                  <div
-                    class="js-slide slick-slide slick-cloned"
-                    data-slick-index="9"
-                    aria-hidden="true"
-                    style="width: 470px"
-                    tabindex="-1"
-                  >
-                    <img
-                      class="img-fluid"
-                      src="@/assets/img/720X660/img5.jpg"
-                      alt="Image Description"
-                    />
-                  </div>
-                </div>
+            -->
+              <div
+                class="js-slide slick-slide slick-cloned"
+                data-slick-index="-1"
+                aria-hidden="true"
+                style="width: 470px"
+                tabindex="-1"
+                v-for="(slide, p) of mainCarouselImages"
+                :key="p"
+              >
+                <img class="img-fluid" :src="slide" alt="Image Description" />
               </div>
 
+              <!--
               <div
                 class="js-next d-none d-lg-inline-block u-slick__arrow-classic u-slick__arrow-centered--y rounded-circle fas fa-arrow-right u-slick__arrow-classic-inner u-slick__arrow-classic-inner--right mr-lg-2 mr-xl-4 slick-arrow"
                 style=""
               ></div>
-            </div>
+              -->
+            </VueSlickCarousel>
 
             <div
               id="sliderSyncingThumb"
@@ -229,67 +87,17 @@
                   "
                 >
                   <div
-                    class="js-slide slick-slide slick-current slick-active"
-                    style="cursor: pointer; width: 88px; height: auto"
-                    data-slick-index="0"
-                    aria-hidden="false"
-                    tabindex="0"
-                  >
-                    <img
-                      class="img-fluid"
-                      src="@/assets/img/720X660/img1.jpg"
-                      alt="Image Description"
-                    />
-                  </div>
-                  <div
                     class="js-slide slick-slide slick-active"
                     style="cursor: pointer; width: 88px; height: auto"
-                    data-slick-index="1"
-                    aria-hidden="false"
                     tabindex="0"
+                    v-for="(slide, k) of mainCarouselImages"
+                    :key="k"
+                    :class="{ 'slick-current': mainCarouselActiveIndex == k }"
+                    @click="changeSlide(k)"
                   >
                     <img
                       class="img-fluid"
-                      src="@/assets/img/720X660/img2.jpg"
-                      alt="Image Description"
-                    />
-                  </div>
-                  <div
-                    class="js-slide slick-slide slick-active"
-                    style="cursor: pointer; width: 88px; height: auto"
-                    data-slick-index="2"
-                    aria-hidden="false"
-                    tabindex="0"
-                  >
-                    <img
-                      class="img-fluid"
-                      src="@/assets/img/720X660/img3.jpg"
-                      alt="Image Description"
-                    />
-                  </div>
-                  <div
-                    class="js-slide slick-slide slick-active"
-                    style="cursor: pointer; width: 88px; height: auto"
-                    data-slick-index="3"
-                    aria-hidden="false"
-                    tabindex="0"
-                  >
-                    <img
-                      class="img-fluid"
-                      src="@/assets/img/720X660/img4.jpg"
-                      alt="Image Description"
-                    />
-                  </div>
-                  <div
-                    class="js-slide slick-slide slick-active"
-                    style="cursor: pointer; width: 88px; height: auto"
-                    data-slick-index="4"
-                    aria-hidden="false"
-                    tabindex="0"
-                  >
-                    <img
-                      class="img-fluid"
-                      src="@/assets/img/720X660/img5.jpg"
+                      :src="slide"
                       alt="Image Description"
                     />
                   </div>
@@ -303,7 +111,7 @@
                 >Headphones</a
               >
               <h2 class="font-size-25 text-lh-1dot2">
-                Ultra Wireless S50 Headphones S50 with Bluetooth
+                {{ product ? product.title : "" }}
               </h2>
               <div class="mb-2">
                 <a
@@ -311,14 +119,15 @@
                   href="#"
                 >
                   <div class="text-warning mr-2">
-                    <small class="fas fa-star"></small>
-                    <small class="fas fa-star"></small>
-                    <small class="fas fa-star"></small>
-                    <small class="fas fa-star"></small>
-                    <small class="far fa-star text-muted"></small>
+                    <small
+                      class="fas fa-star"
+                      v-for="star of 5"
+                      :key="star"
+                      :class="{ 'text-muted': star > product.averageRating }"
+                    ></small>
                   </div>
                   <span class="text-secondary font-size-13"
-                    >(3 customer reviews)</span
+                    >({{ product.overview.length }} customer reviews)</span
                   >
                 </a>
               </div>
@@ -330,17 +139,16 @@
               /></a>
               <div class="mb-2">
                 <ul class="font-size-14 pl-3 ml-1 text-gray-110">
-                  <li>4.5 inch HD Touch Screen (1280 x 720)</li>
-                  <li>Android 4.4 KitKat OS</li>
-                  <li>1.4 GHz Quad Core™ Processor</li>
-                  <li>20 MP Electro and 28 megapixel CMOS rear camera</li>
+                  <li v-for="(feature, j) of product.keyFeatures" :key="j">
+                    {{ feature }}
+                  </li>
                 </ul>
               </div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor incididunt.
               </p>
-              <p><strong>SKU</strong>: FW511948218</p>
+              <p><strong>SKU</strong>: {{ product.sku }}</p>
             </div>
           </div>
           <div class="mx-md-auto mx-lg-0 col-md-6 col-lg-4 col-xl-3">
@@ -352,10 +160,12 @@
                   class="text-gray-9 font-size-14 pb-2 border-color-1 border-bottom mb-3"
                 >
                   Availability:
-                  <span class="text-green font-weight-bold">26 in stock</span>
+                  <span class="text-green font-weight-bold"
+                    >{{ product.amount }} in stock</span
+                  >
                 </div>
                 <div class="mb-3">
-                  <div class="font-size-36">$685.00</div>
+                  <div class="font-size-36">${{ product.price }}</div>
                 </div>
                 <div class="mb-3">
                   <h6 class="font-size-14">Quantity</h6>
@@ -457,6 +267,7 @@
       </div>
       <!-- End Single Product Body -->
     </div>
+
     <div class="bg-gray-7 pt-6 pb-3 mb-6">
       <div class="container">
         <div class="js-scroll-nav">
@@ -960,79 +771,11 @@
                 <div class="table-responsive">
                   <table class="table table-hover">
                     <tbody>
-                      <tr>
-                        <th class="px-4 px-xl-5 border-top-0">Brand</th>
-                        <td class="border-top-0">Apple</td>
-                      </tr>
-                      <tr>
-                        <th class="px-4 px-xl-5">Item Height</th>
-                        <td>18 Millimeters</td>
-                      </tr>
-                      <tr>
-                        <th class="px-4 px-xl-5">Item Width</th>
-                        <td>31.4 Centimeters</td>
-                      </tr>
-                      <tr>
-                        <th class="px-4 px-xl-5">Screen Size</th>
-                        <td>13 Inches</td>
-                      </tr>
-                      <tr>
-                        <th class="px-4 px-xl-5">Item Weight</th>
-                        <td>1.6 Kg</td>
-                      </tr>
-                      <tr>
-                        <th class="px-4 px-xl-5">Product Dimensions</th>
-                        <td>21.9 x 31.4 x 1.8 cm</td>
-                      </tr>
-                      <tr>
-                        <th class="px-4 px-xl-5">Item model number</th>
-                        <td>MF841HN/A</td>
-                      </tr>
-                      <tr>
-                        <th class="px-4 px-xl-5">Processor Brand</th>
-                        <td>Intel</td>
-                      </tr>
-                      <tr>
-                        <th class="px-4 px-xl-5">Processor Type</th>
-                        <td>Core i5</td>
-                      </tr>
-                      <tr>
-                        <th class="px-4 px-xl-5">Processor Speed</th>
-                        <td>2.9 GHz</td>
-                      </tr>
-                      <tr>
-                        <th class="px-4 px-xl-5">RAM Size</th>
-                        <td>8 GB</td>
-                      </tr>
-                      <tr>
-                        <th class="px-4 px-xl-5">Hard Drive Size</th>
-                        <td>512 GB</td>
-                      </tr>
-                      <tr>
-                        <th class="px-4 px-xl-5">Hard Disk Technology</th>
-                        <td>Solid State Drive</td>
-                      </tr>
-                      <tr>
-                        <th class="px-4 px-xl-5">Graphics Coprocessor</th>
-                        <td>Intel Integrated Graphics</td>
-                      </tr>
-                      <tr>
-                        <th class="px-4 px-xl-5">Graphics Card Description</th>
-                        <td>Integrated Graphics Card</td>
-                      </tr>
-                      <tr>
-                        <th class="px-4 px-xl-5">Hardware Platform</th>
-                        <td>Mac</td>
-                      </tr>
-                      <tr>
-                        <th class="px-4 px-xl-5">Operating System</th>
-                        <td>Mac OS</td>
-                      </tr>
-                      <tr>
-                        <th class="px-4 px-xl-5">
-                          Average Battery Life (in hours)
+                      <tr v-for="(item, m) of product.description" :key="m">
+                        <th class="px-4 px-xl-5 border-top-0">
+                          {{ item.name }}
                         </th>
-                        <td>9</td>
+                        <td class="border-top-0">{{ item.text }}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -1492,8 +1235,8 @@
         </div>
       </div>
     </div>
+
     <div class="container">
-      <!-- Related products -->
       <div class="mb-6">
         <div
           class="d-flex justify-content-between align-items-center border-bottom border-color-1 flex-lg-nowrap flex-wrap mb-4"
@@ -1682,9 +1425,10 @@
                     <a
                       href="../shop/wishlist.html"
                       class="text-gray-6 font-size-13"
-                      ><i class="ec ec-favorites mr-1 font-size-15"></i>
-                      Wishlist</a
                     >
+                      <i class="ec ec-favorites mr-1 font-size-15"></i>
+                      Wishlist
+                    </a>
                   </div>
                 </div>
               </div>
@@ -1891,142 +1635,117 @@
       <div class="mb-8">
         <div class="py-2 border-top border-bottom">
           <div
-            class="js-slick-carousel u-slick my-1 slick-initialized slick-slider"
-            data-slides-show="5"
-            data-slides-scroll="1"
-            data-arrows-classes="d-none d-lg-inline-block u-slick__arrow-normal u-slick__arrow-centered--y"
-            data-arrow-left-classes="fa fa-angle-left u-slick__arrow-classic-inner--left z-index-9"
-            data-arrow-right-classes="fa fa-angle-right u-slick__arrow-classic-inner--right"
-            data-responsive='[{
-                                "breakpoint": 992,
-                                "settings": {
-                                    "slidesToShow": 2
-                                }
-                            }, {
-                                "breakpoint": 768,
-                                "settings": {
-                                    "slidesToShow": 1
-                                }
-                            }, {
-                                "breakpoint": 554,
-                                "settings": {
-                                    "slidesToShow": 1
-                                }
-                            }]'
-          >
+            class="js-prev d-none d-lg-inline-block u-slick__arrow-normal u-slick__arrow-centered--y fa fa-angle-left u-slick__arrow-classic-inner--left z-index-9 slick-arrow slick-disabled"
+            aria-disabled="true"
+            style=""
+          ></div>
+          <div class="slick-list draggable">
             <div
-              class="js-prev d-none d-lg-inline-block u-slick__arrow-normal u-slick__arrow-centered--y fa fa-angle-left u-slick__arrow-classic-inner--left z-index-9 slick-arrow slick-disabled"
-              aria-disabled="true"
-              style=""
-            ></div>
-            <div class="slick-list draggable">
+              class="slick-track"
+              style="
+                opacity: 1;
+                width: 1404px;
+                transform: translate3d(0px, 0px, 0px);
+              "
+            >
               <div
-                class="slick-track"
-                style="
-                  opacity: 1;
-                  width: 1404px;
-                  transform: translate3d(0px, 0px, 0px);
-                "
+                class="js-slide slick-slide slick-current slick-active"
+                data-slick-index="0"
+                aria-hidden="false"
+                style="width: 234px; height: auto"
+                tabindex="0"
               >
-                <div
-                  class="js-slide slick-slide slick-current slick-active"
-                  data-slick-index="0"
-                  aria-hidden="false"
-                  style="width: 234px; height: auto"
-                  tabindex="0"
-                >
-                  <a href="#" class="link-hover__brand" tabindex="0">
-                    <img
-                      class="img-fluid m-auto max-height-50"
-                      src="@/assets/img/200X60/img1.png"
-                      alt="Image Description"
-                    />
-                  </a>
-                </div>
-                <div
-                  class="js-slide slick-slide slick-active"
-                  data-slick-index="1"
-                  aria-hidden="false"
-                  style="width: 234px; height: auto"
-                  tabindex="0"
-                >
-                  <a href="#" class="link-hover__brand" tabindex="0">
-                    <img
-                      class="img-fluid m-auto max-height-50"
-                      src="@/assets/img/200X60/img2.png"
-                      alt="Image Description"
-                    />
-                  </a>
-                </div>
-                <div
-                  class="js-slide slick-slide slick-active"
-                  data-slick-index="2"
-                  aria-hidden="false"
-                  style="width: 234px; height: auto"
-                  tabindex="0"
-                >
-                  <a href="#" class="link-hover__brand" tabindex="0">
-                    <img
-                      class="img-fluid m-auto max-height-50"
-                      src="@/assets/img/200X60/img3.png"
-                      alt="Image Description"
-                    />
-                  </a>
-                </div>
-                <div
-                  class="js-slide slick-slide slick-active"
-                  data-slick-index="3"
-                  aria-hidden="false"
-                  style="width: 234px; height: auto"
-                  tabindex="0"
-                >
-                  <a href="#" class="link-hover__brand" tabindex="0">
-                    <img
-                      class="img-fluid m-auto max-height-50"
-                      src="@/assets/img/200X60/img4.png"
-                      alt="Image Description"
-                    />
-                  </a>
-                </div>
-                <div
-                  class="js-slide slick-slide slick-active"
-                  data-slick-index="4"
-                  aria-hidden="false"
-                  style="width: 234px; height: auto"
-                  tabindex="0"
-                >
-                  <a href="#" class="link-hover__brand" tabindex="0">
-                    <img
-                      class="img-fluid m-auto max-height-50"
-                      src="@/assets/img/200X60/img5.png"
-                      alt="Image Description"
-                    />
-                  </a>
-                </div>
-                <div
-                  class="js-slide slick-slide"
-                  data-slick-index="5"
-                  aria-hidden="true"
-                  style="width: 234px; height: auto"
-                  tabindex="-1"
-                >
-                  <a href="#" class="link-hover__brand" tabindex="-1">
-                    <img
-                      class="img-fluid m-auto max-height-50"
-                      src="@/assets/img/200X60/img6.png"
-                      alt="Image Description"
-                    />
-                  </a>
-                </div>
+                <a href="#" class="link-hover__brand" tabindex="0">
+                  <img
+                    class="img-fluid m-auto max-height-50"
+                    src="@/assets/img/200X60/img1.png"
+                    alt="Image Description"
+                  />
+                </a>
+              </div>
+              <div
+                class="js-slide slick-slide slick-active"
+                data-slick-index="1"
+                aria-hidden="false"
+                style="width: 234px; height: auto"
+                tabindex="0"
+              >
+                <a href="#" class="link-hover__brand" tabindex="0">
+                  <img
+                    class="img-fluid m-auto max-height-50"
+                    src="@/assets/img/200X60/img2.png"
+                    alt="Image Description"
+                  />
+                </a>
+              </div>
+              <div
+                class="js-slide slick-slide slick-active"
+                data-slick-index="2"
+                aria-hidden="false"
+                style="width: 234px; height: auto"
+                tabindex="0"
+              >
+                <a href="#" class="link-hover__brand" tabindex="0">
+                  <img
+                    class="img-fluid m-auto max-height-50"
+                    src="@/assets/img/200X60/img3.png"
+                    alt="Image Description"
+                  />
+                </a>
+              </div>
+              <div
+                class="js-slide slick-slide slick-active"
+                data-slick-index="3"
+                aria-hidden="false"
+                style="width: 234px; height: auto"
+                tabindex="0"
+              >
+                <a href="#" class="link-hover__brand" tabindex="0">
+                  <img
+                    class="img-fluid m-auto max-height-50"
+                    src="@/assets/img/200X60/img4.png"
+                    alt="Image Description"
+                  />
+                </a>
+              </div>
+              <div
+                class="js-slide slick-slide slick-active"
+                data-slick-index="4"
+                aria-hidden="false"
+                style="width: 234px; height: auto"
+                tabindex="0"
+              >
+                <a href="#" class="link-hover__brand" tabindex="0">
+                  <img
+                    class="img-fluid m-auto max-height-50"
+                    src="@/assets/img/200X60/img5.png"
+                    alt="Image Description"
+                  />
+                </a>
+              </div>
+              <div
+                class="js-slide slick-slide"
+                data-slick-index="5"
+                aria-hidden="true"
+                style="width: 234px; height: auto"
+                tabindex="-1"
+              >
+                <a href="#" class="link-hover__brand" tabindex="-1">
+                  <img
+                    class="img-fluid m-auto max-height-50"
+                    src="@/assets/img/200X60/img6.png"
+                    alt="Image Description"
+                  />
+                </a>
               </div>
             </div>
-
-            <div
-              class="js-next d-none d-lg-inline-block u-slick__arrow-normal u-slick__arrow-centered--y fa fa-angle-right u-slick__arrow-classic-inner--right slick-arrow"
-              style=""
-              aria-disabled="false"
-            ></div>
           </div>
+
+          <div
+            class="js-next d-none d-lg-inline-block u-slick__arrow-normal u-slick__arrow-centered--y fa fa-angle-right u-slick__arrow-classic-inner--right slick-arrow"
+            style=""
+            aria-disabled="false"
+          ></div>
         </div>
       </div>
       <!-- End Brand Carousel -->
@@ -2035,20 +1754,43 @@
 </template>
 
 <script>
-  import Products from "@/App/_shared/services/Products"
+import Products from "@/App/_shared/services/Products";
+import VueSlickCarousel from "vue-slick-carousel";
+import "vue-slick-carousel/dist/vue-slick-carousel.css";
+import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
+import mutations from "@/App/_shared/services/mutations";
 
-  export default {
-    async beforeRouteEnter(to, from, next){
-      const product = await Products.fetchProduct(to.params.id)
+export default {
+  components: { VueSlickCarousel },
+  async beforeRouteEnter(to, from, next) {
+    const product = await Products.fetchProduct(to.params.id);
 
-      next(vm=>{
-        vm.product = product
-      })
+    next((vm) => {
+      vm.product = product;
+    });
+  },
+  data: () => ({
+    product: null,
+    mainCarouselActiveIndex: 0,
+  }),
+  computed: {
+    mainCarouselImages() {
+      return this.product && this.product.images
+        ? this.product.images.size720x660.map((image) => image.link)
+        : [];
     },
-    data:()=>({
-      product: null
-    })
-  };
+  },
+  async mounted() {
+    await mutations.addItemToRecentlyViewedProducts(this.product.id);
+    await mutations.increaseProductViews(this.product.id);
+  },
+  methods: {
+    changeSlide(index) {
+      this.mainCarouselActiveIndex = index;
+      this.$refs.carousel.goTo(index);
+    },
+  },
+};
 </script>
 
 <style

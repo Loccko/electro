@@ -55,12 +55,14 @@
               tabindex="0"
               ><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a
             >
-            <a
-              href="../shop/wishlist.html"
+            <div
               class="text-gray-6 font-size-13"
               tabindex="0"
-              ><i class="ec ec-favorites mr-1 font-size-15"></i> Wishlist</a
+              @click="updateWishList"
             >
+              <i class="ec ec-favorites mr-1 font-size-15"></i>
+              Wishlist
+            </div>
           </div>
         </div>
       </div>
@@ -140,9 +142,9 @@
             <a href="../shop/compare.html" class="text-gray-6 font-size-13"
               ><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a
             >
-            <a href="../shop/wishlist.html" class="text-gray-6 font-size-13"
-              ><i class="ec ec-favorites mr-1 font-size-15"></i> Wishlist</a
-            >
+            <div class="text-gray-6 font-size-13" @click="updateWishList">
+              <i class="ec ec-favorites mr-1 font-size-15"></i> Wishlist
+            </div>
           </div>
         </div>
       </div>
@@ -234,10 +236,10 @@
               class="text-gray-6 font-size-13 mx-wd-3"
               ><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a
             >
-            <a
-              href="../shop/wishlist.html"
+            <div
               class="text-gray-6 font-size-13 mx-wd-3"
-              ><i class="ec ec-favorites mr-1 font-size-15"></i> Wishlist</a
+              @click="updateWishList"
+              ><i class="ec ec-favorites mr-1 font-size-15"></i> Wishlist</div
             >
           </div>
         </div>
@@ -333,13 +335,10 @@
               <i class="ec ec-compare mr-1 font-size-15"></i>
               Compare
             </a>
-            <a
-              href="../shop/wishlist.html"
-              class="text-gray-6 font-size-13 mx-wd-3"
-            >
+            <div class="text-gray-6 font-size-13 mx-wd-3" @click="updateWishList">
               <i class="ec ec-favorites mr-1 font-size-15"></i>
               Wishlist
-            </a>
+            </div>
           </div>
         </div>
       </div>
@@ -348,6 +347,8 @@
 </template>
 
 <script>
+import mutations from "@/App/_shared/services/mutations";
+
 export default {
   name: "ProductCard",
   props: {
@@ -358,6 +359,15 @@ export default {
       type: Number,
     },
   },
+  methods: {
+    async updateWishList(a=true){
+      if(a) {
+        await mutations.addItemToWishlist(this.item.id)
+      } else {
+        await mutations.removeItemFromWishlist(this.item.id)
+      }
+    }
+  }
 };
 </script>
 
