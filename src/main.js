@@ -12,7 +12,7 @@ require('./assets/vendor/fancybox/jquery.fancybox.css')
 require('./assets/vendor/slick-carousel/slick/slick.css')
 require('./assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')
 require('./assets/css/theme.css')
-
+Vue.use(require('vue-moment'));
 new Vue({
   router ,
   render: h => h(App),
