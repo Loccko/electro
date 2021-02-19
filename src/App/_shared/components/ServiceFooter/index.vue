@@ -64,7 +64,11 @@
     <div class="container d-none d-lg-block mb-3">
       <div class="row">
         <div class="col-wd-3 col-lg-4" v-for="i of 3" :key="i">
-          <products-column :products="productColumns[i-1]" :title="columnTitles[i-1]"/>
+          <products-column :products="productColumns[i-1]" :title="columnTitles[i-1]" :type="types[i-1]"/>
+
+        </div>
+        <div class="col-wd-3 d-none d-wd-block">
+          <img class="img-fluid" src="https://transvelo.github.io/electro-html/2.0/assets/img/330X360/img1.jpg" alt="Image Description">
         </div>
       </div>
     </div>
@@ -485,6 +489,7 @@ export default {
     columnTitles: Array
   },
   data: () => ({
+    types: ['views', 'sale', 'rated'],
     settings: {
       draggable: true,
       dots: false,

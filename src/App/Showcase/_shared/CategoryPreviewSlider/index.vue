@@ -11,7 +11,7 @@
       <template #customPaging style="display: flex">
         <li
             role="presentation"
-            v-for="j of item.products.length/slidesToShow"
+            v-for="j of Math.ceil(item.products.length/slidesToShow)"
             :key="j"
         >
           <span></span>

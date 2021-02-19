@@ -5,16 +5,16 @@
 </template>
 
 <script>
-  import FiltersGroup from "@/App/Showcase/_shared/FiltersGroup"
+import FiltersGroup from "@/App/Showcase/_shared/FiltersGroup"
 
-  export default {
-    components: {
-      "filters-group": FiltersGroup
-    },
-    props: {
-      categoryFilter: Array
-    }
+export default {
+  components: {
+    "filters-group": FiltersGroup
+  },
+  props: {
+    categoryFilter: Array
   }
+}
 </script>
 
 <style></style>

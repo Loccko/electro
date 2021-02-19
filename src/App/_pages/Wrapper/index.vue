@@ -1,10 +1,10 @@
 <template>
   <div>
     <service-header :categories="categories"/>
-    <router-view  class="wwww" :initialCategoriesArray="initialCategoriesArray"/>
-    <service-footer 
-      :productColumns="fotterProducts"
-      :columnTitles="['Featured Products','Onsale Products','Top Rated Products']"
+    <router-view :initialCategoriesArray="initialCategoriesArray"/>
+    <service-footer
+        :productColumns="footerProducts"
+        :columnTitles="['Most viewed products','On sale Products','Top Rated Products']"
     />
   </div>
 </template>
@@ -13,35 +13,35 @@
 import ServiceHeader from '@/App/_shared/components/ServiceHeader'
 import ServiceFooter from "@/App/_shared/components/ServiceFooter"
 import Categories from "@/App/_shared/services/Categories"
-import LatestProducts from "@/App/_shared/services/LatestProducts";
+import Products from "@/App/_shared/services/Products";
 
 export default {
-  name:'Generall-App-Wrapper',
+  name: 'Generall-App-Wrapper',
   components: {
     'service-header': ServiceHeader,
-    'service-footer':ServiceFooter
+    'service-footer': ServiceFooter
   },
-  async beforeRouteEnter(to, from, next){
+  async beforeRouteEnter(to, from, next) {
     const categories = await Categories.fetchCategories()
     let popularProducts = []
-    const popularityProducts = await LatestProducts.fetchLatestProducts(3, 'popularity');
-    const topRatedProducts = await LatestProducts.fetchLatestProducts(3, 'average_rating');
-    const discountedProducts = await LatestProducts.fetchLatestProducts(3, 'discount');
-    popularProducts.push(popularityProducts,topRatedProducts,discountedProducts)
+    const mostViewedProducts = await Products.fetchProducts(3, null, 'popularity');
+    const discountedProducts = await Products.fetchProducts(3, null, 'discount');
+    const topRatedProducts = await Products.fetchProducts(3, null, 'average_rating');
+    popularProducts.push(mostViewedProducts, discountedProducts, topRatedProducts)
 
     next(vm => {
       vm.categories = categories;
-      vm.fotterProducts = popularProducts
+      vm.footerProducts = popularProducts
     })
   },
-  data:()=>({
+  data: () => ({
     categories: null,
     productColumns: null,
-    fotterProducts: null
+    footerProducts: null
   }),
   computed: {
-    initialCategoriesArray(){
-      if(this.categories && this.categories.length>0) {
+    initialCategoriesArray() {
+      if (this.categories && this.categories.length > 0) {
         return this.categories
       }
       return null
