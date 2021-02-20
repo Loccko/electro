@@ -1,7 +1,7 @@
 <template>
   <header id="header" class="u-header u-header-left-aligned-nav">
     <div class="u-header__section">
-      <header-navigation />
+      <header-navigation @openAuth="$emit('openAuth')" :me="me"/>
       <header-search-bar :categories="categories"/>
     </div>
   </header>
@@ -20,7 +20,8 @@ export default {
     categories: {
       type: Array,
       default: null
-    }
+    },
+    me: Object
   }
 };
 </script>

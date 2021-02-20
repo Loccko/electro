@@ -7,18 +7,21 @@
             <a
               href="#"
               class="text-gray-110 font-size-13 u-header-topbar__nav-link"
-              >Welcome to Electro!</a
             >
+              Welcome to Electro!
+            </a>
+            <div v-if="me">{{ me.data.firstName + ' ' +  me.data.lastName}}</div>
           </div>
           <div class="topbar-right ml-auto">
             <ul class="list-inline mb-0">
               <li
+                @click="$emit('openAuth')"
                 class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border"
               >
                 <!-- Account Sidebar Toggle Button -->
                 <a
+                  v-if="!me"
                   id="sidebarNavToggler"
-                  href="javascript:;"
                   role="button"
                   class="u-header-topbar__nav-link"
                   aria-controls="sidebarContent"
@@ -380,5 +383,12 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    me: {
+      type: Object,
+      default: null
+    }
+  }
+};
 </script>

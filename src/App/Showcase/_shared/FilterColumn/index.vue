@@ -146,7 +146,7 @@
           Filters
         </h3>
       </div>
-      <filters :categoryFilter="categoryFilter"/>
+      <filters :categoryFilter="categoryFilter" @select="onSelect"/>
       <div class="range-slider">
         <h4 class="font-size-14 mb-3 font-weight-bold">Price</h4>
         <!-- Range Slider -->
@@ -177,6 +177,7 @@
         <button
           type="submit"
           class="btn px-4 btn-primary-dark-w py-2 rounded-lg"
+          @click="$emit('filter')"
         >
           Filter
         </button>
@@ -385,6 +386,11 @@ export default {
     categoryFilter: Array,
     subcategories: Array,
     categoryTitle: String
+  },
+  methods: {
+    onSelect(event){
+      this.$emit('select', event)
+    }
   }
 };
 </script>

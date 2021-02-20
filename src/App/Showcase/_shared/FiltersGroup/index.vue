@@ -7,9 +7,14 @@
         :key="i"
     >
       <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input" :id="title+'-option-'+i"/>
+        <input 
+          type="checkbox" 
+          class="custom-control-input" 
+          :id="title+'-option-'+i"
+          @change="check(option, i)"
+        />
         <label class="custom-control-label" :for="title+'-option-'+i">
-          {{ option.title }}
+          {{ option.name }}
           <span class="text-gray-25 font-size-12 font-weight-normal">
             ({{ option.count }})
           </span>
@@ -20,18 +25,19 @@
     <!-- View More - Collapse -->
     <div class="collapse" id="collapseBrand" style="" :class="{'show': opened}">
       <div
-          class="form-group d-flex align-items-center justify-content-between mb-2 pb-1"
-          v-for="(option, j) of options.slice(maxVisible)"
-          :key="j+maxVisible"
+        class="form-group d-flex align-items-center justify-content-between mb-2 pb-1"
+        v-for="(option, j) of options.slice(maxVisible)"
+        :key="j+maxVisible"
       >
         <div class="custom-control custom-checkbox">
           <input
-              type="checkbox"
-              class="custom-control-input"
-              :id="title+'-option-'+j+maxVisible"
+            type="checkbox"
+            class="custom-control-input"
+            :id="title+'-option-'+j+maxVisible"
+            @change="check(option, j)"
           />
           <label class="custom-control-label" :for="title+'-option-'+j+maxVisible">
-            {{ option.title }}
+            {{ option.name }}
             <span class="text-gray-25 font-size-12 font-weight-normal">
               ({{ option.count }})
             </span>
@@ -87,8 +93,20 @@ export default {
     title: String
   },
   data: () => ({
-    opened: false
-  })
+    opened: false,
+    selected: []
+  }),
+  methods: {
+    check(option, index){
+      if(this.selected.indexOf(index)>=0){
+        this.selected.splice(this.selected.indexOf(index), 1)
+      } else {
+        this.selected.push(index)
+      }
+
+      this.$emit('select', this.selected)
+    }
+  }
 };
 </script>
 

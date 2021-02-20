@@ -117,6 +117,7 @@ export default {
     });
     return (await response.json()).data;
   },
+
   async createUser(email, password, phone, firstName, lastName) {
     const response = await fetch(env.endpoint, {
       method: "POST",
@@ -144,6 +145,24 @@ export default {
         }`,
       }),
     });
-    return (await response.json()).data;
+    return (await response.json());
+  },
+
+  async authorizeUser(email, password) {
+    const response = await fetch(env.endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        query: `mutation {
+          authorizeUser(input: {email:"${email}", password: "${password}"}){
+            accessToken
+            refreshToken
+            accessTokenExpirationDate
+            refreshTokenExpirationDate
+          }
+        }`,
+      }),
+    });
+    return (await response.json());
   },
 };

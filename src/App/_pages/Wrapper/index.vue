@@ -1,11 +1,16 @@
 <template>
   <div>
-    <service-header :categories="categories"/>
+    <service-header 
+      :categories="categories" 
+      @openAuth="authorizationSidebarOpened=true"
+      :me="me"
+    />
     <router-view :initialCategoriesArray="initialCategoriesArray"/>
     <service-footer
         :productColumns="footerProducts"
         :columnTitles="['Most viewed products','On sale Products','Top Rated Products']"
     />
+    <auth-sidebar :opened="authorizationSidebarOpened" @close="authorizationSidebarOpened=false"/>
   </div>
 </template>
 
@@ -14,12 +19,16 @@ import ServiceHeader from '@/App/_shared/components/ServiceHeader'
 import ServiceFooter from "@/App/_shared/components/ServiceFooter"
 import Categories from "@/App/_shared/services/Categories"
 import Products from "@/App/_shared/services/Products";
+import AuthSidebar from "@/App/_shared/components/AuthSidebar";
+import AuthService from "@/App/_shared/services/Auth"
+import Auth from "@/App/_shared/utils/Auth";
 
 export default {
   name: 'Generall-App-Wrapper',
   components: {
     'service-header': ServiceHeader,
-    'service-footer': ServiceFooter
+    'service-footer': ServiceFooter,
+    'auth-sidebar': AuthSidebar
   },
   async beforeRouteEnter(to, from, next) {
     const categories = await Categories.fetchCategories()
@@ -34,10 +43,27 @@ export default {
       vm.footerProducts = popularProducts
     })
   },
+  async mounted(){
+    const auth = new Auth()
+    const authValidation = auth.validate()
+
+    if(authValidation.accessTokenValid && authValidation.refreshTokenValid) {
+      this.me = await AuthService.getMe(auth.getToken())
+    } else if (!authValidation.accessTokenValid && authValidation.refreshTokenValid) {
+      const tokensRefreshed = await auth.refreshAccessToken()
+      if(!tokensRefreshed){
+        auth.logOut()
+      }
+    } else {
+      auth.logOut()
+    }
+  },
   data: () => ({
     categories: null,
     productColumns: null,
-    footerProducts: null
+    footerProducts: null,
+    authorizationSidebarOpened: false,
+    me: null
   }),
   computed: {
     initialCategoriesArray() {

@@ -24,9 +24,11 @@
     <div class="container">
       <div class="row mb-8">
         <filter-column
-            :categoryFilter="category.filters"
-            :subcategories="category.subcategories"
-            :categoryTitle="category.title"
+          :categoryFilter="category.filters"
+          :subcategories="category.subcategories"
+          :categoryTitle="category.title"
+          @select="selectFilters"
+          @filter="filter"
         />
         <div class="col-xl-9 col-wd-9gdot5">
           <!-- Shop-control-bar Title -->
@@ -88,16 +90,20 @@ export default {
     products: Array,
     categoriesFromRoot: Array,
     view: 0,
+    selectedFilters: null
   }),
   methods: {
     updateActiveViewScheme(index) {
       this.view = index;
+    },
+    selectFilters(filters){
+      this.selectedFilters = filters
+    },
+    async filter(){
+      this.products = await Products.fetchProducts(20, this.$route.params.categoryid, null, null, JSON.stringify(this.selectedFilters))
     }
-    ,
   }
-  ,
-}
-;
+};
 </script>
 
 <style>
