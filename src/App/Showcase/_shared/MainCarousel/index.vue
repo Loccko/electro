@@ -2,8 +2,8 @@
   <div>
     <div class="bg-img-hero" :style="{ 'background-image': `url(${sliderBg})` }">
       <div class="container min-height-438 overflow-hidden">
-        <carousel v-bind="settings" @afterChange="updateCurrentSlide">
-          <div class="js-slide" v-for="(item, i) of items" :key="i" :item="item">
+        <carousel v-bind="settings" @afterChange="updateCurrentSlide" v-if="categories">
+          <div class="js-slide" v-for="(category, i) of categories" :key="i">
             <div class="row min-height-438 pt-7 py-md-0">
               <div class="d-none d-xl-block col-auto">
                 <div class="max-width-270 min-width-270"></div>
@@ -38,7 +38,7 @@
               <div
                   class="col-xl-5 col-6 d-flex align-items-end ml-auto ml-md-0"
                   data-scs-animation-in="fadeInUp"
-                  :class="{'fadeInUp animated': currentSlideIndex==1}"
+                  :class="{'fadeInUp animated': currentSlideIndex === 1}"
                   data-scs-animation-delay="500"
                   :style="`animation-delay: 500ms;`"
               >
@@ -76,9 +76,7 @@ export default {
     carousel: VueSlickCarousel,
   },
   props: {
-    categories: {
-      required: true
-    }
+    categories: Array
   },
   data: () => ({
     settings: {
@@ -100,7 +98,6 @@ export default {
   }),
   methods: {
     updateCurrentSlide(e) {
-      console.log(e);
       setTimeout(() => {
         this.currentSlideIndex = e
       }, 600)

@@ -3,20 +3,17 @@
     <main-carousel class="mb-4"/>
     <div class="container">
       <div class="row">
-        <div class="col-xl-3 col-wd-auto d-none d-xl-block">
+        <div class="col-xl-3 col-wd-auto d-none d-xl-block" v-if="latestProducts">
           <left-side-panel :latestProducts="latestProducts"/>
         </div>
         <div class="col-xl-9 col-wd-auto max-width-1130">
           <main-banner :categories="categoriesWithoutSubcategories ? categoriesWithoutSubcategories.slice(0,2) : []"/>
           <tab-selector :products="popularProducts"/>
           <div class="mb-8" v-if="popularProducts && popularProducts[2] && popularProducts[2][0]">
-            <full-banner :image="popularProducts[2][0].node.images.size212x200.link"/>
+            <full-banner :image="popularProducts[2][0].images.size212x200.link"/>
           </div>
-          <div class="mb-8" v-if="categoriesWithoutSubcategories && categoriesWithoutSubcategories[0]">
-            <category-preview-slider
-                :slidesToShow="4"
-                :title="`Bestsellers`"
-                :item="categoriesWithoutSubcategories ? categoriesWithoutSubcategories[0] : null"
+          <div class="mb-8" v-if="categoriesWithoutSubcategories">
+            <category-preview-slider :slidesToShow="4" :title="`Bestsellers`" :products="categoriesWithoutSubcategories[0].products"
             />
           </div>
           <category-best-offers :category="categoriesWithoutSubcategories[2]"
@@ -26,41 +23,32 @@
           <div class="mb-8">
             <div class="row">
               <div class="col-md-6 mb-3 mb-md-0">
-                <img
-                    class="img-fluid"
-                    src="https://transvelo.github.io/electro-html/2.0/assets/img/536X150/img1.jpg"
-                    alt="Image Description"
-                />
+                <img class="img-fluid" src="https://transvelo.github.io/electro-html/2.0/assets/img/536X150/img1.jpg" alt="Image Description"/>
               </div>
               <div class="col-md-6">
-                <img
-                    class="img-fluid"
-                    src="https://transvelo.github.io/electro-html/2.0/assets/img/536X150/img2.jpg"
-                    alt="Image Description"
-                />
+                <img class="img-fluid" src="https://transvelo.github.io/electro-html/2.0/assets/img/536X150/img2.jpg" alt="Image Description"/>
               </div>
             </div>
           </div>
-          <category-preview-slider
-              :slidesToShow="5"
-              :title="categoriesWithoutSubcategories[0].title"
-              :item="categoriesWithoutSubcategories[0]"
+          <category-preview-slider v-if="categoriesWithoutSubcategories && categoriesWithoutSubcategories[0]"
+                                   :slidesToShow="5"
+                                   :title="categoriesWithoutSubcategories[0].title"
+                                   :products="categoriesWithoutSubcategories[0].products"
           />
-          <category-preview-slider
-              :slidesToShow="5"
-              :title="categoriesWithoutSubcategories[1].title"
-              :item="categoriesWithoutSubcategories[1]"
+          <category-preview-slider v-if="categoriesWithoutSubcategories && categoriesWithoutSubcategories[1]"
+                                   :slidesToShow="5"
+                                   :title="categoriesWithoutSubcategories[1].title"
+                                   :products="categoriesWithoutSubcategories[1].products"
           />
-          <category-preview-slider
-              :slidesToShow="5"
-              :title="categoriesWithoutSubcategories[19].title"
-              :item="categoriesWithoutSubcategories[19]"
+          <category-preview-slider v-if="categoriesWithoutSubcategories && categoriesWithoutSubcategories[19]"
+                                   :slidesToShow="5"
+                                   :title="categoriesWithoutSubcategories[19].title"
+                                   :products="categoriesWithoutSubcategories[19].products"
           />
-          <category-preview-slider
-              v-if="recentlyViewedProducts.length"
-              :slidesToShow="5"
-              :title="`Recently viewed`"
-              :item="recentlyViewedProducts"
+          <category-preview-slider v-if="recentlyViewedProducts"
+                                   :slidesToShow="5"
+                                   :title="`Recently viewed`"
+                                   :products="recentlyViewedProducts"
           />
         </div>
       </div>
@@ -96,14 +84,14 @@ export default {
   async beforeRouteEnter(to, from, next) {
 
     let popularProducts = [];
-    const popularityProducts = await Products.fetchProducts(5, null, 'popularity');
-    const topRatedProducts = await Products.fetchProducts(5, null, 'average_rating');
-    const discountedProducts = await Products.fetchProducts(5, null, 'discount');
+    const popularityProducts = await Products.fetchProducts(5, null, 'popularity')
+    const topRatedProducts = await Products.fetchProducts(5, null, 'average_rating')
+    const discountedProducts = await Products.fetchProducts(5, null, 'discount')
     popularProducts.push(popularityProducts, discountedProducts, topRatedProducts)
 
     const categoriesWithoutSubcategories = await Categories.fetchCategoriesWithoutSubcategories();
-    const latestProducts = await Products.fetchProducts(24, null, 'latest');
-    const recentlyViewedProducts = {'products': await Products.fetchRecentlyViewedProducts()};
+    const latestProducts = await Products.fetchProducts(24, null, 'latest')
+    const recentlyViewedProducts = await Products.fetchRecentlyViewedProducts()
 
     next((vm) => {
       vm.latestProducts = latestProducts;
@@ -116,7 +104,7 @@ export default {
     latestProducts: null,
     categoriesWithoutSubcategories: null,
     popularProducts: [],
-    recentlyViewedProducts: []
+    recentlyViewedProducts: null,
   }),
   methods: {}
 };

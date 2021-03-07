@@ -1,38 +1,16 @@
 <template>
   <div class="bg-gray-1 flex-center-between borders-radius-9 py-1">
-    <div class="d-xl-none">
-      <!-- Account Sidebar Toggle Button -->
-      <a
-        id="sidebarNavToggler1"
-        class="btn btn-sm py-1 font-weight-normal"
-        href="javascript:;"
-        role="button"
-        aria-controls="sidebarContent1"
-        aria-haspopup="true"
-        aria-expanded="false"
-        data-unfold-event="click"
-        data-unfold-hide-on-scroll="false"
-        data-unfold-target="#sidebarContent1"
-        data-unfold-type="css-animation"
-        data-unfold-animation-in="fadeInLeft"
-        data-unfold-animation-out="fadeOutLeft"
-        data-unfold-duration="500"
-      >
-        <i class="fas fa-sliders-h"></i> <span class="ml-1">Filters</span>
-      </a>
-      <!-- End Account Sidebar Toggle Button -->
-    </div>
     <div class="px-3 d-none d-xl-block">
       <ul class="nav nav-tab-shop" id="pills-tab" role="tablist">
         <li class="nav-item" @click="changeView(0)">
           <a
-            class="nav-link"
-            :class="{'active': view == 0, inactive:view !== 0 }"
-            :aria-selected="view == 0"
-            id="pills-one-example1-tab"
+              class="nav-link"
+              :class="{'active': view == 0, inactive:view !== 0 }"
+              :aria-selected="view == 0"
+              id="pills-one-example1-tab"
           >
             <div
-              class="d-md-flex justify-content-md-center align-items-md-center"
+                class="d-md-flex justify-content-md-center align-items-md-center"
             >
               <i class="fa fa-th"></i>
             </div>
@@ -40,13 +18,13 @@
         </li>
         <li class="nav-item" @click="changeView(1)">
           <a
-            class="nav-link"
-            :class="{ active: view == 1 , inactive:view !== 1 }"
-            :aria-selected="view == 1"
-            id="pills-two-example1-tab"
+              class="nav-link"
+              :class="{ active: view == 1 , inactive:view !== 1 }"
+              :aria-selected="view == 1"
+              id="pills-two-example1-tab"
           >
             <div
-              class="d-md-flex justify-content-md-center align-items-md-center"
+                class="d-md-flex justify-content-md-center align-items-md-center"
             >
               <i class="fa fa-align-justify"></i>
             </div>
@@ -54,12 +32,12 @@
         </li>
         <li class="nav-item" @click="changeView(2)">
           <a
-            class="nav-link"
-            id="pills-three-example1-tab"
-            :class="{ 'active': view == 2 , inactive:view !== 2 }"
+              class="nav-link"
+              id="pills-three-example1-tab"
+              :class="{ 'active': view == 2 , inactive:view !== 2 }"
           >
             <div
-              class="d-md-flex justify-content-md-center align-items-md-center"
+                class="d-md-flex justify-content-md-center align-items-md-center"
             >
               <i class="fa fa-list"></i>
             </div>
@@ -67,12 +45,12 @@
         </li>
         <li class="nav-item" @click="changeView(3)">
           <a
-            class="nav-link"
-            id="pills-four-example1-tab"
-            :class="{ 'active': view == 3, inactive:view !== 3  }"
+              class="nav-link"
+              id="pills-four-example1-tab"
+              :class="{ 'active': view == 3, inactive:view !== 3  }"
           >
             <div
-              class="d-md-flex justify-content-md-center align-items-md-center"
+                class="d-md-flex justify-content-md-center align-items-md-center"
             >
               <i class="fa fa-th-list"></i>
             </div>
@@ -80,48 +58,35 @@
         </li>
       </ul>
     </div>
+
     <div class="d-flex">
-      <form method="get">
-        <!-- Select -->
-        <select
-          class="js-select selectpicker dropdown-select max-width-200 max-width-160-sm right-dropdown-0 px-2 px-xl-0"
-          data-style="btn-sm bg-white font-weight-normal py-2 border text-gray-20 bg-lg-down-transparent border-lg-down-0"
-        >
-          <option value="one" selected>Default sorting</option>
-          <option value="two">Sort by popularity</option>
-          <option value="three">Sort by average rating</option>
-          <option value="four">Sort by latest</option>
-          <option value="five">Sort by price: low to high</option>
-          <option value="six">Sort by price: high to low</option>
-        </select>
-        <!-- End Select -->
-      </form>
-      <form method="POST" class="ml-2 d-none d-xl-block">
-        <!-- Select -->
-        <select
-          class="js-select selectpicker dropdown-select max-width-120"
-          data-style="btn-sm bg-white font-weight-normal py-2 border text-gray-20 bg-lg-down-transparent border-lg-down-0"
-        >
-          <option value="one" selected>Show 20</option>
-          <option value="two">Show 40</option>
-          <option value="three">Show All</option>
-        </select>
-        <!-- End Select -->
-      </form>
+      <div class="dropdown bootstrap-select js-select dropdown-select max-width-200 max-width-160-sm right-dropdown-0 px-2 px-xl-0">
+        <button class="btn dropdown-toggle btn-sm bg-white font-weight-normal py-2 border text-gray-20 bg-lg-down-transparent border-lg-down-0"
+                @click="showOder=!showOder"
+                type="button"
+                data-toggle="dropdown" role="button" title="Default sorting">
+          <div class="filter-option">
+            <div class="filter-option-inner">
+              <div class="filter-option-inner-inner"> {{ selectedSortingOrder }}</div>
+            </div>
+          </div>
+        </button>
+        <div class="dropdown-menu" role="combobox" :class="{'show':showOder}">
+          <div class="inner show" role="listbox" aria-expanded="true">
+            <ul class="dropdown-menu inner show">
+              <li v-for="(order, name, i) in sortingOrders" :key="i">
+                <a role="option" class="dropdown-item" @click="changeOrder(name)">
+                  <span class=" bs-ok-default check-mark"></span>
+                  <span class="text">{{ name }}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
     <nav class="px-3 flex-horizontal-center text-gray-20 d-none d-xl-flex">
-      <form method="post" class="min-width-50 mr-1">
-        <input
-          size="2"
-          min="1"
-          max="3"
-          step="1"
-          type="number"
-          class="form-control text-center px-2 height-35"
-          value="1"
-        />
-      </form>
-      of 3
+      1 of 3
       <a class="text-gray-30 font-size-20 ml-2" href="#">→</a>
     </nav>
   </div>
@@ -132,16 +97,36 @@ export default {
   props: {
     view: Number,
   },
+  data: () => ({
+    selectedSortingOrder: 'Default sorting',
+    showOder: false,
+    sortingOrders: {
+      'Default sorting': null,
+      'Sort by average rating': 'average_rating',
+      'Sort by popularity': 'popularity',
+      'Sort by latest': 'latest',
+      'Sort by discount': 'discount',
+      'Sort by price: low to high': 'price_low_to_high',
+      'Sort by price: high to low': 'price_high_to_low'
+    }
+  }),
   methods: {
     changeView(type) {
       this.$emit("changeview", type);
+    },
+    changeOrder(name) {
+      this.selectedSortingOrder = name
+      this.showOder = false
+      const value = this.sortingOrders[name]
+      console.log(this.selectedSortingOrder, this.showOder, value)
+      this.$emit("changeorder", value)
     },
   },
 };
 </script>
 
 <style scoped>
-  .inactive {
-    opacity: .3 !important;
-  }
+.inactive {
+  opacity: .3 !important;
+}
 </style>

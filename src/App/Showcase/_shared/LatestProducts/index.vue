@@ -5,21 +5,16 @@
     </div>
     <carousel v-bind="settings" @afterChange="updateCurrentSlide" ref="slider">
       <div v-for="i of 3" :key="i">
-        <latest-product-item
-            v-for="(item, j) of itemsPart(i-1)"
-            :key="j"
-            :item="item.node"
-        />
+        <latest-product-item v-for="(item, j) of itemsPart(i-1)" :key="j" :item="item"/>
       </div>
     </carousel>
-    <div
-        @click="showPrev"
-        class="js-prev position-absolute top-0 font-size-17 u-slick__arrow-normal top-10 fa fa-angle-left right-1 slick-arrow"
-        aria-disabled="false"
-        style="">
+    <div class="js-prev position-absolute top-0 font-size-17 u-slick__arrow-normal top-10 fa fa-angle-left right-1 slick-arrow"
+         @click="showPrev"
+         aria-disabled="false"
+         style="">
     </div>
-    <div @click="showNext"
-         class="js-next position-absolute top-0 font-size-17 u-slick__arrow-normal top-10 fa fa-angle-right right-0 slick-arrow"
+    <div class="js-next position-absolute top-0 font-size-17 u-slick__arrow-normal top-10 fa fa-angle-right right-0 slick-arrow"
+         @click="showNext"
          style=""
          aria-disabled="false">
     </div>

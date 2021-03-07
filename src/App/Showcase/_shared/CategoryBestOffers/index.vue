@@ -5,18 +5,14 @@
     </div>
     <div class="row">
       <div class="col-auto">
-        <a href="../shop/shop.html" class="d-block">
-          <img
-              class="img-fluid"
-              :src="category.images.size212x305.link"
-              alt="Image Description"
-          />
-        </a>
+        <router-link :to="`/goods/${category.id}`" class="d-block">
+          <img class="img-fluid" :src="category.images.size212x305.link" alt="Image Description"/>
+        </router-link>
       </div>
-      <div class="col">
+      <div class="col" v-if="products && products.length > 1">
         <ul class="row list-unstyled products-group no-gutters">
           <li :class="removeDivider(i)" v-for="i of 4" :key="i">
-            <product-card :item="products[i-1].node"/>
+            <product-card :item="products[i-1]"/>
           </li>
         </ul>
       </div>
@@ -27,7 +23,6 @@
 <script>
 import ProductCard from "@/App/Showcase/_shared/ProductCard"
 import Products from "@/App/_shared/services/Products";
-
 
 export default {
   props: {
@@ -48,13 +43,11 @@ export default {
       }
       return "col-6 col-md-4 col-wd-3 product-item"
     }
-
   },
   async mounted() {
     this.products = await Products.fetchProducts(4, this.category.id);
   }
-}
-;
+};
 </script>
 
 <style></style>

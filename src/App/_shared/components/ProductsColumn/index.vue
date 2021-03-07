@@ -7,44 +7,27 @@
     </div>
 
     <ul class="list-unstyled products-group">
-      <li
-          class="product-item product-item__list row no-gutters mb-6 remove-divider"
-          v-for="product of products"
-          :key="product.id"
-      >
+      <li class="product-item product-item__list row no-gutters mb-6 remove-divider" v-for="(product, i) of products" :key="i">
         <div class="col-auto">
-          <router-link
-              to="../shop/single-product-fullwidth.html"
-              class="d-block width-75 text-center"
-          ><img
-              class="img-fluid"
-              :src="product.node.images.size75x75.link"
-              alt="Image Description"
-          /></router-link>
+          <router-link to="../shop/single-product-fullwidth.html" class="d-block width-75 text-center">
+            <img class="img-fluid" :src="product.images.size75x75.link" alt="Image Description"/>
+          </router-link>
         </div>
         <div class="col pl-4 d-flex flex-column">
           <h5 class="product-item__title mb-0">
-            <router-link
-                to="../shop/single-product-fullwidth.html"
-                class="text-blue font-weight-bold"
-            >{{ product.node.title }}
-            </router-link
-            >
+            <router-link to="../shop/single-product-fullwidth.html" class="text-blue font-weight-bold">
+              {{ product.title }}
+            </router-link>
           </h5>
           <div v-if="type === 'rated'" class="text-warning mb-2">
-            <small
-                class="fas fa-star"
-                v-for="star of 5"
-                :key="star"
-                :class="{ 'text-muted': star > product.node.averageRating }"
-            ></small>
+            <small class="fas fa-star" v-for="star of 5" :key="star" :class="{ 'text-muted': star > product.averageRating }"></small>
           </div>
           <div class="prodcut-price mt-auto flex-horizontal-center">
             <ins class="font-size-15 text-decoration-none">
-              ${{ product.node.priceWithDiscount }}
+              ${{ product.priceWithDiscount }}
             </ins>
-            <del class="font-size-12 text-gray-9 ml-2" v-if="product.node.discount">
-              ${{ product.node.price }}
+            <del class="font-size-12 text-gray-9 ml-2" v-if="product.discount">
+              ${{ product.price }}
             </del>
           </div>
         </div>

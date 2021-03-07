@@ -1,186 +1,161 @@
 import env from "@/environment";
 
 export default {
-  async fetchProducts(
-    first = 20,
-    category = null,
-    orderBy = null,
-    after = null,
-    filters = null
-  ) {
-    let requestParams = {
-      category,
-      first,
-      after,
-      orderBy,
-    };
-
-    for (const iterator in requestParams) {
-      if (requestParams[iterator] === null) {
-        delete requestParams[iterator];
-      }
-    }
-
-    let str = "";
-
-    for (const iterator in requestParams) {
-      let val = requestParams[iterator];
-      if (typeof requestParams[iterator] == "string") {
-        val = `"${val}"`;
-      }
-      str = str + "," + iterator + ": " + val;
-    }
-
-    if(filters) {
-      str = str + ", filters:" + filters.substr(0, filters.length)
-    }
-
-    const response = await fetch(env.endpoint, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        query: `{
-            products(${str}) {
-              edges {
-                node {
-                  id
-                  title
-                  amount
-                  keyFeatures
-                  createdAt
-                  category {
-                    title
-                    id
-                  }
-                  price
-                  discount
-                  priceWithDiscount
-                  averageRating
-                  sku
-                  comments {
-                    id
-                  }
-                  images {
-                      size150x140 {
-                        link
-                      }
-                      size212x200 {
-                        link
-                      }
-                      size75x75 {
-                        link
-                      }
-                  }
-                }
-              }
-              pageInfo {
-                hasNextPage
-                endCursor
-              }
+    async fetchProducts(amount = 20, category = null, orderBy = null, filters = null) {
+        let requestParams = {
+            category,
+            amount,
+            orderBy,
+        };
+        for (const iterator in requestParams) {
+            if (requestParams[iterator] === null) {
+                delete requestParams[iterator];
             }
-        }`,
-      }),
-    });
-    return (await response.json()).data.products.edges;
-  },
-
-  async fetchProduct(id) {
-    const response = await fetch(env.endpoint, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        query: `{
-          node (id: "${id}"){
-            ...on Product {
-              id
-              title
-              sku
-              images {
-                size75x75 {
-                  link
-                }
-                size150x140 {
-                  link
-                }
-                size720x660 {
-                  link
-                }
-                size500x400 {
-                  link
-                }
-              }
-              category {
-                id
-                title
-              }
-              price
-              discount
-              priceWithDiscount
-              amount
-              isAvailable
-              views
-              overview
-              keyFeatures
-              description {
-                name
-                text
-              }
-              averageRating
-              comments {
-                id
-                author {
-                  id
-                  email
-                  phone
-                  assignDate
-                  data {
-                    firstName
-                    lastName
-                    address {
-                      city
-                      street
-                      apartment
-                      zipCode
-                    }
-                  }
-                }
-                text
-                rating
-                createdAt
-              }
-              createdAt
-            }
-          }
         }
-        `,
-      }),
-    });
 
-    return (await response.json()).data.node;
-  },
+        let str = "";
 
-  async fetchRecentlyViewedProducts() {
-    const response = await fetch(env.endpoint, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        query: `{
+        for (const iterator in requestParams) {
+            let val = requestParams[iterator];
+            if (typeof requestParams[iterator] == "string") {
+                val = `"${val}"`;
+            }
+            str = str + "," + iterator + ": " + val;
+        }
+
+        if (filters) {
+            const filters_stringified = []
+            for (const filter in filters) {
+                const current_filter = filters[filter]
+                if (current_filter.options.length > 0) {
+                    filters_stringified.push('{name: "' + current_filter.name + '", options: ' + JSON.stringify(current_filter.options) + '}')
+                }
+            }
+            str += ', filters: [' + filters_stringified + ']'
+        }
+
+        const response = await fetch(env.endpoint, {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                query: `{
+                          products(${str}) {
+                            id
+                            title
+                            amount
+                            keyFeatures
+                            createdAt
+                            categories {
+                              title
+                              id
+                            }
+                            price
+                            discount
+                            priceWithDiscount
+                            averageRating
+                            sku
+                            comments {
+                              id
+                            }
+                            images {
+                              size150x140 {
+                                link
+                              }
+                              size212x200 {
+                                link
+                              }
+                              size75x75 {
+                                link
+                              }
+                            }
+                          }
+                        }`,
+            }),
+        });
+        return (await response.json()).data.products
+    },
+
+    async fetchProduct(id) {
+        const response = await fetch(env.endpoint, {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                query: `{
+                          node (id: "${id}"){
+                            ...on Product {
+                              id
+                              title
+                              sku
+                              images {
+                                size720x660 {
+                                  link
+                                }
+                              }
+                              categories {
+                                id
+                                title
+                              }
+                              price
+                              discount
+                              priceWithDiscount
+                              amount
+                              isAvailable
+                              overview
+                              keyFeatures
+                              description {
+                                name
+                                text
+                              }
+                              averageRating
+                              comments {
+                                author {
+                                  data {
+                                    firstName
+                                    lastName
+                                  }
+                                }
+                                text
+                                rating
+                                createdAt
+                              }
+                            }
+                          }
+                        }`,
+            }),
+        });
+
+        return (await response.json()).data.node;
+    },
+
+    async fetchRecentlyViewedProducts() {
+        const response = await fetch(env.endpoint, {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            credentials: "include",
+            body: JSON.stringify({
+                query: `{
                           recentlyViewedProducts {
                             id
                             title
                             price
                             discount
                             priceWithDiscount
+                            amount
+                            categories {
+                              id
+                              title
+                            }
                             images {
-                              size150x140 {
+                              size212x200 {
                                 link
                               }
                             }
                           }
                         }`,
-      }),
-    });
+            }),
+        });
 
-    return (await response.json()).data.node;
-  },
+        return (await response.json()).data.recentlyViewedProducts;
+    }
+    ,
 };

@@ -1,15 +1,8 @@
 <template>
   <div>
-    <service-header 
-      :categories="categories" 
-      @openAuth="authorizationSidebarOpened=true"
-      :me="me"
-    />
-    <router-view :initialCategoriesArray="initialCategoriesArray"/>
-    <service-footer
-        :productColumns="footerProducts"
-        :columnTitles="['Most viewed products','On sale Products','Top Rated Products']"
-    />
+    <service-header :categories="categories" @openAuth="authorizationSidebarOpened=true"/>
+    <router-view/>
+    <service-footer :productColumns="footerProducts" :columnTitles="['Most viewed products','On sale Products','Top Rated Products']"/>
     <auth-sidebar :opened="authorizationSidebarOpened" @close="authorizationSidebarOpened=false"/>
   </div>
 </template>
@@ -20,8 +13,6 @@ import ServiceFooter from "@/App/_shared/components/ServiceFooter"
 import Categories from "@/App/_shared/services/Categories"
 import Products from "@/App/_shared/services/Products";
 import AuthSidebar from "@/App/_shared/components/AuthSidebar";
-import AuthService from "@/App/_shared/services/Auth"
-import Auth from "@/App/_shared/utils/Auth";
 
 export default {
   name: 'Generall-App-Wrapper',
@@ -33,9 +24,9 @@ export default {
   async beforeRouteEnter(to, from, next) {
     const categories = await Categories.fetchCategories()
     let popularProducts = []
-    const mostViewedProducts = await Products.fetchProducts(3, null, 'popularity');
-    const discountedProducts = await Products.fetchProducts(3, null, 'discount');
-    const topRatedProducts = await Products.fetchProducts(3, null, 'average_rating');
+    const mostViewedProducts = await Products.fetchProducts(3, null, 'popularity')
+    const discountedProducts = await Products.fetchProducts(3, null, 'discount')
+    const topRatedProducts = await Products.fetchProducts(3, null, 'average_rating')
     popularProducts.push(mostViewedProducts, discountedProducts, topRatedProducts)
 
     next(vm => {
@@ -43,35 +34,20 @@ export default {
       vm.footerProducts = popularProducts
     })
   },
-  async mounted(){
-    const auth = new Auth()
-    const authValidation = auth.validate()
-
-    if(authValidation.accessTokenValid && authValidation.refreshTokenValid) {
-      this.me = await AuthService.getMe(auth.getToken())
-    } else if (!authValidation.accessTokenValid && authValidation.refreshTokenValid) {
-      const tokensRefreshed = await auth.refreshAccessToken()
-      if(!tokensRefreshed){
-        auth.logOut()
-      }
-    } else {
-      auth.logOut()
+  async mounted() {
+    await this.$store.dispatch('initAuth')
+    const token = this.$store.getters.token()
+    if (token) {
+      await this.$store.dispatch('fetchUser', token)
     }
+    await this.$store.dispatch('fetchWishlist', token);
+    await this.$store.dispatch('fetchCart', token);
   },
   data: () => ({
     categories: null,
     productColumns: null,
     footerProducts: null,
     authorizationSidebarOpened: false,
-    me: null
-  }),
-  computed: {
-    initialCategoriesArray() {
-      if (this.categories && this.categories.length > 0) {
-        return this.categories
-      }
-      return null
-    }
-  }
+  })
 };
 </script>

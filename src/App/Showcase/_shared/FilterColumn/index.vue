@@ -4,135 +4,41 @@
       <!-- List -->
       <ul id="sidebarNav" class="list-unstyled mb-0 sidebar-navbar">
         <li>
-          <a
-            class="dropdown-toggle dropdown-toggle-collapse dropdown-title"
-            href="javascript:;"
-            role="button"
-            data-toggle="collapse"
-            aria-expanded="false"
-            aria-controls="sidebarNav1Collapse"
-            data-target="#sidebarNav1Collapse"
+          <a class="dropdown-toggle dropdown-toggle-collapse dropdown-title"
+             role="button"
+             data-toggle="collapse"
+             @click="showRootCategories = !showRootCategories"
+             :aria-expanded="showRootCategories"
+             aria-controls="sidebarNav1Collapse"
+             data-target="#sidebarNav1Collapse"
           >
             Show All Categories
           </a>
 
-          <div
-            id="sidebarNav1Collapse"
-            class="collapse"
-            data-parent="#sidebarNav"
-          >
+          <div id="sidebarNav1Collapse" class="collapse" data-parent="#sidebarNav" :class="{show: showRootCategories}">
             <ul id="sidebarNav1" class="list-unstyled dropdown-list">
-              <!-- Menu List -->
-              <li>
-                <a class="dropdown-item" href="#"
-                  >Accessories<span
-                    class="text-gray-25 font-size-12 font-weight-normal"
-                  >
-                    (56)</span
-                  ></a
-                >
+              <li v-for="(cat, i) of rootCategories" :key="i">
+                <a :href="`/goods/${cat.id}`" class="dropdown-item">
+                  {{ cat.title }}
+                  <span class="text-gray-25 font-size-12 font-weight-normal">({{ cat.amount }})</span>
+                </a>
               </li>
-              <li>
-                <a class="dropdown-item" href="#"
-                  >Cameras & Photography<span
-                    class="text-gray-25 font-size-12 font-weight-normal"
-                  >
-                    (11)</span
-                  ></a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="#"
-                  >Computer Components<span
-                    class="text-gray-25 font-size-12 font-weight-normal"
-                  >
-                    (22)</span
-                  ></a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="#"
-                  >Gadgets<span
-                    class="text-gray-25 font-size-12 font-weight-normal"
-                  >
-                    (5)</span
-                  ></a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="#"
-                  >Home Entertainment<span
-                    class="text-gray-25 font-size-12 font-weight-normal"
-                  >
-                    (7)</span
-                  ></a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="#"
-                  >Laptops & Computers<span
-                    class="text-gray-25 font-size-12 font-weight-normal"
-                  >
-                    (42)</span
-                  ></a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="#"
-                  >Printers & Ink<span
-                    class="text-gray-25 font-size-12 font-weight-normal"
-                  >
-                    (63)</span
-                  ></a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="#"
-                  >Smart Phones & Tablets<span
-                    class="text-gray-25 font-size-12 font-weight-normal"
-                  >
-                    (11)</span
-                  ></a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="#"
-                  >TV & Audio<span
-                    class="text-gray-25 font-size-12 font-weight-normal"
-                  >
-                    (66)</span
-                  ></a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="#"
-                  >Video Games & Consoles<span
-                    class="text-gray-25 font-size-12 font-weight-normal"
-                  >
-                    (31)</span
-                  ></a
-                >
-              </li>
-              <!-- End Menu List -->
             </ul>
           </div>
         </li>
         <li>
           <a class="dropdown-current active" href="#">
-            {{ categoryTitle }}
-            <span class="text-gray-25 font-size-12 font-weight-normal">
-              (50)
-            </span>
+            {{ category.title }}
+            <span class="text-gray-25 font-size-12 font-weight-normal">({{ category.amount }})</span>
           </a>
-          <ul class="list-unstyled dropdown-list" v-if="subcategories && subcategories.length>0">
-            <!-- Menu List -->
-            <li v-for="category of subcategories" :key="category.id">
-              <router-link class="dropdown-item" :to="`/goods/${category.id}`">
+          <ul class="list-unstyled dropdown-list" v-if="category">
+            <li v-for="category of category.subcategories" :key="category.id">
+              <a class="dropdown-item" :href="`/goods/${category.id}`">
                 {{ category.title }}
                 <span class="text-gray-25 font-size-12 font-weight-normal">
-                  ({{ category.count ? category.count : 0 }})
+                  ({{ category.amount }})
                 </span>
-              </router-link
+              </a
               >
             </li>
           </ul>
@@ -146,250 +52,39 @@
           Filters
         </h3>
       </div>
-      <filters :categoryFilter="categoryFilter" @select="onSelect"/>
-      <div class="range-slider">
-        <h4 class="font-size-14 mb-3 font-weight-bold">Price</h4>
-        <!-- Range Slider -->
-        <input
-          class="js-range-slider"
-          type="text"
-          data-extra-classes="u-range-slider u-range-slider-indicator u-range-slider-grid"
-          data-type="double"
-          data-grid="false"
-          data-hide-from-to="true"
-          data-prefix="$"
-          data-min="0"
-          data-max="3456"
-          data-from="0"
-          data-to="3456"
-          data-result-min="#rangeSliderExample3MinResult"
-          data-result-max="#rangeSliderExample3MaxResult"
-        />
-        <!-- End Range Slider -->
-        <div class="mt-1 text-gray-111 d-flex mb-4">
-          <span class="mr-0dot5">Price: </span>
-          <span>$</span>
-          <span id="rangeSliderExample3MinResult" class=""></span>
-          <span class="mx-0dot5"> — </span>
-          <span>$</span>
-          <span id="rangeSliderExample3MaxResult" class=""></span>
-        </div>
-        <button
-          type="submit"
-          class="btn px-4 btn-primary-dark-w py-2 rounded-lg"
-          @click="$emit('filter')"
-        >
-          Filter
-        </button>
-      </div>
-    </div>
-    <div class="mb-8">
-      <div class="border-bottom border-color-1 mb-5">
-        <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18">
-          Latest Products
-        </h3>
-      </div>
-      <ul class="list-unstyled">
-        <li class="mb-4">
-          <div class="row">
-            <div class="col-auto">
-              <a
-                href="../shop/single-product-fullwidth.html"
-                class="d-block width-75"
-              >
-                <img
-                  class="img-fluid"
-                  src="@/assets/img/300X300/img1.jpg"
-                  alt="Image Description"
-                />
-              </a>
-            </div>
-            <div class="col">
-              <h3 class="text-lh-1dot2 font-size-14 mb-0">
-                <a href="../shop/single-product-fullwidth.html"
-                  >Notebook Black Spire V Nitro VN7-591G</a
-                >
-              </h3>
-              <div
-                class="text-warning text-ls-n2 font-size-16 mb-1"
-                style="width: 80px"
-              >
-                <small class="fas fa-star"></small>
-                <small class="fas fa-star"></small>
-                <small class="fas fa-star"></small>
-                <small class="fas fa-star"></small>
-                <small class="far fa-star text-muted"></small>
-              </div>
-              <div class="font-weight-bold">
-                <del class="font-size-11 text-gray-9 d-block">$2299.00</del>
-                <ins class="font-size-15 text-red text-decoration-none d-block"
-                  >$1999.00</ins
-                >
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="mb-4">
-          <div class="row">
-            <div class="col-auto">
-              <a
-                href="../shop/single-product-fullwidth.html"
-                class="d-block width-75"
-              >
-                <img
-                  class="img-fluid"
-                  src="@/assets/img/300X300/img3.jpg"
-                  alt="Image Description"
-                />
-              </a>
-            </div>
-            <div class="col">
-              <h3 class="text-lh-1dot2 font-size-14 mb-0">
-                <a href="../shop/single-product-fullwidth.html"
-                  >Notebook Black Spire V Nitro VN7-591G</a
-                >
-              </h3>
-              <div
-                class="text-warning text-ls-n2 font-size-16 mb-1"
-                style="width: 80px"
-              >
-                <small class="fas fa-star"></small>
-                <small class="fas fa-star"></small>
-                <small class="fas fa-star"></small>
-                <small class="fas fa-star"></small>
-                <small class="far fa-star text-muted"></small>
-              </div>
-              <div class="font-weight-bold font-size-15">$499.00</div>
-            </div>
-          </div>
-        </li>
-        <li class="mb-4">
-          <div class="row">
-            <div class="col-auto">
-              <a
-                href="../shop/single-product-fullwidth.html"
-                class="d-block width-75"
-              >
-                <img
-                  class="img-fluid"
-                  src="@/assets/img/300X300/img5.jpg"
-                  alt="Image Description"
-                />
-              </a>
-            </div>
-            <div class="col">
-              <h3 class="text-lh-1dot2 font-size-14 mb-0">
-                <a href="../shop/single-product-fullwidth.html"
-                  >Tablet Thin EliteBook Revolve 810 G6</a
-                >
-              </h3>
-              <div
-                class="text-warning text-ls-n2 font-size-16 mb-1"
-                style="width: 80px"
-              >
-                <small class="fas fa-star"></small>
-                <small class="fas fa-star"></small>
-                <small class="fas fa-star"></small>
-                <small class="fas fa-star"></small>
-                <small class="far fa-star text-muted"></small>
-              </div>
-              <div class="font-weight-bold font-size-15">$100.00</div>
-            </div>
-          </div>
-        </li>
-        <li class="mb-4">
-          <div class="row">
-            <div class="col-auto">
-              <a
-                href="../shop/single-product-fullwidth.html"
-                class="d-block width-75"
-              >
-                <img
-                  class="img-fluid"
-                  src="@/assets/img/300X300/img6.jpg"
-                  alt="Image Description"
-                />
-              </a>
-            </div>
-            <div class="col">
-              <h3 class="text-lh-1dot2 font-size-14 mb-0">
-                <a href="../shop/single-product-fullwidth.html"
-                  >Notebook Purple G952VX-T7008T</a
-                >
-              </h3>
-              <div
-                class="text-warning text-ls-n2 font-size-16 mb-1"
-                style="width: 80px"
-              >
-                <small class="fas fa-star"></small>
-                <small class="fas fa-star"></small>
-                <small class="fas fa-star"></small>
-                <small class="fas fa-star"></small>
-                <small class="far fa-star text-muted"></small>
-              </div>
-
-              <div class="font-weight-bold">
-                <del class="font-size-11 text-gray-9 d-block">$2299.00</del>
-                <ins class="font-size-15 text-red text-decoration-none d-block"
-                  >$1999.00</ins
-                >
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="mb-4">
-          <div class="row">
-            <div class="col-auto">
-              <a
-                href="../shop/single-product-fullwidth.html"
-                class="d-block width-75"
-              >
-                <img
-                  class="img-fluid"
-                  src="@/assets/img/300X300/img10.png"
-                  alt="Image Description"
-                />
-              </a>
-            </div>
-            <div class="col">
-              <h3 class="text-lh-1dot2 font-size-14 mb-0">
-                <a href="../shop/single-product-fullwidth.html"
-                  >Laptop Yoga 21 80JH0035GE W8.1</a
-                >
-              </h3>
-              <div
-                class="text-warning text-ls-n2 font-size-16 mb-1"
-                style="width: 80px"
-              >
-                <small class="fas fa-star"></small>
-                <small class="fas fa-star"></small>
-                <small class="fas fa-star"></small>
-                <small class="fas fa-star"></small>
-                <small class="far fa-star text-muted"></small>
-              </div>
-              <div class="font-weight-bold font-size-15">$1200.00</div>
-            </div>
-          </div>
-        </li>
-      </ul>
+      <filters :categoryFilter="category.filters" @select="onSelect"/>
+      <button type="submit" class="btn px-4 btn-primary-dark-w py-2 rounded-lg" @click="$emit('filter'); scrollToTop();">
+        Filter
+      </button>
     </div>
   </div>
 </template>
 
 <script>
 import Filters from "@/App/Showcase/_shared/Filters"
+import Categories from "@/App/_shared/services/Categories"
+
+
 export default {
+  async mounted() {
+    this.rootCategories = await Categories.fetchRootCategories()
+  },
   components: {
-    'filters':Filters
+    'filters': Filters
   },
   props: {
-    categoryFilter: Array,
-    subcategories: Array,
-    categoryTitle: String
+    category: null
   },
+  data: () => ({
+    rootCategories: Array,
+    showRootCategories: false,
+  }),
   methods: {
-    onSelect(event){
+    onSelect(event) {
       this.$emit('select', event)
+    },
+    scrollToTop() {
+      window.scrollTo(0, 0);
     }
   }
 };
