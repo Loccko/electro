@@ -5,6 +5,10 @@ const GoodsPage = () => import('./_pages/Goods')
 const ProductPage = () => import('./_pages/Product')
 const CartPage = () => import('./_pages/Cart')
 const WishlistPage = () => import('./_pages/Wishlist')
+const About = () => import('./_pages/About')
+const FAQs = () => import('./_pages/FAQs')
+const Contact = () => import('./_pages/Contact')
+
 
 const showcaseRoutes = [
     {
@@ -35,6 +39,21 @@ const showcaseRoutes = [
                 path: '/wishlist',
                 component: WishlistPage,
                 name: 'wishlist'
+            },
+            {
+                path: '/about',
+                component: About,
+                name: 'about'
+            },
+            {
+                path: '/faq',
+                component: FAQs,
+                name: 'faq'
+            },
+            {
+                path: '/contact-us',
+                component: Contact,
+                name: 'contact-us'
             },
         ]
     }

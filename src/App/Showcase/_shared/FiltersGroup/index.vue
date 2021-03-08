@@ -20,8 +20,8 @@
            :key="j+maxVisible"
       >
         <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" :id="title+'-option-'+j+maxVisible" @change="check(option, j)"/>
-          <label class="custom-control-label" :for="title+'-option-'+j+maxVisible">
+          <input type="checkbox" class="custom-control-input" :id="title+'-option-'+ (j + maxVisible)" @change="check(option, j + maxVisible)"/>
+          <label class="custom-control-label" :for="title+'-option-'+ (j + maxVisible)">
             {{ option.name }}
             <span class="text-gray-25 font-size-12 font-weight-normal">
               ({{ option.count }})

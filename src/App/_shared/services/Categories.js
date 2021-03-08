@@ -47,6 +47,9 @@ export default {
                               size212x305 {
                                 link
                               }
+                              size246x176 {
+                                link
+                              }
                             }
                             products {
                               id

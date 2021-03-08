@@ -1,13 +1,13 @@
 <template>
   <div>
-    <main-carousel class="mb-4"/>
+    <main-carousel :categories="categoriesWithoutSubcategories ? categoriesWithoutSubcategories.slice(0,1) : []" class="mb-4"/>
     <div class="container">
       <div class="row">
         <div class="col-xl-3 col-wd-auto d-none d-xl-block" v-if="latestProducts">
           <left-side-panel :latestProducts="latestProducts"/>
         </div>
         <div class="col-xl-9 col-wd-auto max-width-1130">
-          <main-banner :categories="categoriesWithoutSubcategories ? categoriesWithoutSubcategories.slice(0,2) : []"/>
+          <main-banner :categories="categoriesWithoutSubcategories ? categoriesWithoutSubcategories.slice(0,3) : []"/>
           <tab-selector :products="popularProducts"/>
           <div class="mb-8" v-if="popularProducts && popularProducts[2] && popularProducts[2][0]">
             <full-banner :image="popularProducts[2][0].images.size212x200.link"/>
@@ -45,7 +45,7 @@
                                    :title="categoriesWithoutSubcategories[19].title"
                                    :products="categoriesWithoutSubcategories[19].products"
           />
-          <category-preview-slider v-if="recentlyViewedProducts"
+          <category-preview-slider v-if="recentlyViewedProducts && recentlyViewedProducts.length > 1"
                                    :slidesToShow="5"
                                    :title="`Recently viewed`"
                                    :products="recentlyViewedProducts"

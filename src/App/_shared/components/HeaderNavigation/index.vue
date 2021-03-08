@@ -129,29 +129,50 @@
                   <li class="nav-item u-header__nav-item">
                     <router-link to="/" class="nav-link u-header__nav-link">Home</router-link>
                   </li>
-                  <li class="nav-item hs-has-mega-menu u-header__nav-item" data-event="click" data-animation-in="slideInUp"
-                      data-animation-out="fadeOut">
-                    <router-link id="pagesMegaMenu"
-                                 class="nav-link u-header__nav-link"
-                                 href="javascript:;"
-                                 aria-haspopup="true"
-                                 aria-expanded="false"
-                                 to="/categories"
+                  <li class="nav-item hs-has-sub-menu u-header__nav-item"
+                      :class="{'hs-sub-menu-opened': showCategories}"
+                      data-event="hover"
+                      data-animation-in="slideInUp"
+                      data-animation-out="fadeOut"
+                  >
+                    <a id="HomeMegaMenu"
+                       class="nav-link u-header__nav-link u-header__nav-link-toggle"
+                       aria-haspopup="true"
+                       aria-expanded="false"
+                       aria-labelledby="HomeSubMenu"
+                       @mouseover="showCategories = true"
                     >
                       Categories
-                    </router-link>
+                    </a>
+                    <ul id="HomeSubMenu"
+                        class="hs-sub-menu u-header__sub-menu animated "
+                        :class="{'slideInUp': showCategories, 'fadeOut': !showCategories}"
+                        aria-labelledby="HomeMegaMenu"
+                        style="min-width: 230px; display: block;"
+                        @mouseleave="showCategories = false"
+                    >
+                      <li v-for="(category, i) of categories" :key="i">
+                        <router-link class="nav-link u-header__sub-menu-nav-link" :to="`/goods/${category.id}`">{{ category.title }}</router-link>
+                      </li>
+                    </ul>
                   </li>
                   <li class="nav-item u-header__nav-item">
-                    <a class="nav-link u-header__nav-link" href="about.html">Cart</a>
+                    <router-link class="nav-link u-header__nav-link" to="/cart">Cart</router-link>
                   </li>
                   <li class="nav-item u-header__nav-item">
-                    <a class="nav-link u-header__nav-link" href="about.html">About us</a>
+                    <router-link class="nav-link u-header__nav-link" to="/wishlist">Wishlist</router-link>
                   </li>
                   <li class="nav-item u-header__nav-item">
-                    <a class="nav-link u-header__nav-link" href="faq.html">FAQs</a>
+                    <router-link class="nav-link u-header__nav-link" to="/about">About us</router-link>
                   </li>
                   <li class="nav-item u-header__nav-item">
-                    <a class="nav-link u-header__nav-link" href="contact-v1.html">Contact Us</a>
+                    <router-link class="nav-link u-header__nav-link" to="/faq">FAQs</router-link>
+                  </li>
+                  <li class="nav-item u-header__nav-item">
+                    <router-link class="nav-link u-header__nav-link" to="/contact-us">Contact Us</router-link>
+                  </li>
+                  <li class="nav-item u-header__nav-item">
+                    <router-link class="nav-link u-header__nav-link" to="/contact-us">Product Support</router-link>
                   </li>
                 </ul>
               </div>
@@ -181,6 +202,12 @@
 
 <script>
 export default {
+  props: {
+    categories: null,
+  },
+  data: () => ({
+    showCategories: false,
+  }),
   computed: {
     user() {
       return this.$store.getters.user;
