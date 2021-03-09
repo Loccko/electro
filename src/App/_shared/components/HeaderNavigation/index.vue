@@ -140,6 +140,7 @@
                        aria-haspopup="true"
                        aria-expanded="false"
                        aria-labelledby="HomeSubMenu"
+                       @click="showCategories = !showCategories"
                        @mouseover="showCategories = true"
                     >
                       Categories
@@ -163,6 +164,9 @@
                     <router-link class="nav-link u-header__nav-link" to="/wishlist">Wishlist</router-link>
                   </li>
                   <li class="nav-item u-header__nav-item">
+                    <router-link class="nav-link u-header__nav-link" to="/compare">Compare</router-link>
+                  </li>
+                  <li class="nav-item u-header__nav-item">
                     <router-link class="nav-link u-header__nav-link" to="/about">About us</router-link>
                   </li>
                   <li class="nav-item u-header__nav-item">
@@ -170,9 +174,6 @@
                   </li>
                   <li class="nav-item u-header__nav-item">
                     <router-link class="nav-link u-header__nav-link" to="/contact-us">Contact Us</router-link>
-                  </li>
-                  <li class="nav-item u-header__nav-item">
-                    <router-link class="nav-link u-header__nav-link" to="/contact-us">Product Support</router-link>
                   </li>
                 </ul>
               </div>

@@ -56,6 +56,46 @@ export default {
             }),
         })
         return (await response.json()).data.wishlist;
+    },
+    async getComparisonList(token) {
+        const headers = {'Content-Type': 'application/json'}
+        if (token) {
+            headers['Authorization'] = `JWT ${token}`
+        }
+        const response = await fetch(env.endpoint, {
+            method: 'POST',
+            headers: headers,
+            credentials: "include",
+            body: JSON.stringify({
+                query: `{
+                          comparisonList {
+                            category {
+                              title
+                              filters {
+                                name
+                              }
+                            }
+                            products {
+                              id
+                              title
+                              priceWithDiscount
+                              images {
+                                size212x200 {
+                                  link
+                                }
+                              }
+                              description {
+                                name
+                                text
+                              }
+                              sku
+                              amount
+                              averageRating
+                            }
+                          }
+                        }`
+            }),
+        })
+        return (await response.json()).data.comparisonList;
     }
-
 }

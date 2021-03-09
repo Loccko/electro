@@ -7,14 +7,13 @@
             <div id="basicsAccordion">
               <div class="card border-0 rounded-0">
                 <div class="card-header bg-primary rounded-0 card-collapse border-0" id="basicsHeadingOne">
-                  <button
-                      type="button"
-                      class="btn-link btn-remove-focus btn-block d-flex card-btn py-3 text-lh-1 px-4 shadow-none btn-primary rounded-top-lg border-0 font-weight-bold text-gray-90"
-                      data-toggle="collapse"
-                      data-target="#basicsCollapseOne"
-                      aria-expanded="true"
-                      aria-controls="basicsCollapseOne"
-                      @click="toogleCategoriesList"
+                  <button type="button"
+                          class="btn-link btn-remove-focus btn-block d-flex card-btn py-3 text-lh-1 px-4 shadow-none btn-primary rounded-top-lg border-0 font-weight-bold text-gray-90"
+                          data-toggle="collapse"
+                          data-target="#basicsCollapseOne"
+                          aria-expanded="true"
+                          aria-controls="basicsCollapseOne"
+                          @click="categoriesListOpened = !categoriesListOpened"
                   >
                     <span class="pl-1 text-gray-90">Categories</span>
                     <span class="text-gray-90 ml-3">
@@ -99,14 +98,19 @@
           <div class="d-flex">
             <ul class="d-flex list-unstyled mb-0">
               <li class="col">
-                <a
-                    href="../shop/compare.html"
-                    class="text-gray-90"
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title="Compare"
-                ><i class="font-size-22 ec ec-compare"></i
-                ></a>
+                <router-link to="/compare"
+                             class="text-gray-90"
+                             data-toggle="tooltip"
+                             data-placement="top"
+                             title="Compare"
+                >
+                  <i class="font-size-22 ec ec-compare"></i>
+                  <span
+                      class="width-22 height-22 bg-dark position-absolute flex-content-center text-white rounded-circle right-0 top-8 font-weight-bold font-size-12"
+                  >
+                    {{ comparisonListLength }}
+                  </span>
+                </router-link>
               </li>
               <li class="col">
                 <router-link to="/wishlist" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="Favorites">
@@ -149,6 +153,14 @@ export default {
     wishlist() {
       return this.$store.getters.wishlist
     },
+    comparisonList() {
+      return this.$store.getters.comparisonList
+    },
+    comparisonListLength() {
+      return this.comparisonList.reduce(function (accumulator, item) {
+        return accumulator + item.products.length;
+      }, 0);
+    },
     total() {
       return this.$store.getters.total
     }
@@ -160,14 +172,9 @@ export default {
     }
   },
   data: () => ({
-    categoriesListOpened: false,
+    categoriesListOpened: true,
     hoveredMenuItemId: null
-  }),
-  methods: {
-    toogleCategoriesList() {
-      this.categoriesListOpened = !this.categoriesListOpened
-    }
-  }
+  })
 }
 </script>
 

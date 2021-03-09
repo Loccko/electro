@@ -6,6 +6,7 @@ import AuthService from "@/App/_shared/services/Auth";
 const state = {
     cart: [],
     wishlist: [],
+    comparisonList: [],
     user: null,
     auth: null
 };
@@ -13,16 +14,27 @@ const state = {
 const getters = {
     cart: state => state.cart,
     wishlist: state => state.wishlist,
+    comparisonList: state => state.comparisonList,
     user: state => state.user,
     auth: state => state.auth,
-    token: (state) => () => {
-        return state.auth.getToken()
+    token: (state) => async () => {
+        return await state.auth.getToken()
     },
     cartHasProduct: (state) => (id) => {
         return state.cart.some(thing => thing.product.id === id)
     },
     wishlistHasProduct: (state) => (id) => {
         return state.wishlist.some(thing => thing.id === id)
+    },
+    comparisonListHasProduct: (state) => (id) => {
+        for (let item of state.comparisonList) {
+            for (let product of item.products) {
+                if (product.id === id) {
+                    return true
+                }
+            }
+        }
+        return false
     },
     total(state) {
         let total = 0.0
@@ -39,6 +51,10 @@ const actions = {
     async fetchWishlist({commit}, token) {
         const products = await User.getWishlist(token)
         commit("setWishlist", products)
+    },
+    async fetchComparisonList({commit}, token) {
+        const products = await User.getComparisonList(token)
+        commit("setComparisonList", products)
     },
     async fetchUser({commit}, token) {
         const user = await AuthService.getMe(token)
@@ -62,6 +78,15 @@ const actions = {
         }
         await dispatch('fetchWishlist', token)
     },
+    async updateComparisonList({dispatch, getters}, id) {
+        const token = getters.token()
+        if (getters.comparisonListHasProduct(id)) {
+            await Mutations.removeItemFromComparisonList(id, token)
+        } else {
+            await Mutations.addItemToComparisonList(id, token)
+        }
+        await dispatch('fetchComparisonList', token)
+    },
     async initAuth({commit}) {
         commit('setAuth')
     }
@@ -73,6 +98,9 @@ const mutations = {
     ),
     setWishlist: (state, products) => (
         state.wishlist = products
+    ),
+    setComparisonList: (state, products) => (
+        state.comparisonList = products
     ),
     setUser: (state, user) => (
         state.user = user

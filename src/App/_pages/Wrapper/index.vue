@@ -2,7 +2,8 @@
   <div>
     <service-header :categories="categories" @openAuth="authorizationSidebarOpened=true"/>
     <router-view/>
-    <service-footer :productColumns="footerProducts" :columnTitles="['Most viewed products','On sale Products','Top Rated Products']"/>
+    <service-footer :categories="categories" :productColumns="footerProducts"
+                    :columnTitles="['Most viewed products','On sale Products','Top Rated Products']"/>
     <auth-sidebar :opened="authorizationSidebarOpened" @close="authorizationSidebarOpened=false"/>
   </div>
 </template>
@@ -36,12 +37,13 @@ export default {
   },
   async mounted() {
     await this.$store.dispatch('initAuth')
-    const token = this.$store.getters.token()
+    const token = await this.$store.getters.token()
     if (token) {
       await this.$store.dispatch('fetchUser', token)
     }
     await this.$store.dispatch('fetchWishlist', token);
     await this.$store.dispatch('fetchCart', token);
+    await this.$store.dispatch('fetchComparisonList', token);
   },
   data: () => ({
     categories: null,

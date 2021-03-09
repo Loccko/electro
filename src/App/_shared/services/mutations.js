@@ -235,4 +235,59 @@ export default {
         });
         return await response.json()
     },
+    async addItemToComparisonList(id, token) {
+        const headers = {'Content-Type': 'application/json'}
+        if (token) {
+            headers['Authorization'] = `JWT ${token}`
+        }
+        const response = await fetch(env.endpoint, {
+            method: "POST",
+            headers: headers,
+            credentials: 'include',
+            body: JSON.stringify({
+                query: `mutation {
+                          addItemToComparisonList(input:{
+                            product: "${id}",
+                          }) {
+                            comparisonList {
+                              category {
+                                id
+                              }
+                            }
+                          }
+                        }`,
+            }),
+        });
+        return (await response.json()).data;
+    },
+    async removeItemFromComparisonList(id, token) {
+        const headers = {'Content-Type': 'application/json'}
+        if (token) {
+            headers['Authorization'] = `JWT ${token}`
+        }
+        const response = await fetch(env.endpoint, {
+            method: "POST",
+            headers: headers,
+            credentials: 'include',
+            body: JSON.stringify({
+                query: `mutation {
+                          removeItemFromComparisonList(input: {
+                            product: "${id}"
+                          }) {
+                            comparisonList {
+                              category {
+                                id
+                                title
+                              }
+                              products {
+                                id
+                                title
+                              }
+                            }
+                          }
+                        }`
+            }),
+        });
+        return (await response.json()).data;
+    },
 };

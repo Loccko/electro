@@ -8,7 +8,7 @@ const WishlistPage = () => import('./_pages/Wishlist')
 const About = () => import('./_pages/About')
 const FAQs = () => import('./_pages/FAQs')
 const Contact = () => import('./_pages/Contact')
-
+const Compare = () => import('./_pages/Compare')
 
 const showcaseRoutes = [
     {
@@ -54,6 +54,11 @@ const showcaseRoutes = [
                 path: '/contact-us',
                 component: Contact,
                 name: 'contact-us'
+            },
+            {
+                path: '/compare',
+                component: Compare,
+                name: 'compare'
             },
         ]
     }

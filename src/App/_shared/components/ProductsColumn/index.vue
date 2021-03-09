@@ -9,13 +9,13 @@
     <ul class="list-unstyled products-group">
       <li class="product-item product-item__list row no-gutters mb-6 remove-divider" v-for="(product, i) of products" :key="i">
         <div class="col-auto">
-          <router-link to="../shop/single-product-fullwidth.html" class="d-block width-75 text-center">
+          <router-link :to="`/product/${product.id}`" class="d-block width-75 text-center">
             <img class="img-fluid" :src="product.images.size75x75.link" alt="Image Description"/>
           </router-link>
         </div>
         <div class="col pl-4 d-flex flex-column">
           <h5 class="product-item__title mb-0">
-            <router-link to="../shop/single-product-fullwidth.html" class="text-blue font-weight-bold">
+            <router-link :to="`/product/${product.id}`" class="text-blue font-weight-bold">
               {{ product.title }}
             </router-link>
           </h5>

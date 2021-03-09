@@ -41,8 +41,9 @@
         </div>
         <div class="product-item__footer">
           <div class="border-top pt-2 flex-center-between flex-wrap">
-            <a class="text-gray-6 font-size-13" tabindex="0">
-              <i class="ec ec-compare mr-1 font-size-15"></i>
+            <a class="text-gray-6 font-size-13" tabindex="0" @click="updateComparisonList" style="cursor: pointer;">
+              <i v-if="comparisonListHasProduct" class="ec ec-compare mr-1 font-size-15" style="color: red;"></i>
+              <i v-else class="ec ec-compare mr-1 font-size-15"></i>
               Compare
             </a>
             <div class="text-gray-6 font-size-13" tabindex="0" @click="updateWishList" style="cursor: pointer;">
@@ -106,8 +107,9 @@
         </div>
         <div class="product-item__footer">
           <div class="border-top pt-2 flex-center-between flex-wrap">
-            <a class="text-gray-6 font-size-13">
-              <i class="ec ec-compare mr-1 font-size-15"></i>
+            <a class="text-gray-6 font-size-13" @click="updateComparisonList" style="cursor: pointer;">
+              <i v-if="comparisonListHasProduct" class="ec ec-compare mr-1 font-size-15" style="color: red;"></i>
+              <i v-else class="ec ec-compare mr-1 font-size-15"></i>
               Compare
             </a>
             <div class="text-gray-6 font-size-13" @click="updateWishList" style="cursor: pointer;">
@@ -160,23 +162,22 @@
             <div class="prodcut-price mb-2">
               <div class="text-gray-100">${{ item.price }}</div>
             </div>
-            <a class="btn-add-cart btn-primary transition-3d-hover" tabindex="0" @click="updateCart" style="cursor: pointer;">
-              <i v-if="cartHasProduct" class="fa fa-check" aria-hidden="true"></i>
-              <i v-else class="ec ec-add-to-cart"></i>
-            </a>
             <div class="prodcut-add-cart">
               <a v-if="item.amount > 0"
-                 class="btn btn-sm btn-block btn-primary-dark btn-wide transition-3d-hover"
+                 class="btn btn-sm btn-block btn-primary btn-wide"
                  @click="updateCart"
                  style="cursor: pointer;">
-                <i> {{ cartHasProduct ? "Remove from cart" : "Add to cart" }}</i>
+                {{ cartHasProduct ? "Remove from cart" : "Add to cart" }}
               </a>
-              <div v-else class="text-gray-100" style="color: red">Not available</div>
+              <a v-else class="btn btn-sm btn-block btn-primary btn-wide">
+                Not available
+              </a>
             </div>
           </div>
           <div class="flex-horizontal-center justify-content-between justify-content-wd-center flex-wrap">
-            <a class="text-gray-6 font-size-13 mx-wd-3">
-              <i class="ec ec-compare mr-1 font-size-15"></i>
+            <a class="text-gray-6 font-size-13 mx-wd-3" @click="updateComparisonList" style="cursor: pointer;">
+              <i v-if="comparisonListHasProduct" class="ec ec-compare mr-1 font-size-15" style="color: red;"></i>
+              <i v-else class="ec ec-compare mr-1 font-size-15"></i>
               Compare
             </a>
             <div class="text-gray-6 font-size-13 mx-wd-3" @click="updateWishList" style="cursor: pointer;">
@@ -239,8 +240,9 @@
             </div>
           </div>
           <div class="flex-horizontal-center justify-content-between justify-content-wd-center flex-wrap border-top pt-3">
-            <a class="text-gray-6 font-size-13 mx-wd-3">
-              <i class="ec ec-compare mr-1 font-size-15"></i>
+            <a class="text-gray-6 font-size-13 mx-wd-3" @click="updateComparisonList" style="cursor: pointer;">
+              <i v-if="comparisonListHasProduct" class="ec ec-compare mr-1 font-size-15" style="color: red;"></i>
+              <i v-else class="ec ec-compare mr-1 font-size-15"></i>
               Compare
             </a>
             <div class="text-gray-6 font-size-13 mx-wd-3" @click="updateWishList" style="cursor: pointer;">
@@ -275,6 +277,9 @@ export default {
     wishlistHasProduct() {
       return this.$store.getters.wishlistHasProduct(this.item.id)
     },
+    comparisonListHasProduct() {
+      return this.$store.getters.comparisonListHasProduct(this.item.id)
+    },
     getCategory() {
       return this.item.categories[this.item.categories.length - 1]
     }
@@ -285,6 +290,9 @@ export default {
     },
     updateWishList() {
       this.$store.dispatch('updateWishList', this.item.id, this.token)
+    },
+    updateComparisonList() {
+      this.$store.dispatch('updateComparisonList', this.item.id, this.token)
     }
   }
 };

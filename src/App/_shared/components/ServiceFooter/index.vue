@@ -1,12 +1,10 @@
 <template>
   <footer>
-    <!-- Footer-top-widget -->
     <div class="container mb-8">
       <div class="py-2 border-top border-bottom">
         <carousel v-bind="settings">
           <div class="js-slide" v-for="i of 5" :key="i">
-            <img class="img-fluid m-auto max-height-50"
-                 src="https://transvelo.github.io/electro-html/2.0/assets/img/200X60/img3.png"
+            <img class="img-fluid m-auto max-height-50" src="https://transvelo.github.io/electro-html/2.0/assets/img/200X60/img3.png"
                  alt="Image Description"/>
           </div>
         </carousel>
@@ -17,7 +15,6 @@
         <div class="col-wd-3 col-lg-4" v-for="i of 3" :key="i">
           <products-column :products="productColumns[i-1]" :title="columnTitles[i-1]" :type="types[i-1]"/>
         </div>
-
         <div class="col-wd-3 d-none d-wd-block">
           <img class="img-fluid" src="https://transvelo.github.io/electro-html/2.0/assets/img/330X360/img1.jpg" alt="Image Description">
         </div>
@@ -30,14 +27,13 @@
           <div class="col-lg-5">
             <div class="mb-6">
               <a href="#" class="d-inline-block">
-                <svg
-                    version="1.1"
-                    x="0px"
-                    y="0px"
-                    width="156px"
-                    height="37px"
-                    viewBox="0 0 175.748 42.52"
-                    enable-background="new 0 0 175.748 42.52"
+                <svg version="1.1"
+                     x="0px"
+                     y="0px"
+                     width="156px"
+                     height="37px"
+                     viewBox="0 0 175.748 42.52"
+                     enable-background="new 0 0 175.748 42.52"
                 >
                   <ellipse
                       fill-rule="evenodd"
@@ -99,8 +95,7 @@
                   <div class="font-size-13 font-weight-light">
                     Got questions? Call us 24/7!
                   </div>
-                  <a href="tel:+80080018588" class="font-size-20 text-gray-90">(800) 8001-8588, </a>
-                  <a href="tel:+0600874548" class="font-size-20 text-gray-90">(0600) 874 548</a>
+                  <a href="tel:+380663555555" class="font-size-20 text-gray-90">+38 (066) 355-55-55</a>
                 </div>
               </div>
             </div>
@@ -113,136 +108,49 @@
           </div>
           <div class="col-lg-7">
             <div class="row">
-              <div class="col-12 col-md mb-4 mb-md-0">
+              <div v-if="categories.length > 0" class="col-12 col-md mb-4 mb-md-0">
                 <h6 class="mb-3 font-weight-bold">Find it Fast</h6>
-                <!-- List Group -->
                 <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
-                  <li>
-                    <a class="list-group-item list-group-item-action" href="../shop/product-categories-5-column-sidebar.html">Laptops & Computers</a>
-                  </li>
-                  <li>
-                    <a class="list-group-item list-group-item-action" href="../shop/product-categories-5-column-sidebar.html">Cameras &
-                      Photography</a>
-                  </li>
-                  <li>
-                    <a class="list-group-item list-group-item-action" href="../shop/product-categories-5-column-sidebar.html">Smart Phones &
-                      Tablets</a>
-                  </li>
-                  <li>
-                    <a class="list-group-item list-group-item-action" href="../shop/product-categories-5-column-sidebar.html">Video Games &
-                      Consoles</a>
-                  </li>
-                  <li>
-                    <a class="list-group-item list-group-item-action" href="../shop/product-categories-5-column-sidebar.html">TV & Audio</a>
-                  </li>
-                  <li>
-                    <a class="list-group-item list-group-item-action" href="../shop/product-categories-5-column-sidebar.html">Gadgets</a>
-                  </li>
-                  <li>
-                    <a class="list-group-item list-group-item-action" href="../shop/product-categories-5-column-sidebar.html">Car Electronic & GPS</a>
+                  <li v-for="i of 7" :key="i">
+                    <router-link :to="`goods/${categories[i - 1].id}`" class="list-group-item list-group-item-action">
+                      {{ categories[i - 1].title }}
+                    </router-link>
                   </li>
                 </ul>
-                <!-- End List Group -->
               </div>
-
-              <div class="col-12 col-md mb-4 mb-md-0">
-                <!-- List Group -->
+              <div v-if="categories.length > 7" class="col-12 col-md mb-4 mb-md-0">
                 <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent mt-md-6">
-                  <li>
-                    <a class="list-group-item list-group-item-action" href="../shop/product-categories-5-column-sidebar.html">Printers & Ink</a>
-                  </li>
-                  <li>
-                    <a class="list-group-item list-group-item-action" href="../shop/product-categories-5-column-sidebar.html">Software</a>
-                  </li>
-                  <li>
-                    <a class="list-group-item list-group-item-action" href="../shop/product-categories-5-column-sidebar.html">Office Supplies</a>
-                  </li>
-                  <li>
-                    <a class="list-group-item list-group-item-action" href="../shop/product-categories-5-column-sidebar.html">Computer Components</a>
-                  </li>
-                  <li>
-                    <a class="list-group-item list-group-item-action" href="../shop/product-categories-5-column-sidebar.html">Accesories</a>
+                  <li v-for="i of 7" :key="i">
+                    <router-link :to="`goods/${categories[i + 7 - 1].id}`" class="list-group-item list-group-item-action">
+                      {{ categories[i + 7 - 1].title }}
+                    </router-link>
                   </li>
                 </ul>
-                <!-- End List Group -->
               </div>
-
               <div class="col-12 col-md mb-4 mb-md-0">
                 <h6 class="mb-3 font-weight-bold">Customer Care</h6>
-                <!-- List Group -->
                 <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
                   <li>
-                    <a class="list-group-item list-group-item-action" href="../shop/my-account.html">My Account</a>
+                    <router-link class="list-group-item list-group-item-action" to="/cart">Cart</router-link>
                   </li>
                   <li>
-                    <a class="list-group-item list-group-item-action" href="../shop/track-your-order.html">Order Tracking</a>
+                    <router-link class="list-group-item list-group-item-action" to="/wishlist">Wishlist</router-link>
                   </li>
                   <li>
-                    <a class="list-group-item list-group-item-action" href="../shop/wishlist.html">Wish List</a>
+                    <router-link class="list-group-item list-group-item-action" to="/compare">Compare</router-link>
                   </li>
                   <li>
-                    <a class="list-group-item list-group-item-action" href="../home/terms-and-conditions.html">Customer Service</a>
+                    <router-link class="list-group-item list-group-item-action" to="/about">About us</router-link>
                   </li>
                   <li>
-                    <a class="list-group-item list-group-item-action" href="../home/terms-and-conditions.html">Returns / Exchange</a>
+                    <router-link class="list-group-item list-group-item-action" to="/faq">FAQs</router-link>
                   </li>
                   <li>
-                    <a class="list-group-item list-group-item-action" href="../home/faq.html">FAQs</a>
-                  </li>
-                  <li>
-                    <a class="list-group-item list-group-item-action" href="../home/terms-and-conditions.html">Product Support</a>
+                    <router-link class="list-group-item list-group-item-action" to="/contact-us">Contact Us</router-link>
                   </li>
                 </ul>
-                <!-- End List Group -->
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="bg-gray-14 py-2">
-      <div class="container">
-        <div class="flex-center-between d-block d-md-flex">
-          <div class="mb-3 mb-md-0">
-            © <a href="#" class="font-weight-bold text-gray-90">Electro</a> -
-            All rights Reserved
-          </div>
-          <div class="text-md-right">
-            <span class="d-inline-block bg-white border rounded p-1">
-              <img
-                  class="max-width-5"
-                  src="@/assets/img/100x60/img1.jpg"
-                  alt="Image Description"
-              />
-            </span>
-            <span class="d-inline-block bg-white border rounded p-1">
-              <img
-                  class="max-width-5"
-                  src="@/assets/img/100x60/img2.jpg"
-                  alt="Image Description"
-              />
-            </span>
-            <span class="d-inline-block bg-white border rounded p-1">
-              <img
-                  class="max-width-5"
-                  src="@/assets/img/100x60/img3.jpg"
-                  alt="Image Description"
-              />
-            </span>
-            <span class="d-inline-block bg-white border rounded p-1">
-              <img
-                  class="max-width-5"
-                  src="@/assets/img/100x60/img4.jpg"
-                  alt="Image Description"
-              />
-            </span>
-            <span class="d-inline-block bg-white border rounded p-1">
-              <img
-                  class="max-width-5"
-                  src="@/assets/img/100x60/img5.jpg"
-                  alt="Image Description"
-              />
-            </span>
           </div>
         </div>
       </div>
@@ -263,7 +171,8 @@ export default {
   },
   props: {
     productColumns: Array,
-    columnTitles: Array
+    columnTitles: Array,
+    categories: Array,
   },
   data: () => ({
     types: ['views', 'sale', 'rated'],

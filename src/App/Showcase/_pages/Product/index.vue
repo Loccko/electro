@@ -123,7 +123,7 @@
                 </div>
 
                 <div v-if="product.amount !== 0" class="mb-3">
-                  <a href="#" class="btn btn-block btn-dark">Buy Now</a>
+                  <router-link to="/cart" class="btn btn-block btn-dark">Buy Now</router-link>
                 </div>
 
                 <div class="flex-content-center flex-wrap">
@@ -276,7 +276,7 @@
                             <div class="progress ml-xl-5" style="height: 10px; width: 200px">
                               <div class="progress-bar"
                                    role="progressbar"
-                                   :style="`width: ${getProgressBarWidth(rate)}%`"
+                                   :style="`width: ${getProgressBarWidth(commentsRating[rate])}%`"
                                    aria-valuenow="100"
                                    aria-valuemin="0"
                                    aria-valuemax="100"
@@ -459,12 +459,12 @@ export default {
       this.mainCarouselActiveIndex = index;
       this.$refs.carousel.goTo(index);
     },
-    getProgressBarWidth(index) {
+    getProgressBarWidth(rating) {
       let totalCount = 0
       for (const key in this.commentsRating) {
         totalCount += this.commentsRating[key]
       }
-      return (this.commentsRating[index] / totalCount) * 100
+      return (rating / totalCount) * 100
     },
     getClass(index) {
       if (index % 3 === 0) {
@@ -478,6 +478,14 @@ export default {
     },
     getCategory() {
       return this.product.categories[this.product.categories.length - 1]
+    },
+    refreshCommentsRating() {
+      for (let key in this.commentsRating) {
+        this.commentsRating[key] = 0
+      }
+      this.product.comments.forEach(comment => {
+        this.commentsRating[comment.rating]++
+      })
     },
     async sendComment() {
       this.errors = null
@@ -503,6 +511,7 @@ export default {
     },
     async fetchProduct() {
       this.product = await Products.fetchProduct(this.product.id);
+      this.refreshCommentsRating()
     }
   }
 };

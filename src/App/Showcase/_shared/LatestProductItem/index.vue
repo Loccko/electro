@@ -2,17 +2,17 @@
   <div class="product-item__outer h-100">
     <div class="product-item__inner py-md-3 mx-3 border-bottom row no-gutters">
       <div class="col-auto product-media-left">
-        <a href="../shop/single-product-fullwidth.html" class="max-width-70 d-block" tabindex="0">
+        <router-link :to="`/product/${item.id}`" class="max-width-70 d-block" tabindex="0">
           <img class="img-fluid" :src="item.images.size150x140.link" alt="Image Description"
           />
-        </a>
+        </router-link>
       </div>
       <div class="col product-item__body pl-2 pl-lg-3">
         <div class="mb-4">
           <h5 class="product-item__title">
-            <a href="../shop/single-product-fullwidth.html" class="text-gray-90" tabindex="0">
+            <router-link :to="`/product/${item.id}`" class="text-gray-90" tabindex="0">
               {{ item.title }}
-            </a>
+            </router-link>
           </h5>
         </div>
         <div class="flex-center-between">

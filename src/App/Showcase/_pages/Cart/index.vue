@@ -158,14 +158,14 @@ export default {
     cart() {
       return this.$store.getters.cart
     },
-    token() {
-      return this.$store.getters.token()
-    },
     total() {
       return this.$store.getters.total
     }
   },
   methods: {
+    async token() {
+      return await this.$store.getters.token()
+    },
     async refreshCart() {
       await this.$store.dispatch('fetchCart', this.token)
     },

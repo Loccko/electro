@@ -12,19 +12,21 @@ const Auth = class {
         localStorage.setItem('refreshTokenExpirationDate', refreshTokenExpirationDate);
     }
 
-    getToken() {
+    async getToken() {
         const validation = this.validate()
         if (!validation.accessTokenValid && validation.refreshTokenValid) {
-            this.refreshAccessToken()
+            await this.refreshAccessToken()
         } else if (!validation.accessTokenValid && !validation.refreshTokenValid) {
             this.logOut()
         }
         return localStorage.getItem('accessToken');
     }
 
-    refreshAccessToken() {
-        const response = AuthService.refreshAccessToken(localStorage.getItem('refreshToken'))
+    async refreshAccessToken() {
+        const response = await AuthService.refreshAccessToken(localStorage.getItem('refreshToken'))
+        console.log(response)
         if (response.tokens && response.tokens.accessToken && response.tokens.accessTokenExpirationDate) {
+            console.log("OKEY")
             localStorage.setItem('accessToken', response.tokens.accessToken);
             localStorage.setItem('accessTokenExpirationDate', response.tokens.accessTokenExpirationDate);
         } else {
