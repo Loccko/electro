@@ -24,9 +24,7 @@ const Auth = class {
 
     async refreshAccessToken() {
         const response = await AuthService.refreshAccessToken(localStorage.getItem('refreshToken'))
-        console.log(response)
         if (response.tokens && response.tokens.accessToken && response.tokens.accessTokenExpirationDate) {
-            console.log("OKEY")
             localStorage.setItem('accessToken', response.tokens.accessToken);
             localStorage.setItem('accessTokenExpirationDate', response.tokens.accessTokenExpirationDate);
         } else {

@@ -44,15 +44,18 @@ const getters = {
 };
 
 const actions = {
-    async fetchCart({commit}, token) {
+    async fetchCart({commit, getters}) {
+        const token = await getters.token()
         const products = await User.getCart(token)
         commit("setCart", products)
     },
-    async fetchWishlist({commit}, token) {
+    async fetchWishlist({commit, getters}) {
+        const token = await getters.token()
         const products = await User.getWishlist(token)
         commit("setWishlist", products)
     },
-    async fetchComparisonList({commit}, token) {
+    async fetchComparisonList({commit, getters}) {
+        const token = await getters.token()
         const products = await User.getComparisonList(token)
         commit("setComparisonList", products)
     },
@@ -61,7 +64,7 @@ const actions = {
         commit("setUser", user)
     },
     async updateCart({dispatch, getters}, id) {
-        const token = getters.token()
+        const token = await getters.token()
         if (getters.cartHasProduct(id)) {
             await Mutations.removeItemFromCart(id, token)
         } else {
@@ -70,7 +73,7 @@ const actions = {
         await dispatch('fetchCart', token)
     },
     async updateWishList({dispatch, getters}, id) {
-        const token = getters.token()
+        const token = await getters.token()
         if (getters.wishlistHasProduct(id)) {
             await Mutations.removeItemFromWishlist(id, token)
         } else {
@@ -79,7 +82,7 @@ const actions = {
         await dispatch('fetchWishlist', token)
     },
     async updateComparisonList({dispatch, getters}, id) {
-        const token = getters.token()
+        const token = await getters.token()
         if (getters.comparisonListHasProduct(id)) {
             await Mutations.removeItemFromComparisonList(id, token)
         } else {

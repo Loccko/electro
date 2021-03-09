@@ -101,26 +101,22 @@ import mutations from "@/App/_shared/services/mutations";
 
 export default {
   async mounted() {
-    await this.refreshComparisonList()
+    await this.$store.dispatch('fetchCart')
+    await this.$store.dispatch('fetchComparisonList')
   },
   computed: {
     comparisonList() {
       return this.$store.getters.comparisonList
     },
-    token() {
-      return this.$store.getters.token()
-    },
   },
   methods: {
-    async refreshComparisonList() {
-      await this.$store.dispatch('fetchComparisonList', this.token)
-    },
     async removeItemFromComparisonList(id) {
-      await mutations.removeItemFromComparisonList(id, this.token)
-      await this.refreshComparisonList()
+      let token = await this.$store.getters.token()
+      await mutations.removeItemFromComparisonList(id, token)
+      await this.$store.dispatch('fetchComparisonList')
     },
     updateCart(id) {
-      this.$store.dispatch('updateCart', id, this.token)
+      this.$store.dispatch('updateCart', id)
     },
     cartHasProduct(id) {
       return this.$store.getters.cartHasProduct(id)

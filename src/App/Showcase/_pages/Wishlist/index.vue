@@ -86,8 +86,8 @@ import mutations from "@/App/_shared/services/mutations";
 
 export default {
   async mounted() {
-    await this.$store.dispatch('fetchCart', this.token)
-    await this.$store.dispatch('fetchWishlist', this.token)
+    await this.$store.dispatch('fetchCart')
+    await this.$store.dispatch('fetchWishlist')
   },
   data: () => ({
     errors: null
@@ -96,23 +96,18 @@ export default {
     wishlist() {
       return this.$store.getters.wishlist
     },
-    token() {
-      return this.$store.getters.token()
-    },
   },
   methods: {
     cartHasProduct(id) {
       return this.$store.getters.cartHasProduct(id)
     },
     updateCart(id) {
-      this.$store.dispatch('updateCart', id, this.token)
-    },
-    async refreshWishlist() {
-      await this.$store.dispatch('fetchWishlist', this.token)
+      this.$store.dispatch('updateCart', id)
     },
     async removeItemFromWishlist(id) {
-      await mutations.removeItemFromWishlist(id, this.token)
-      await this.refreshWishlist()
+      const token = await this.$store.getters.token()
+      await mutations.removeItemFromWishlist(id, token)
+      await this.$store.dispatch('fetchWishlist')
     },
   }
 }

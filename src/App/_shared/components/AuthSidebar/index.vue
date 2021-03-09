@@ -290,10 +290,10 @@ export default {
         if (response && response.data && response.data.authorizeUser) {
           this.$store.getters.auth.writeTokensToLS(response.data.authorizeUser)
           const token = await this.$store.getters.token()
-          console.log(token)
           await this.$store.dispatch('fetchUser', token)
           await this.$store.dispatch('fetchCart', token)
           await this.$store.dispatch('fetchWishlist', token)
+          await this.$store.dispatch('fetchComparisonList', token)
           this.errors = "You are successfully signed in!"
         } else if (response.errors) {
           this.errors = response.errors[0].message

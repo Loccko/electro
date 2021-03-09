@@ -268,9 +268,6 @@ export default {
     },
   },
   computed: {
-    token() {
-      return this.$store.getters.token()
-    },
     cartHasProduct() {
       return this.$store.getters.cartHasProduct(this.item.id)
     },
@@ -285,14 +282,17 @@ export default {
     }
   },
   methods: {
+    async token() {
+      return await this.$store.getters.token()
+    },
     updateCart() {
-      this.$store.dispatch('updateCart', this.item.id, this.token)
+      this.$store.dispatch('updateCart', this.item.id)
     },
     updateWishList() {
-      this.$store.dispatch('updateWishList', this.item.id, this.token)
+      this.$store.dispatch('updateWishList', this.item.id)
     },
     updateComparisonList() {
-      this.$store.dispatch('updateComparisonList', this.item.id, this.token)
+      this.$store.dispatch('updateComparisonList', this.item.id)
     }
   }
 };

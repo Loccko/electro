@@ -41,9 +41,9 @@ export default {
     if (token) {
       await this.$store.dispatch('fetchUser', token)
     }
-    await this.$store.dispatch('fetchWishlist', token);
-    await this.$store.dispatch('fetchCart', token);
-    await this.$store.dispatch('fetchComparisonList', token);
+    await this.$store.dispatch('fetchWishlist');
+    await this.$store.dispatch('fetchCart');
+    await this.$store.dispatch('fetchComparisonList');
   },
   data: () => ({
     categories: null,

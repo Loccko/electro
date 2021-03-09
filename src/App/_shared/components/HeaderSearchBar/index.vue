@@ -153,11 +153,8 @@ export default {
     wishlist() {
       return this.$store.getters.wishlist
     },
-    comparisonList() {
-      return this.$store.getters.comparisonList
-    },
     comparisonListLength() {
-      return this.comparisonList.reduce(function (accumulator, item) {
+      return this.$store.getters.comparisonList.reduce(function (accumulator, item) {
         return accumulator + item.products.length;
       }, 0);
     },

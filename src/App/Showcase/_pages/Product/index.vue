@@ -127,8 +127,9 @@
                 </div>
 
                 <div class="flex-content-center flex-wrap">
-                  <a href="#" class="text-gray-6 font-size-13 ml-2">
-                    <i class="ec ec-compare mr-1 font-size-15"></i>
+                  <a class="text-gray-6 font-size-13 ml-2" @click="updateComparisonList" style="cursor: pointer;">
+                    <i v-if="comparisonListHasProduct" class="ec ec-compare mr-1 font-size-15" style="color: red;"></i>
+                    <i v-else class="ec ec-compare mr-1 font-size-15"></i>
                     Compare
                   </a>
 
@@ -431,9 +432,6 @@ export default {
     this.relatedProducts = await Products.fetchProducts(6, category.id)
   },
   computed: {
-    token() {
-      return this.$store.getters.token()
-    },
     user() {
       return this.$store.getters.user
     },
@@ -443,6 +441,9 @@ export default {
     wishlistHasProduct() {
       return this.$store.getters.wishlistHasProduct(this.product.id)
     },
+    comparisonListHasProduct() {
+      return this.$store.getters.comparisonListHasProduct(this.product.id)
+    },
     mainCarouselImages() {
       return this.product && this.product.images ? this.product.images.size720x660.map((image) => image.link) : [];
     }
@@ -450,10 +451,13 @@ export default {
 
   methods: {
     updateCart() {
-      this.$store.dispatch('updateCart', this.product.id, this.token)
+      this.$store.dispatch('updateCart', this.product.id)
     },
     updateWishList() {
-      this.$store.dispatch('updateWishList', this.product.id, this.token)
+      this.$store.dispatch('updateWishList', this.product.id)
+    },
+    updateComparisonList() {
+      this.$store.dispatch('updateComparisonList', this.product.id)
     },
     changeSlide(index) {
       this.mainCarouselActiveIndex = index;
@@ -489,7 +493,7 @@ export default {
     },
     async sendComment() {
       this.errors = null
-      const token = this.token
+      const token = await this.$store.getters.token()
 
       if (this.reviewText) {
         this.reviewText = this.reviewText.trim()

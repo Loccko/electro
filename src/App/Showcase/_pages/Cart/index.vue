@@ -163,19 +163,18 @@ export default {
     }
   },
   methods: {
-    async token() {
-      return await this.$store.getters.token()
-    },
     async refreshCart() {
-      await this.$store.dispatch('fetchCart', this.token)
+      await this.$store.dispatch('fetchCart')
     },
     async removeItemFromCart(id) {
-      await mutations.removeItemFromCart(id, this.token)
+      let token = await this.$store.getters.token()
+      await mutations.removeItemFromCart(id, token)
       await this.refreshCart()
     },
     async increaseItemCartAmount(id) {
       this.errors = null
-      const response = await mutations.increaseItemCartAmount(id, this.token)
+      let token = await this.$store.getters.token()
+      const response = await mutations.increaseItemCartAmount(id, token)
       if (response && response.data && response.data.increaseItemCartAmount) {
         await this.refreshCart()
       } else if (response.errors) {
@@ -184,7 +183,8 @@ export default {
     },
     async decreaseItemCartAmount(id) {
       this.errors = null
-      const response = await mutations.decreaseItemCartAmount(id, this.token)
+      let token = await this.$store.getters.token()
+      const response = await mutations.decreaseItemCartAmount(id, token)
       if (response && response.data && response.data.decreaseItemCartAmount) {
         await this.refreshCart()
       } else if (response.errors) {
