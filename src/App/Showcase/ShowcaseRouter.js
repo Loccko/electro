@@ -9,6 +9,8 @@ const About = () => import('./_pages/About')
 const FAQs = () => import('./_pages/FAQs')
 const Contact = () => import('./_pages/Contact')
 const Compare = () => import('./_pages/Compare')
+const Checkout = () => import('./_pages/Checkout')
+
 
 const showcaseRoutes = [
     {
@@ -59,6 +61,11 @@ const showcaseRoutes = [
                 path: '/compare',
                 component: Compare,
                 name: 'compare'
+            },
+            {
+                path: '/checkout',
+                component: Checkout,
+                name: 'checkout'
             },
         ]
     }
