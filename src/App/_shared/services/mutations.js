@@ -8,12 +8,12 @@ export default {
             credentials: 'include',
             body: JSON.stringify({
                 query: `mutation {
-                                  addItemToRecentlyViewedProducts(input: {product: "${id}"}){
-                                    recentlyViewedProducts {
-                                      id
-                                    }
-                                  }
-                                }`,
+                          addItemToRecentlyViewedProducts(input: {product: "${id}"}){
+                            recentlyViewedProducts {
+                              id
+                            }
+                          }
+                        }`,
             }),
         });
         return (await response.json()).data;
@@ -29,13 +29,13 @@ export default {
             credentials: "include",
             body: JSON.stringify({
                 query: `mutation {
-                                  addItemToWishlist(input: {product: "${id}"}) {
-                                    wishlist {
-                                      id
-                                      title
-                                    }
-                                  }
-                                }`,
+                          addItemToWishlist(input: {product: "${id}"}) {
+                            wishlist {
+                              id
+                              title
+                            }
+                          }
+                        }`,
             }),
         });
         return (await response.json()).data.wishlist;
@@ -289,5 +289,38 @@ export default {
             }),
         });
         return (await response.json()).data;
+    },
+    async createOrder(city, street, zipcode, firstName, lastName, phone, email, paymentType, token, notes = null, apartment = null) {
+        let requestParams = {city, street, zipcode, firstName, lastName, phone, email, paymentType, notes, apartment};
+
+        let str = "";
+        for (const iterator in requestParams) {
+            let val = requestParams[iterator];
+            if (val !== null) {
+                str += iterator + `: "${val}" `
+            }
+        }
+        console.log(str)
+        const headers = {'Content-Type': 'application/json'}
+        if (token) {
+            headers['Authorization'] = `JWT ${token}`
+        }
+        const response = await fetch(env.endpoint, {
+            method: "POST",
+            headers: headers,
+            credentials: 'include',
+            body: JSON.stringify({
+                query: `mutation {
+                          createOrder(input:{
+                            ${str}
+                          }) {
+                            order {
+                              email
+                            }
+                          }
+                        }`
+            }),
+        });
+        return await response.json();
     },
 };
