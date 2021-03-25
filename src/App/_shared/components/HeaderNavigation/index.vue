@@ -28,6 +28,25 @@
                   <i class="ec ec-user mr-1"></i>Register<span class="text-gray-50"> or </span>Sign in
                 </a>
               </li>
+              <li v-else @click="logout()" class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
+                <a role="button"
+                   class="u-header-topbar__nav-link"
+                   aria-controls="sidebarContent"
+                   aria-haspopup="true"
+                   aria-expanded="false"
+                   data-unfold-event="click"
+                   data-unfold-hide-on-scroll="false"
+                   data-unfold-target="#sidebarContent"
+                   data-unfold-type="css-animation"
+                   data-unfold-animation-in="fadeInRight"
+                   data-unfold-animation-out="fadeOutRight"
+                   data-unfold-duration="500"
+                   style="cursor: pointer;"
+                >
+                  <i class="ec ec-user mr-1"></i>
+                  Logout
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -209,6 +228,11 @@ export default {
   data: () => ({
     showCategories: false,
   }),
+  methods: {
+    async logout() {
+      await this.$store.dispatch('logout')
+    }
+  },
   computed: {
     user() {
       return this.$store.getters.user;

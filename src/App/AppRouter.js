@@ -10,7 +10,7 @@ const routes = [
     {
         path: "/",
         component: ServiceWrapperPage,
-        children: [...ShowcaseRouter,/*...CartRouter, ...ProfileRouter*/],
+        children: [...ShowcaseRouter],
     },
 ];
 

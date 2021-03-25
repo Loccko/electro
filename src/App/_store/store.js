@@ -8,7 +8,7 @@ const state = {
     wishlist: [],
     comparisonList: [],
     user: null,
-    auth: null
+    auth: new Auth()
 };
 
 const getters = {
@@ -44,6 +44,13 @@ const getters = {
 };
 
 const actions = {
+    async logout({commit, dispatch, getters}) {
+        getters.auth.logOut()
+        commit('setUser', null)
+        dispatch('fetchCart')
+        dispatch('fetchWishlist')
+        dispatch('fetchComparisonList')
+    },
     async fetchCart({commit, getters}) {
         const token = await getters.token()
         const products = await User.getCart(token)
@@ -59,7 +66,8 @@ const actions = {
         const products = await User.getComparisonList(token)
         commit("setComparisonList", products)
     },
-    async fetchUser({commit}, token) {
+    async fetchUser({commit, getters}) {
+        const token = await getters.token()
         const user = await AuthService.getMe(token)
         commit("setUser", user)
     },
@@ -90,9 +98,6 @@ const actions = {
         }
         await dispatch('fetchComparisonList', token)
     },
-    async initAuth({commit}) {
-        commit('setAuth')
-    }
 };
 
 const mutations = {
@@ -108,9 +113,6 @@ const mutations = {
     setUser: (state, user) => (
         state.user = user
     ),
-    setAuth: (state) => (
-        state.auth = new Auth()
-    )
 };
 
 export default {
