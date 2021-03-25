@@ -32,15 +32,11 @@ export default {
 
     next(vm => {
       vm.categories = categories;
-      vm.footerProducts = popularProducts
+      vm.footerProducts = popularProducts;
     })
   },
   async mounted() {
-    await this.$store.dispatch('initAuth')
-    const token = await this.$store.getters.token()
-    if (token) {
-      await this.$store.dispatch('fetchUser', token)
-    }
+    await this.$store.dispatch('fetchUser');
     await this.$store.dispatch('fetchWishlist');
     await this.$store.dispatch('fetchCart');
     await this.$store.dispatch('fetchComparisonList');

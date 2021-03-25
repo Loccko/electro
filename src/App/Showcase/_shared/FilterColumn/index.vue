@@ -1,7 +1,6 @@
 <template>
   <div class="d-none d-xl-block col-xl-3 col-wd-2gdot5">
     <div class="mb-8 border border-width-2 border-color-3 borders-radius-6">
-      <!-- List -->
       <ul id="sidebarNav" class="list-unstyled mb-0 sidebar-navbar">
         <li>
           <a class="dropdown-toggle dropdown-toggle-collapse dropdown-title"
@@ -44,7 +43,6 @@
           </ul>
         </li>
       </ul>
-      <!-- End List -->
     </div>
     <div class="mb-6">
       <div class="border-bottom border-color-1 mb-5">

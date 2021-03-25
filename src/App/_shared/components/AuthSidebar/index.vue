@@ -36,12 +36,10 @@
                     <div class="u-sidebar__content u-header-sidebar__content">
                       <form class="js-validate" novalidate="novalidate" @submit.prevent.stop>
                         <div id="login" data-target-group="idForm" v-if="mode === 'login'">
-                          <!-- Title -->
                           <header class="text-center mb-7">
                             <h2 class="h4 mb-0">Welcome Back!</h2>
                             <p>Login to manage your account.</p>
                           </header>
-                          <!-- End Title -->
 
                           <!-- Form Group -->
                           <div class="form-group">
@@ -289,11 +287,10 @@ export default {
         const response = await mutations.authorizeUser(this.email, this.password)
         if (response && response.data && response.data.authorizeUser) {
           this.$store.getters.auth.writeTokensToLS(response.data.authorizeUser)
-          const token = await this.$store.getters.token()
-          await this.$store.dispatch('fetchUser', token)
-          await this.$store.dispatch('fetchCart', token)
-          await this.$store.dispatch('fetchWishlist', token)
-          await this.$store.dispatch('fetchComparisonList', token)
+          await this.$store.dispatch('fetchUser')
+          await this.$store.dispatch('fetchCart')
+          await this.$store.dispatch('fetchWishlist')
+          await this.$store.dispatch('fetchComparisonList')
           this.errors = "You are successfully signed in!"
         } else if (response.errors) {
           this.errors = response.errors[0].message
