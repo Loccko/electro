@@ -144,6 +144,60 @@
                           </div>
                           <div class="form-group">
                             <div class="js-form-message js-focus-state">
+                              <label class="sr-only" for="signupEmail">Phone number</label>
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                    <span class="fas fa-user"></span>
+                                  </span>
+                                </div>
+                                <input class="form-control"
+                                       placeholder="Phone number"
+                                       aria-label="Phone number"
+                                       required=""
+                                       v-model="phone"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="js-form-message js-focus-state">
+                              <label class="sr-only" for="signupEmail">Email</label>
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                    <span class="fas fa-user"></span>
+                                  </span>
+                                </div>
+                                <input class="form-control"
+                                       placeholder="First name"
+                                       aria-label="Firstname"
+                                       required=""
+                                       v-model="firstname"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="js-form-message js-focus-state">
+                              <label class="sr-only" for="signupEmail">Email</label>
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                    <span class="fas fa-user"></span>
+                                  </span>
+                                </div>
+                                <input class="form-control"
+                                       placeholder="Last name"
+                                       aria-label="Lastname"
+                                       required=""
+                                       v-model="lastname"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="js-form-message js-focus-state">
                               <label class="sr-only" for="signupPassword">Password</label>
                               <div class="input-group">
                                 <div class="input-group-prepend">
@@ -167,7 +221,6 @@
                               </div>
                             </div>
                           </div>
-
                           <div class="form-group">
                             <div class="js-form-message js-focus-state">
                               <label class="sr-only" for="signupConfirmPassword">Confirm Password</label>
@@ -263,23 +316,28 @@ export default {
     mode: 'login',
     email: null,
     password: null,
+    phone: null,
+    firstname: null,
+    lastname: null,
     confirmedPassword: null,
     errors: null,
     AutAPI: null
   }),
   methods: {
     async registerUser() {
-      if (this.email && this.password === this.confirmedPassword) {
+      if (this.email && this.phone && this.firstname && this.lastname && this.password === this.confirmedPassword) {
         this.errors = null
-        const response = await mutations.createUser(this.email, this.password, 380952524522, 'Vitalii', 'Grusha')
+        const response = await mutations.createUser(this.email, this.password, this.phone, this.firstname, this.lastname)
         if (response.errors) {
           this.errors = response.errors[0].message
         }
         if (response.data.createUser) {
           this.password = null
           this.confirmedPassword = null
-          this.errors = null
+          this.errors = "Account successfully created! Sign in."
         }
+      } else {
+        this.errors = "All fields are required."
       }
     },
     async login() {
