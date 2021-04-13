@@ -73,21 +73,21 @@
           </div>
         </div>
         <div class="col align-self-center">
-          <form class="js-focus-state">
+          <form class="js-focus-state" @submit.prevent.stop>
+            <div v-if="errors" class="alert alert-primary" role="alert">{{ errors }}</div>
             <label class="sr-only" for="searchProduct">Search</label>
             <div class="input-group">
-              <input
-                  type="email"
-                  class="form-control py-2 pl-5 font-size-15 border-0 height-40 rounded-left-pill"
-                  name="email"
-                  id="searchProduct"
-                  placeholder="Search for Products"
-                  aria-label="Search for Products"
-                  aria-describedby="searchProduct1"
-                  required
+              <input v-model="searchString"
+                     v-on:keyup.enter="search()"
+                     class="form-control py-2 pl-5 font-size-15 border-0 height-40 rounded-left-pill"
+                     id="searchProduct"
+                     placeholder="Search for Products"
+                     aria-label="Search for Products"
+                     aria-describedby="searchProduct1"
+                     required
               />
               <div class="input-group-append">
-                <button class="btn btn-dark height-40 py-2 px-3 rounded-right-pill" type="button" id="searchProduct1">
+                <button @click="search()" class="btn btn-dark height-40 py-2 px-3 rounded-right-pill" type="button" id="searchProduct1">
                   <span class="ec ec-search font-size-24"></span>
                 </button>
               </div>
@@ -169,9 +169,23 @@ export default {
     }
   },
   data: () => ({
-    categoriesListOpened: true,
-    hoveredMenuItemId: null
-  })
+    categoriesListOpened: false,
+    hoveredMenuItemId: null,
+    searchString: null,
+    errors: null,
+  }),
+  methods: {
+    search() {
+      this.errors = null
+      if (this.searchString !== null) {
+        if (this.searchString.length < 3 || this.searchString.length > 15) {
+          this.errors = "Provided string is not correct. Enter valid search string in range 3-15"
+        } else {
+          window.location.href = `/goods/search=${this.searchString}`
+        }
+      }
+    }
+  }
 }
 </script>
 

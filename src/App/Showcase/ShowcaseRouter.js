@@ -2,6 +2,7 @@ import FeatureWrapper from './'
 
 const HomePage = () => import('./_pages/Home')
 const GoodsPage = () => import('./_pages/Goods')
+const SearchGoodsPage = () => import('./_pages/SearchGoods')
 const ProductPage = () => import('./_pages/Product')
 const CartPage = () => import('./_pages/Cart')
 const WishlistPage = () => import('./_pages/Wishlist')
@@ -21,6 +22,11 @@ const showcaseRoutes = [
                 path: '/',
                 component: HomePage,
                 name: 'home'
+            },
+            {
+                path: '/goods/search=:search',
+                component: SearchGoodsPage,
+                name: 'goods'
             },
             {
                 path: '/goods/:categoryid',
