@@ -404,8 +404,7 @@ export default {
     async order() {
       this.errors = null
 
-      if (this.confirmedTerms === false
-      ) {
+      if (this.confirmedTerms === false) {
         this.errors = "Please agree terms and conditions."
       } else if (this.city && this.street && this.zipcode && this.firstName && this.lastName && this.phone && this.email && this.paymentType) {
         const token = await this.$store.getters.token()

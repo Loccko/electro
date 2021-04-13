@@ -86,8 +86,7 @@
       </div>
     </div>
     <nav class="px-3 flex-horizontal-center text-gray-20 d-none d-xl-flex">
-      1 of 3
-      <a class="text-gray-30 font-size-20 ml-2" href="#">→</a>
+      <a class="text-gray-30 font-size-20 ml-2"></a>
     </nav>
   </div>
 </template>
@@ -118,7 +117,6 @@ export default {
       this.selectedSortingOrder = name
       this.showOder = false
       const value = this.sortingOrders[name]
-      console.log(this.selectedSortingOrder, this.showOder, value)
       this.$emit("changeorder", value)
     },
   },

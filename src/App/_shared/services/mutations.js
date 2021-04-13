@@ -141,7 +141,7 @@ export default {
                   city
                   street
                   apartment
-                  zipCode
+                  zipcode
                 }
               }
             }

@@ -25,7 +25,7 @@
             </ul>
           </div>
         </li>
-        <li>
+        <li v-if="category !== null">
           <a class="dropdown-current active" href="#">
             {{ category.title }}
             <span class="text-gray-25 font-size-12 font-weight-normal">({{ category.amount }})</span>
@@ -44,7 +44,7 @@
         </li>
       </ul>
     </div>
-    <div class="mb-6">
+    <div v-if="category !== null" class="mb-6">
       <div class="border-bottom border-color-1 mb-5">
         <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18">
           Filters
@@ -75,7 +75,7 @@ export default {
   },
   data: () => ({
     rootCategories: Array,
-    showRootCategories: false,
+    showRootCategories: true,
   }),
   methods: {
     onSelect(event) {

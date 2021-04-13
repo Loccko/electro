@@ -1,11 +1,12 @@
 import env from "@/environment";
 
 export default {
-    async fetchProducts(amount = 20, category = null, orderBy = null, filters = null) {
+    async fetchProducts(amount = 20, category = null, orderBy = null, filters = null, search = null) {
         let requestParams = {
             category,
             amount,
             orderBy,
+            search,
         };
         for (const iterator in requestParams) {
             if (requestParams[iterator] === null) {
@@ -74,7 +75,6 @@ export default {
         });
         return (await response.json()).data.products
     },
-
     async fetchProduct(id) {
         const response = await fetch(env.endpoint, {
             method: "POST",
@@ -126,7 +126,6 @@ export default {
 
         return (await response.json()).data.node;
     },
-
     async fetchRecentlyViewedProducts() {
         const response = await fetch(env.endpoint, {
             method: "POST",
@@ -156,6 +155,5 @@ export default {
         });
 
         return (await response.json()).data.recentlyViewedProducts;
-    }
-    ,
+    },
 };

@@ -16,6 +16,9 @@
     </div>
 
     <div class="container">
+      <div class="mb-4">
+        <h1 class="text-center">Compare</h1>
+      </div>
       <div v-for="(item, i) of comparisonList" :key="i" class="table-responsive table-bordered table-compare-list mb-10 border-0">
         <p> {{ item.category.title }}</p>
         <table class="table">

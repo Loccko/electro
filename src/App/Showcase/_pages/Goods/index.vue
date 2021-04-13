@@ -119,6 +119,7 @@ export default {
     async filter() {
       this.products = await Products.fetchProducts(null, this.category.id, this.sortingOrder, this.selectedFilters)
       this.pageCount = Math.ceil(this.products.length / this.products_per_page)
+      this.currentPage = 1
     },
   }
 };

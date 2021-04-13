@@ -11,14 +11,15 @@ export default {
             headers: headers,
             body: JSON.stringify({
                 query: `{
-              me {
-                id
-                email
-                data {
-                  firstName
-                  lastName
-                }
-              }
+                          me {
+                            id
+                            email
+                            phone
+                            data {
+                              firstName
+                              lastName
+                            }
+                          }
             }`
             }),
         })
@@ -31,11 +32,11 @@ export default {
             headers: {'Content-Type': 'application/json', 'Authorization': `JWT ${token}`},
             body: JSON.stringify({
                 query: `mutation {
-            tokens: refreshToken(input:{}) {
-              accessToken
-              accessTokenExpirationDate
-            }
-          }`
+                            tokens: refreshToken(input:{}) {
+                              accessToken
+                              accessTokenExpirationDate
+                            }
+                          }`
             }),
         })
         return (await response.json()).data;
